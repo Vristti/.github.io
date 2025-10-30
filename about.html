@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vristti Jalan · Experience</title>
+
+  <!-- Fonts (same across your site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Preloader removed: only show preloader on home page -->
+<!-- ===== UNIVERSAL NAVBAR ===== -->
+<nav class="navbar">
+  <div class="brand-group">
+    <div class="brand">Vristti Jalan</div>
+    <div class="brand-subtitle">
+      Human Resources Specialist | Cultivating Talent &amp; Organizational Excellence
+    </div>
+  </div>
+
+  <!-- Toggle button for mobile -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="case-studies.html" class="nav-link">Case Studies</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+  </div>
+</nav>
+<div class="nav-separator"></div>
+<script>
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+</aside>
+
+<script>
+  // Mobile toggle for hamburger
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+<div class="drawer-backdrop" data-close-drawer></div>
+
+  <section id="about" class="about-section">
+    <h2 class="section-title">About</h2>
+
+    <div class="about-grid">
+      <!-- About Me -->
+      <details class="about-card">
+        <summary class="about-header">
+          <span>About Me</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+        <div class="about-body">
+          <p>
+            I’m an HR professional passionate about connecting people to meaningful work.
+            My background includes recruitment coordination, HR operations, and talent pipeline development
+            for students and emerging professionals. I enjoy creating efficient systems, improving candidate experiences,
+            and helping organizations grow through strong people practices.
+          </p>
+           <a class="btn" href="experience.html">more about my experience</a>
+        </div>
+      </details>
+
+      <!-- Career Goals -->
+      <details class="about-card">
+        <summary class="about-header">
+          <span>Career Goals</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+        <div class="about-body">
+          <p>
+            My long-term goal is to advance into a strategic HR role, combining analytics and people development.
+            I’m working toward CHRP/CHRL certification and exploring graduate studies in HR Management.
+            I aim to design data-driven frameworks that support inclusive workplaces and sustainable employee growth.
+          </p>
+        </div>
+      </details>
+
+      <!-- Volunteering (this is the trigger for the lemonade) -->
+      <details class="about-card" id="volunteering-card">
+        <summary class="about-header">
+          <span>Volunteering</span>
+          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+        <div class="about-body">
+          <p>
+            As Co-Founder of <strong>Lemonade Lovers</strong>, I’ve helped raise over $125,000 for the SickKids Hospital over the past decade.
+            I also volunteer with youth initiatives and community outreach programs that encourage leadership and inclusion.
+          </p>
+        </div>
+      </details> 
+
+      <!-- Projects -->
+     <!-- Projects + Book Stack side-by-side -->
+<div class="projects-row">
+  <!-- Projects -->
+  <details class="about-card" id="projects">
+    <summary class="about-header">
+      <span>Projects</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </summary>
+    <div class="about-body">
+      <ul>
+        <li>Designed “Co-op Outsourcing Package” to streamline client recruitment and onboarding.</li>
+        <li>Built candidate scorecards and interview templates for small business clients.</li>
+        <li>Contributed to community fundraising campaigns and youth leadership events.</li>
+      </ul>
+    </div>
+  </details>
+
+  </section>
+
+  <!-- Lemonade glass animation -->
+  <div class="lemonade-glass" aria-hidden="true" title="Lemonade!">
+    <svg viewBox="0 0 128 128" width="80" height="80">
+      <!-- glass -->
+      <rect x="28" y="16" width="60" height="96" rx="10" ry="10" fill="#ffffff" stroke="#cfcfcf" stroke-width="3" opacity="0.9"/>
+      <!-- lemonade -->
+      <rect x="32" y="44" width="52" height="64" rx="8" ry="8" fill="#F7E36A"/>
+      <!-- ice -->
+      <rect x="40" y="56" width="16" height="10" fill="#ffffff" opacity="0.7" />
+      <rect x="58" y="66" width="16" height="10" fill="#ffffff" opacity="0.7" />
+      <!-- straw -->
+      <rect x="80" y="10" width="6" height="40" fill="#E07070" transform="rotate(10 80 10)"/>
+    </svg>
+  </div> 
+
+  <script>
+  /* === Lemonade: trigger when the "Volunteering" <details> opens === */
+  (function () {
+    const glass = document.querySelector('.lemonade-glass');
+    const volunteering = document.getElementById('volunteering-card');
+
+    // Hard stop if markup not found
+    if (!glass || !volunteering) {
+      console.warn('[Lemonade] Missing element:', { glass: !!glass, volunteering: !!volunteering });
+      return;
+    }
+
+    // If you want motion regardless of OS setting, set this to false:
+    const respectsReducedMotion = true;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let cooling = false;
+
+    function playLemonade() {
+      if (cooling) return;
+      if (respectsReducedMotion && prefersReduced) {
+        console.info('[Lemonade] Motion suppressed due to prefers-reduced-motion.');
+        return;
+      }
+      cooling = true;
+      glass.classList.add('animate');
+      setTimeout(() => {
+        glass.classList.remove('animate');
+        cooling = false;
+      }, 2600); // keep in sync with CSS @keyframes
+    }
+
+    // Fire only when the details opens
+    volunteering.addEventListener('toggle', () => {
+      if (volunteering.open) {
+        console.debug('[Lemonade] Volunteering opened → play');
+        playLemonade();
+      }
+    });
+
+    // Debug helper: allow manual trigger from console
+    window.playLemonade = playLemonade;
+  })();
+  </script>
+
+
+
+<footer id="contact">
+  <h2>Let's work together</h2>
+  <p>Toronto · 
+    <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="loader.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.querySelector('.drawer-backdrop');
+    const body = document.body;
+
+    function openDrawer() {
+      body.classList.add('drawer-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      body.classList.remove('drawer-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    btn?.addEventListener('click', () => {
+      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+    });
+    backdrop?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
+    });
+  })();
+</script>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="loader.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.querySelector('.drawer-backdrop');
+    const body = document.body;
+
+    function openDrawer() {
+      body.classList.add('drawer-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      body.classList.remove('drawer-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    btn?.addEventListener('click', () => {
+      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+    });
+    backdrop?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
+    });
+  })();
+</script>
+</body>
+</html> 

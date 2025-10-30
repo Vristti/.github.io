@@ -1,42 +1,122 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vristti Jalan | HR & Talent Acquisition</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vristti Jalan · Experience</title>
+
+  <!-- Fonts (same across your site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="container">
-    <h1>Vristti Jalan</h1>
-    <p class="subtitle">HR & Talent Acquisition | Full-cycle Recruitment | ESA Compliance</p>
-
-    <div class="buttons">
-      <a href="mailto:vristti.jalan@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
-      <a href="Vristti_Jalan_Resume.pdf" download>Download Résumé</a>
+  <!-- Preloader with coffee mug and circle logo -->
+  <div id="preloader" class="preloader" aria-hidden="false">
+    <div class="preloader-inner">
+      <div class="logo-container">
+        <div class="center-circle">
+          <span class="initials">VJ</span>
+        </div>
+      </div>
+      <div class="coffee-container">
+        <div class="coffee-mug">
+          <div class="coffee">
+            <div class="coffee-spill"></div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <section>
-      <h2>About</h2>
-      <p>I’m an HR Specialist experienced in recruitment, onboarding, and policy development.
-      I’ve supported 50+ hires across co-op and professional roles, strengthened compliance
-      with Ontario ESA standards, and improved candidate experience end-to-end.</p>
-    </section>
-
-    <section>
-      <h2>Highlights</h2>
-      <ul>
-        <li>Led 50+ hires in 6 months across co-op and professional positions</li>
-        <li>Built partnerships with multiple universities to expand talent pipelines</li>
-        <li>Standardized onboarding processes and documentation</li>
-        <li>Supported payroll accuracy and ESA compliance</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>© 2025 Vristti Jalan</p>
-    </footer>
   </div>
+
+   <!-- ===== UNIVERSAL NAVBAR ===== -->
+<nav class="navbar">
+  <div class="brand-group">
+    <div class="brand">Vristti Jalan</div>
+    <div class="brand-subtitle">
+      Human Resources Specialist | Cultivating Talent &amp; Organizational Excellence
+    </div>
+  </div>
+
+  <!-- Toggle button for mobile -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="case-studies.html" class="nav-link">Case Studies</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+  </div>
+</nav>
+<div class="nav-separator"></div>
+<script>
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+</aside>
+
+<script>
+  // Mobile toggle for hamburger
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+
+<div class="drawer-backdrop" data-close-drawer></div>
+
+<header class="hero">
+  <h1>Empowering People. Strengthening Teams.</h1>
+  <p class="subtitle"> </p>
+  <div style="text-align:center">
+    <a class="btn" href="about.html">Learn More</a>
+    <a class="btn" href="case-studies.html">Case Studies</a>
+  </div>
+</header>
+  
+  <footer id="contact">
+  <h2>Let's work together</h2>
+  <p>Toronto · 
+    <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="loader.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.querySelector('.drawer-backdrop');
+    const body = document.body;
+
+    function openDrawer() {
+      body.classList.add('drawer-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      body.classList.remove('drawer-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    btn?.addEventListener('click', () => {
+      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+    });
+    backdrop?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
+    });
+  })();
+</script>
 </body>
 </html>

@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vristti Jalan · Experience</title>
+
+  <!-- Fonts (same across your site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Preloader removed: only show preloader on home page -->
+<!-- ===== UNIVERSAL NAVBAR ===== -->
+<nav class="navbar">
+  <div class="brand-group">
+    <div class="brand">Vristti Jalan</div>
+    <div class="brand-subtitle">
+      Human Resources Specialist | Cultivating Talent &amp; Organizational Excellence
+    </div>
+  </div>
+
+  <!-- Toggle button for mobile -->
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="case-studies.html" class="nav-link">Case Studies</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+  </div>
+</nav>
+<div class="nav-separator"></div>
+<script>
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+</aside>
+
+<script>
+  // Mobile toggle for hamburger
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+<div class="drawer-backdrop" data-close-drawer></div>
+  
+  <header>
+    <h1>Case Studies</h1>
+    <p class="subtitle">Real-world HR challenges I have handled — and the impact I made.</p>
+  </header>
+
+  <section id="case-studies">
+    <div class="case">
+      <h3>Improving Candidate Experience</h3>
+      <p><strong>Situation:</strong> Candidates often waited weeks between screening and interviews, causing drop-offs.</p>
+      <p><strong>Action:</strong> Implemented structured communication templates, automated scheduling, and 48-hour update systems.</p>
+      <p><strong>Result:</strong> Time-to-interview decreased by 40%, and candidate satisfaction improved significantly.</p>
+    </div>
+
+    <div class="case">
+      <h3>Standardizing Onboarding</h3>
+      <p><strong>Situation:</strong> New hires received inconsistent onboarding information across departments.</p>
+      <p><strong>Action:</strong> Created a unified onboarding checklist and policy manual aligned with ESA standards.</p>
+      <p><strong>Result:</strong> Improved first-week experience and faster productivity ramp-up for new hires.</p>
+    </div>
+
+    <div class="case">
+      <h3>Building Policy Frameworks</h3>
+      <p><strong>Situation:</strong> Outdated internal policies lacked clear documentation, creating compliance risks.</p>
+      <p><strong>Action:</strong> Reviewed, updated, and implemented policies aligned with ESA and internal procedures.</p>
+      <p><strong>Result:</strong> Reduced compliance concerns and improved communication clarity across teams.</p>
+    </div>
+  </section>
+
+ <footer id="contact">
+  <h2>Let’s work together</h2>
+  <p>Toronto ·  
+    <a href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
+  </p>
+  <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="loader.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const backdrop = document.querySelector('.drawer-backdrop');
+    const body = document.body;
+
+    function openDrawer() {
+      body.classList.add('drawer-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      body.classList.remove('drawer-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    btn?.addEventListener('click', () => {
+      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+    });
+    backdrop?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
+    });
+  })();
+</script> 
+
+</body>
+</html>
