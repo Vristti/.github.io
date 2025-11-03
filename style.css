@@ -19,6 +19,16 @@
 
 html { scroll-behavior: smooth; }
 
+.brand {
+  font-family: 'Herr Von Muellerhoff', cursive;
+  font-size: 68px;
+  color: var(--brand);
+  text-decoration: none;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--paper);
@@ -34,94 +44,121 @@ section {
   margin: 60px auto;
   padding: 0 20px;
 }
-
 /* =========================
-   Navbar
+   Navbar (final polished)
    ========================= */
-
-/* ===== Brand Fonts (consistent across all pages) ===== */
-
-/* ===== Fully Centered Navbar ===== */
 .navbar {
-  display: flex;
-  flex-direction: column;       /* stack everything vertically */
-  align-items: center;          /* center horizontally */
-  justify-content: center;
-  padding: 22px 0 16px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #ffffff;          /* white navbar */
-  border-bottom: 3px solid #e7d9cf;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-}
-
-/* Brand group (name + subtitle) */
-.navbar .brand-group {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  padding: 45px 0 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--panel);
+  border-bottom: 3px solid #e7d9cf;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+/* Pill buttons for page links */
+.navbar .nav-links{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin-top:12px;
+  flex-wrap:wrap;
 }
 
-/* Name */
-.navbar .brand {
-  font-family: 'Great Vibes', cursive;
-  font-size: 54px;
-  color: #b07f5e;
-  letter-spacing: 1px;
-  text-decoration: none;
-  line-height: 1;
-  margin: 0;
+.nav-link,
+.nav-link:visited{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:40px;
+  padding:8px 16px;
+  border-radius:999px;
+  text-decoration:none !important;
+  font-weight:500;
+  font-size:16px;
+
+  background: var(--panel);
+  color: var(--ink);
+  border:1px solid var(--line);
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+  transition: background .25s ease, color .25s ease,
+              transform .2s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
-/* Subtitle */
-.navbar .brand-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #6b7280;
-  letter-spacing: 0.3px;
-  text-align: center;
-  margin-top: 2px;
-}
-
-/* Center the nav links below */
-.navbar .nav-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 36px;
-  margin-top: 14px;
-}
-
-/* Nav link buttons */
-.nav-link {
-  color: #1f1d1a;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 8px 18px;
-  border-radius: 20px;
-  position: relative;
-  font-size: 16px;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #b07f5e;
-  background: rgba(176, 127, 94, 0.06);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+.nav-link:hover{
+  background: var(--brand);
+  color:#fff;
+  border-color: transparent;
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
   transform: translateY(-1px);
 }
 
-/* Keep fonts responsive */
-@media (max-width: 768px) {
-  .navbar .brand { font-size: 42px; }
-  .navbar .brand-subtitle { font-size: 14px; padding: 0 12px; }
-  .navbar .nav-links { gap: 24px; flex-wrap: wrap; }
+.nav-link.is-active{
+  background: var(--brand);
+  color:#fff;
+  border-color: transparent;
+  box-shadow:0 8px 22px rgba(0,0,0,.10);
 }
+
+/* Add a bit of glow and separation to brand area */
+.brand-group {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 6px 20px 10px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff, #faf7f3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.brand {
+  font-family: 'Herr Von Muellerhoff', cursive;
+  font-size: 68px;
+  color: var(--brand);
+  text-shadow: 0 1px 0 var(--paper), 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.brand-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--ink-soft);
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+/* Brand area – open and airy */
+.brand-group{
+  text-align:center;
+  margin-bottom:14px;
+  padding:0;                 /* remove tight padding */
+  background: transparent;   /* no boxed bg */
+  box-shadow:none;           /* no card shadow */
+  border-radius:0;
+}
+
+.brand{
+  font-family:'Herr Von Muellerhoff', cursive;
+  font-size:68px;            /* same as Home */
+  line-height:1.05;          /* a bit more breathing room */
+  letter-spacing:.5px;
+  color:var(--brand);
+}
+
+
+.brand-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--ink-soft);
+  letter-spacing: 0.3px;
+  margin-top: 2px;
+}
+
 
 /* =========================
    Hero
@@ -136,7 +173,7 @@ section {
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
-  color: #b07f5e;
+  color: #6b7280;
   position: relative;
   z-index: 2;
 }
@@ -169,7 +206,7 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 h1 {
   font-size: 42px;
   text-align: center;
-  color: #b07f5e;
+  color:var(--brand);
 }
 
 p.subtitle {
@@ -183,14 +220,14 @@ a.btn {
   margin: 10px;
   padding: 10px 16px;
   border-radius: 8px;
-  background: #b07f5e;
+  background:var(--brand);
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease;
 }
 
-a.btn:hover { background: #a06c4c; }
+a.btn:hover { background: var(--brand-dark); }
 
 /* =========================
    Lists
@@ -222,7 +259,7 @@ li {
 }
 
 .case h3 {
-  color: #b07f5e;
+  color: var(--brand);
   font-family: 'Playfair Display', serif;
   margin-top: 0;
 }
@@ -397,16 +434,6 @@ li {
 /* =========================================================
    EXPERIENCE PAGE STYLES
    ========================================================= */
-
-:root {
-  /* Consistent brand colours */
-  --brand-accent: #b07f5e;
-  --muted: #6f6f6f;
-  --canvas: #faf8f6;
-  --ring: rgba(176, 127, 94, 0.22);
-  --brand-accent: #b07f5e;
-  --ink: #1f1f1f;
-} 
 
 /* ===== Page Background ===== */
 body.experience-page {
@@ -667,6 +694,109 @@ body.experience-page {
     transition: none;
   }
 }
+/* =========================
+   Case Studies (Accordion)
+   ========================= */
+.case-accordions {
+  max-width: 900px;
+  margin: 80px auto 100px;
+  padding: 0 20px;
+}
+
+.case-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost {
+  background: transparent;
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.case {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.case summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.case summary::-webkit-details-marker { display: none; }
+
+.case summary span {
+  font-weight: 600;
+  color: var(--brand-dark);
+  font-size: 1.05rem;
+}
+
+.case .chev {
+  width: 22px; height: 22px;
+  stroke: var(--ink-soft); fill: none; stroke-width: 2;
+  transition: transform .25s ease;
+}
+
+.case[open] .chev { transform: rotate(180deg); }
+
+.case-body {
+  padding: 0 24px 22px 24px;
+  border-top: 1px dashed var(--line);
+  animation: dropIn .25s ease;
+}
+
+.case-body p {
+  margin: 12px 0 0;
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: .96rem;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Small tweak for header to match Experience */
+.page-header {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: var(--brand-dark);
+}
+.page-header p {
+  color: var(--ink-soft);
+  margin-top: 8px;
+}
+
 
 /* =========================
    Footer
@@ -682,7 +812,7 @@ footer {
 
 footer h2 {
   font-family: 'Playfair Display', serif;
-  color: #b07f5e;
+  color: var(--brand-dark);
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -693,7 +823,7 @@ footer p {
 }
 
 footer a {
-  color: #b07f5e;
+  color: var(--brand);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -742,7 +872,7 @@ footer a:hover {
   width: 8cm;
   height: 8cm;
   background: transparent;
-  border: 2px solid #b07f5e;
+  border: 2px solid var(--brand);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -750,7 +880,7 @@ footer a:hover {
   animation: pulseCircle 2s infinite ease-in-out;
 }
 .initials {
-  color: #b07f5e;
+  color: var(--brand);
   font-size: 4cm;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
@@ -765,7 +895,7 @@ footer a:hover {
 .coffee-mug {
   width: 120px;
   height: 140px;
-  background: #b07f5e;
+  background:var(--brand);
   border-radius: 0 0 60px 60px;
   position: relative;
 }
@@ -776,7 +906,7 @@ footer a:hover {
   top: 30px;
   width: 40px;
   height: 60px;
-  border: 8px solid #b07f5e;
+  border: 8px solid var(--brand);
   border-left: none;
   border-radius: 0 40px 40px 0;
 }
@@ -850,7 +980,7 @@ footer a:hover {
   display: block;
   height: 2px;
   margin: 7px 4px;
-  background: #1f1d1a;
+  background: var(--ink);
   transition: transform .25s ease, opacity .25s ease;
 }
 
@@ -879,7 +1009,7 @@ footer a:hover {
   padding: 12px 14px;
   border-radius: 10px;
   background: rgba(176,127,94,0.06);
-  color: #1f1d1a;
+  color: var(--ink);
 }
 .mobile-drawer .nav-link:hover {
   background: rgba(176,127,94,0.12);

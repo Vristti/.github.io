@@ -1,124 +1,257 @@
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vristti Jalan · Experience</title>
-
-  <!-- Fonts (same across your site) -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Professional Case Studies · Vristti Jalan</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- Preloader removed: only show preloader on home page -->
-<!-- ===== UNIVERSAL NAVBAR ===== -->
-<nav class="navbar">
-  <div class="brand-group">
-    <div class="brand">Vristti Jalan</div>
-    <div class="brand-subtitle">
-      Human Resources Specialist | Cultivating Talent &amp; Organizational Excellence
-    </div>
-  </div>
 
-  <!-- Toggle button for mobile -->
-  <button class="menu-toggle" aria-label="Toggle navigation">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+<body>
+  <!-- ===== Navbar ===== -->
+<nav class="navbar" role="navigation">
+  <button class="menu-toggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
   </button>
 
-  <div class="nav-links">
+  <div class="brand-group">
+    <a href="index.html" class="brand" aria-label="Home">Vristti Jalan</a>
+    <div class="brand-subtitle">HR &amp; Talent Acquisition</div>
+  </div>
+
+  <div class="nav-links" data-desktop>
     <a href="index.html" class="nav-link">Home</a>
     <a href="about.html" class="nav-link">About</a>
-    <a href="case-studies.html" class="nav-link">Case Studies</a>
     <a href="experience.html" class="nav-link">Experience</a>
+    <a href="case-studies.html" class="nav-link">Case Studies</a>
     <a href="contacts.html" class="nav-link">Contact</a>
   </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="drawer">
+    <div class="drawer-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="contacts.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="backdrop"></div>
 </nav>
-<div class="nav-separator"></div>
-<script>
-  // Mobile menu toggle
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-    this.classList.toggle('open');
-  });
-</script>
-</aside>
 
 <script>
-  // Mobile toggle for hamburger
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-    this.classList.toggle('open');
+  // Drawer
+  const toggle = document.querySelector('.menu-toggle');
+  const backdrop = document.getElementById('backdrop');
+  function openDrawer(open){ document.body.classList.toggle('drawer-open', open); }
+  toggle?.addEventListener('click', () => openDrawer(!document.body.classList.contains('drawer-open')));
+  backdrop?.addEventListener('click', () => openDrawer(false));
+  window.addEventListener('keydown', e => { if (e.key === 'Escape') openDrawer(false); });
+
+  // Auto-activate current page link (desktop + drawer)
+  const here = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-link').forEach(a => {
+    const href = a.getAttribute('href'); if (!href) return;
+    const file = href.split('/').pop();
+    if (file === here) a.classList.add('is-active');
   });
 </script>
-<div class="drawer-backdrop" data-close-drawer></div>
-  
-  <header>
-    <h1>Case Studies</h1>
-    <p class="subtitle">Real-world HR challenges I have handled — and the impact I made.</p>
+
+
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <h1>Professional Case Studies</h1>
+    <p>Real-world HR and Talent initiatives led by Vristti Jalan</p>
   </header>
 
-  <section id="case-studies">
-    <div class="case">
-      <h3>Improving Candidate Experience</h3>
-      <p><strong>Situation:</strong> Candidates often waited weeks between screening and interviews, causing drop-offs.</p>
-      <p><strong>Action:</strong> Implemented structured communication templates, automated scheduling, and 48-hour update systems.</p>
-      <p><strong>Result:</strong> Time-to-interview decreased by 40%, and candidate satisfaction improved significantly.</p>
+  <!-- ===== CASE STUDIES GRID ===== -->
+  <section class="case-studies-grid">
+
+    <details class="case">
+    <summary>
+      <span>Global Recruitment Expansion & Client Growth</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> The organization aimed to scale recruitment operations internationally but lacked a structured model for multiple markets.</p>
+      <p><strong>Action:</strong> Designed and executed a cross-regional hiring framework spanning Canada, India, the UK, the Philippines, and the U.S. Oversaw sourcing, compliance, and onboarding across time zones.</p>
+      <p><strong>Result:</strong> Recruited 150+ professionals and supported 40+ client accounts globally, positioning the company as a reliable cross-border staffing partner.</p>
     </div>
+  </details>
 
-    <div class="case">
-      <h3>Standardizing Onboarding</h3>
-      <p><strong>Situation:</strong> New hires received inconsistent onboarding information across departments.</p>
-      <p><strong>Action:</strong> Created a unified onboarding checklist and policy manual aligned with ESA standards.</p>
-      <p><strong>Result:</strong> Improved first-week experience and faster productivity ramp-up for new hires.</p>
+    <details class="case">
+    <summary>
+      <span>Employee Handbook & Policy Standardization</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Inconsistent HR practices caused uncertainty around compliance and employee relations.</p>
+      <p><strong>Action:</strong> Developed a comprehensive Employee Handbook outlining key policies on conduct, leave, performance, and accountability.</p>
+      <p><strong>Result:</strong> Standardized HR operations across all departments and reduced policy-related inquiries by 40%.</p>
     </div>
+  </details> 
 
-    <div class="case">
-      <h3>Building Policy Frameworks</h3>
-      <p><strong>Situation:</strong> Outdated internal policies lacked clear documentation, creating compliance risks.</p>
-      <p><strong>Action:</strong> Reviewed, updated, and implemented policies aligned with ESA and internal procedures.</p>
-      <p><strong>Result:</strong> Reduced compliance concerns and improved communication clarity across teams.</p>
+   <details class="case">
+    <summary>
+      <span>HR Process Improvement & Workflow Automation</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Manual workflows and document handling delayed onboarding and payroll accuracy.</p>
+      <p><strong>Action:</strong> Introduced digital onboarding, automated templates, and implemented e-signature tools to streamline approvals.</p>
+      <p><strong>Result:</strong> Reduced onboarding time by 30% and improved documentation accuracy to 99%.</p>
     </div>
-  </section>
+  </details>
 
- <footer id="contact">
-  <h2>Let’s work together</h2>
-  <p>Toronto ·  
-    <a href="https://www.linkedin.com/in/your-link" target="_blank">LinkedIn</a>
-  </p>
-  <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
-</footer>
+    <details class="case">
+    <summary>
+      <span>Performance Management System Overhaul</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> The existing review system lacked structure and follow-up processes.</p>
+      <p><strong>Action:</strong> Introduced standardized performance templates and monthly coaching sessions to enhance accountability.</p>
+      <p><strong>Result:</strong> Achieved a 95% completion rate for employee reviews and strengthened engagement through consistent feedback.</p>
+    </div>
+  </details>
 
+    <details class="case">
+    <summary>
+      <span>HR Metrics & Retention Strategy</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> High turnover rates in certain teams affected productivity and morale.</p>
+      <p><strong>Action:</strong> Conducted exit and stay interviews to identify turnover trends and developed data-informed retention initiatives.</p>
+      <p><strong>Result:</strong> Reduced voluntary turnover by 18% within six months and improved employee satisfaction scores.</p>
+    </div>
+  </details> 
+
+    <details class="case">
+    <summary>
+      <span>Co-op and Early Talent Program Development</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Limited engagement and unclear pathways for students and new graduates.</p>
+      <p><strong>Action:</strong> Designed a structured co-op framework integrating mentorship, onboarding, and performance feedback systems.</p>
+      <p><strong>Result:</strong> Increased student applications by 60% and improved conversion of co-op hires to full-time roles.</p>
+    </div>
+  </details>
+
+<details class="case">
+    <summary>
+      <span>Recruitment Process Standardization</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Recruiters followed different screening criteria, affecting consistency and fairness.</p>
+      <p><strong>Action:</strong> Developed standardized scorecards, interview rubrics, and evaluation templates.</p>
+      <p><strong>Result:</strong> Improved hiring consistency across teams and enhanced client and candidate satisfaction.</p>
+    </div>
+  </details>
+
+    <details class="case">
+    <summary>
+      <span>Candidate Experience Optimization</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Delays in communication caused candidate drop-offs during interviews and feedback stages.</p>
+      <p><strong>Action:</strong> Introduced structured update templates, feedback loops, and a personalized candidate journey.</p>
+      <p><strong>Result:</strong> Improved satisfaction by 30% and significantly reduced candidate withdrawal rates.</p>
+    </div>
+  </details> 
+
+  <details class="case">
+    <summary>
+      <span>Data-Driven Recruitment Dashboard</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Leadership lacked visibility into real-time recruitment analytics.</p>
+      <p><strong>Action:</strong> Created an Excel-based dashboard to track candidate pipelines, conversion rates, and source effectiveness.</p>
+      <p><strong>Result:</strong> Enabled data-informed decision-making and improved placement efficiency by 20%.</p>
+    </div>
+  </details>
+
+    <details class="case">
+    <summary>
+      <span>Business Development & Market Research</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> The organization needed a clearer understanding of competitive positioning and client needs.</p>
+      <p><strong>Action:</strong> Conducted market research to identify growth opportunities and developed client acquisition strategies.</p>
+      <p><strong>Result:</strong> Expanded service offerings and increased new business leads by 15%.</p>
+    </div>
+  </details>
+
+    <details class="case">
+    <summary>
+      <span>Client Acquisition & Outreach Strategy</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Business development relied on ad-hoc outreach with low conversion rates.</p>
+      <p><strong>Action:</strong> Refined client proposals, created branded outreach templates, and identified target industries.</p>
+      <p><strong>Result:</strong> Secured multiple long-term clients within one quarter through strategic relationship-building.</p>
+    </div>
+  </details>
+
+   <details class="case">
+    <summary>
+      <span>Administrative System Optimization</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Disorganized documentation and recordkeeping posed compliance risks.</p>
+      <p><strong>Action:</strong> Introduced structured digital filing systems and implemented tracking logs for document accuracy.</p>
+      <p><strong>Result:</strong> Achieved 100% compliance in internal record audits and reduced administrative backlog.</p>
+    </div>
+  </details> 
+
+     <details class="case">
+    <summary>
+      <span>Legal & Client Communication Coordination</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Miscommunication between internal and external stakeholders delayed document turnaround.</p>
+      <p><strong>Action:</strong> Developed standardized communication templates and centralized document workflows.</p>
+      <p><strong>Result:</strong> Reduced response times by 60%, improving client satisfaction and workflow transparency.</p>
+    </div>
+  </details>
+
+  <details class="case">
+    <summary>
+      <span>Reference Check & Screening Process Redesign</span>
+      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="case-body">
+      <p><strong>Challenge:</strong> Reference checks were inconsistent and lacked structure.</p>
+      <p><strong>Action:</strong> Created a standardized template focusing on competencies and job-specific metrics.</p>
+      <p><strong>Result:</strong> Reduced processing time by half while improving candidate evaluation quality.</p>
+    </div>
+  </details>
+</section>
 <script>
-  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Expand/Collapse All
+  const expandBtn = document.getElementById('expand-all');
+  const collapseBtn = document.getElementById('collapse-all');
+  const allCases = () => Array.from(document.querySelectorAll('.case'));
+
+  expandBtn?.addEventListener('click', () => allCases().forEach(d => d.open = true));
+  collapseBtn?.addEventListener('click', () => allCases().forEach(d => d.open = false));
 </script>
-<script src="loader.js"></script>
-<script>
-  (function () {
-    const btn = document.querySelector('.menu-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    const backdrop = document.querySelector('.drawer-backdrop');
-    const body = document.body;
 
-    function openDrawer() {
-      body.classList.add('drawer-open');
-      btn.setAttribute('aria-expanded', 'true');
-      drawer.setAttribute('aria-hidden', 'false');
-    }
-    function closeDrawer() {
-      body.classList.remove('drawer-open');
-      btn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('aria-hidden', 'true');
-    }
-    btn?.addEventListener('click', () => {
-      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
-    });
-    backdrop?.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
-    });
-  })();
-</script> 
-
+  <footer class="footer">
+    <p>© 2025 Vristti Jalan · All Rights Reserved</p>
+  </footer>
 </body>
 </html>
