@@ -938,3 +938,153 @@ body.drawer-open .menu-toggle span:nth-child(3) { transform: translateY(-9px) ro
   .lemonade-glass { left: -140px; }
 }
 
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+body.contact-page {
+  background: linear-gradient(180deg, var(--paper) 0%, #fff 420px);
+}
+
+.contact-hero {
+  max-width: 900px;
+  margin: 48px auto 8px;
+  padding: 0 20px;
+  text-align: center;
+}
+.contact-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 46px);
+  color: var(--brand);
+  margin: 0 0 6px;
+}
+.contact-hero .subtitle {
+  color: #666;
+  margin-top: 6px;
+}
+
+.contact-cards {
+  max-width: 900px;
+  margin: 22px auto 40px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+@media (max-width: 760px) {
+  .contact-cards { grid-template-columns: 1fr; }
+}
+
+.contact-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 16px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+}
+.contact-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin: 0;
+  color: var(--ink);
+}
+.contact-icon {
+  width: 22px; height: 22px;
+  color: var(--brand);
+  opacity: .9;
+}
+
+.muted { color: #6f6f6f; margin: 8px 0 16px; }
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.btn.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.btn.btn-primary:hover { background: var(--brand-dark); }
+
+.btn.ghost {
+  background: #fff;
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+}
+
+.pillline { margin-top: 4px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+.pill.mono {
+  background: #fff7f0;
+  border: 1px dashed rgba(176, 127, 94, 0.45);
+  color: var(--ink);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%) translateY(20px);
+  background: #1f1f1f;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .25s ease, opacity .25s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 3000;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* small copy icon next to email pill */
+.email-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-icon-btn {
+  background: none;
+  border: none;
+  color: var(--brand);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 6px;
+  transition: background 0.2s ease;
+}
+.copy-icon-btn:hover {
+  background: rgba(0,0,0,0.05);
+}
+.copy-icon-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+
+

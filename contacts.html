@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vristti Jalan · Contact</title>
+
+  <!-- Fonts + your site styles (same as other pages) -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="contact-page">
+  <!-- ===== UNIVERSAL NAVBAR (same structure as other pages) ===== -->
+  <nav class="navbar">
+    <div class="brand-group">
+      <div class="brand">Vristti Jalan</div>
+      <div class="brand-subtitle">
+        Human Resources Specialist | Cultivating Talent &amp; Organizational Excellence
+      </div>
+    </div>
+
+    <!-- Toggle button for mobile -->
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="contacts.html" class="nav-link active">Contact</a>
+    </div>
+  </nav>
+  <div class="nav-separator"></div>
+
+  <script>
+    // Mobile menu toggle (same lightweight behavior you use elsewhere)
+    document.querySelector('.menu-toggle')?.addEventListener('click', function () {
+      document.querySelector('.nav-links')?.classList.toggle('active');
+      this.classList.toggle('open');
+    });
+  </script>
+
+  <!-- ===== CONTACT HERO ===== -->
+  <header class="contact-hero">
+    <h1>Let’s Connect</h1>
+    <p class="subtitle">Toronto · Open to opportunities & collaborations</p>
+  </header>
+
+  <!-- ===== CONTACT CARDS ===== -->
+  <section class="contact-cards">
+    <!-- Email card -->
+<article class="contact-card">
+  <div class="contact-card-head">
+    <h3>Email</h3>
+    <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.3-.5 7.2 5.2L18.7 6H4.3Zm15.2 2.1-6.7 4.8a1.5 1.5 0 0 1-1.7 0L4.4 8.1V17.5c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.1Z"/>
+    </svg>
+  </div>
+
+  <p class="muted">Tap to copy & open your mail app</p>
+
+  <div class="contact-actions">
+    <a href="mailto:vristti.jalan@gmail.com"
+       class="btn btn-primary copy-mail"
+       data-email="vristti.jalan@gmail.com">Email Me</a>
+  </div>
+
+  <!-- Email pill with tiny copy button -->
+  <div class="pillline email-line">
+    <span class="pill mono">vristti.jalan@gmail.com</span>
+    <button class="copy-icon-btn" data-email="vristti.jalan@gmail.com" title="Copy email">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </button>
+  </div>
+</article>
+
+
+    <!-- LinkedIn card -->
+    <article class="contact-card">
+      <div class="contact-card-head">
+        <h3>LinkedIn</h3>
+        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h5V24H0V8.98zM7.98 8.98H13v2.05h.08c.7-1.33 2.42-2.73 4.98-2.73 5.33 0 6.32 3.5 6.32 8.05V24h-5v-6.72c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.75-2.58 3.55V24h-5V8.98z"/>
+        </svg>
+      </div>
+
+      <p class="muted">Best for networking, referrals, and quick updates</p>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" target="_blank" href="https://www.linkedin.com/in/vristti-jalan-794960244/">Connect on LinkedIn</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- Toast for copy feedback -->
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
+
+  <!-- ===== FOOTER (same as your site) ===== -->
+  <footer id="contact">
+    <h2>Let’s work together</h2>
+    <p>Toronto ·
+      <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+    </p>
+    <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+  </footer>
+
+
+  <script>
+  // footer year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  async function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+  }
+
+  const toast = document.getElementById('toast');
+  function showToast(msg = 'Copied!') {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1300);
+  }
+
+  // --- EMAIL BUTTON (copies + opens mail app)
+  document.querySelector('.copy-mail').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const email = e.target.dataset.email;
+    await copyText(email);
+    showToast('Email copied');
+    setTimeout(() => (window.location.href = 'mailto:' + email), 150);
+  });
+
+  // --- SMALL COPY ICON ---
+  document.querySelector('.copy-icon-btn').addEventListener('click', async (e) => {
+    const email = e.currentTarget.dataset.email;
+    await copyText(email);
+    showToast('Email copied');
+  });
+
+  // --- Navbar toggle ---
+  document.querySelector('.menu-toggle')?.addEventListener('click', function () {
+    document.querySelector('.nav-links')?.classList.toggle('active');
+    this.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
