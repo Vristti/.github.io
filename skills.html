@@ -46,8 +46,6 @@
   <div class="drawer-backdrop" id="backdrop"></div>
 </nav>
 
-</aside>
-
 <script>
   // Mobile toggle for hamburger
   document.querySelector('.menu-toggle').addEventListener('click', function() {
@@ -128,11 +126,43 @@
     </div>  
 
 </section>
-
-<footer id="contact">
+ <footer id="contact">
   <h2>Let's work together</h2>
   <p>Toronto · 
     <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
   </p>
   <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
 </footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+<script src="loader.js"></script>
+<script>
+  (function () {
+    const btn = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('drawer')
+    const backdrop = document.getElementById('backdrop');
+    const body = document.body;
+
+    function openDrawer() {
+      body.classList.add('drawer-open');
+      btn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+    }
+    function closeDrawer() {
+      body.classList.remove('drawer-open');
+      btn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+    }
+    btn?.addEventListener('click', () => {
+      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
+    });
+    backdrop?.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
+    });
+  })();
+</script>
+</body>
+</html>

@@ -984,19 +984,34 @@ footer a:hover {
   transition: transform .25s ease, opacity .25s ease;
 }
 
-.mobile-drawer {
+ /* Drawer hidden by default (slides from the left) */
+#drawer {
   position: fixed;
-  top: 0;
-  right: -82%;
+  top: 0; left: 0; bottom: 0;
   width: 82%;
-  max-width: 360px;
-  height: 100vh;
-  background: #ffffff;
-  box-shadow: -8px 0 24px rgba(0,0,0,0.12);
-  z-index: 1300;
-  transition: right .3s ease;
-  padding-top: 70px;
+  max-width: 320px;
+  transform: translateX(-100%);
+  transition: transform .28s ease;
+  z-index: 1099;
 }
+
+/* Backdrop hidden by default */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+  z-index: 1098;
+}
+
+/* When the body is “open”, show both */
+.drawer-open #drawer { transform: translateX(0); }
+.drawer-open .drawer-backdrop { opacity: 1; pointer-events: auto; }
+
+/* Keep hamburger above all */
+.menu-toggle { z-index: 1100; position: fixed; top: 14px; left: 16px; }
 .drawer-links {
   display: flex;
   flex-direction: column;
