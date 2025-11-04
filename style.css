@@ -1294,4 +1294,25 @@ body.nav-open{ overflow: hidden; }
     z-index: 1100;
   }
 }
+/* === Simple Hamburger Toggle === */
+nav ul {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+
+nav ul.open {
+  display: flex;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+  nav ul { display: flex !important; flex-direction: row; }
+}
 

@@ -228,5 +228,17 @@
   window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const burger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav ul');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+  }
+});
+</script>
+
 </body>
 </html>
