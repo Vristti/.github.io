@@ -45,19 +45,7 @@
     </div>
   </div>
   <div class="drawer-backdrop" id="backdrop"></div>
-</nav>
-
-</script>
-
-<script>
-  // Mobile toggle for hamburger
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('active');
-    this.classList.toggle('open');
-  });
-</script>
-
-<div class="drawer-backdrop" data-close-drawer></div>
+</nav> 
 
   <section id="about" class="about-section">
     <h2 class="section-title">About</h2>
@@ -213,49 +201,5 @@
     });
   })();
 </script>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-<script src="loader.js"></script>
-<script>
-  (function () {
-    const btn = document.querySelector('.menu-toggle');
-    const drawer = document.getElementById('drawer');
-    const backdrop = document.querySelector('.drawer-backdrop');
-    const body = document.body;
-
-    function openDrawer() {
-      body.classList.add('drawer-open');
-      btn.setAttribute('aria-expanded', 'true');
-      drawer.setAttribute('aria-hidden', 'false');
-    }
-    function closeDrawer() {
-      body.classList.remove('drawer-open');
-      btn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('aria-hidden', 'true');
-    }
-    btn?.addEventListener('click', () => {
-      body.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
-    });
-    backdrop?.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && body.classList.contains('drawer-open')) closeDrawer();
-    });
-  })();
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.querySelector('.hamburger');
-  const nav = document.querySelector('nav ul');
-  if (burger && nav) {
-    burger.addEventListener('click', () => {
-      nav.classList.toggle('open');
-    });
-  }
-});
-</script>
-
 </body>
 </html> 
