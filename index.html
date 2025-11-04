@@ -65,9 +65,6 @@
   <div class="drawer-backdrop" id="backdrop"></div>
 </nav>
 
-
-<div class="drawer-backdrop" data-close-drawer></div>
-
 <header class="hero">
   <h1>Empowering People. Strengthening Teams.</h1>
   <p class="subtitle"> </p>
@@ -92,8 +89,8 @@
 <script>
   (function () {
     const btn = document.querySelector('.menu-toggle');
-    const drawer = document.getElementById('mobile-drawer');
-    const backdrop = document.querySelector('.drawer-backdrop');
+    const drawer = document.getElementById('drawer')
+    const backdrop = document.getElementById('backdrop');
     const body = document.body;
 
     function openDrawer() {
