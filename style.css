@@ -992,8 +992,12 @@ footer a:hover {
   max-width: 320px;
   transform: translateX(-100%);
   transition: transform .28s ease;
-  z-index: 1099;
+ z-index: 9999;          /* was 1099 */
+  pointer-events: auto;   /* ensure clicks go through */
 }
+/* Ensure the links inside the drawer are clickable */
+#drawer a, #drawer button { pointer-events: auto; }
+
 
 /* Backdrop hidden by default */
 .drawer-backdrop {
@@ -1003,7 +1007,7 @@ footer a:hover {
   opacity: 0;
   pointer-events: none;
   transition: opacity .2s ease;
-  z-index: 1098;
+  z-index: 9998; 
 }
 
 /* When the body is “open”, show both */
