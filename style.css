@@ -1258,5 +1258,21 @@ body.contact-page {
 
 /* Prevent page scroll while drawer open */
 body.nav-open{ overflow: hidden; }
+@media (max-width: 768px) {
+  /* Hide the large header and keep only the hamburger */
+  .brand-group {
+    display: none;
+  }
 
+  .nav-links {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 14px;
+    left: 16px;
+    z-index: 1100;
+  }
+}
 
