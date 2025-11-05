@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vristti Jalan · Experience</title>
+<title>Vristti Jalan · Experience</title>
 
   <!-- Fonts (same across your site) -->
    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -181,8 +181,6 @@
         </article>
       </li>
     </ol>
-
-  </div>
 </section>
 <footer id="contact">
   <h2>Let's work together</h2>
@@ -199,7 +197,8 @@
 <script>
   const btn = document.querySelector('.menu-toggle');
   const drawer = document.getElementById('drawer');
-  const backdrop = document.getElementById('backdrop');
+const backdrop = document.querySelector('.drawer-backdrop');
+drawer?.setAttribute('aria-hidden', 'true');
   const body = document.body;
 
   function openDrawer() {
