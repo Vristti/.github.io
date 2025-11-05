@@ -43,27 +43,6 @@
   </div>
   <div class="drawer-backdrop" id="backdrop"></div>
 </nav>
-
-<script>
-  // Drawer
-  const toggle = document.querySelector('.menu-toggle');
-  const backdrop = document.getElementById('backdrop');
-  function openDrawer(open){ document.body.classList.toggle('drawer-open', open); }
-  toggle?.addEventListener('click', () => openDrawer(!document.body.classList.contains('drawer-open')));
-  backdrop?.addEventListener('click', () => openDrawer(false));
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') openDrawer(false); });
-
-  // Auto-activate current page link (desktop + drawer)
-  const here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-link').forEach(a => {
-    const href = a.getAttribute('href'); if (!href) return;
-    const file = href.split('/').pop();
-    if (file === here) a.classList.add('is-active');
-  });
-</script>
-
-
-
   <!-- ===== PAGE HEADER ===== -->
   <header class="page-header">
     <h1>Professional Case Studies</h1>
@@ -267,8 +246,9 @@
 <script>
   (function () {
     const btn = document.querySelector('.menu-toggle');
-    const drawer = document.getElementById('drawer')
-    const backdrop = document.getElementById('backdrop');
+    const drawer = document.getElementById('drawer');
+    const backdrop = document.querySelector('.drawer-backdrop');
+    drawer?.setAttribute('aria-hidden', 'true'); 
     const body = document.body;
 
     function openDrawer() {
