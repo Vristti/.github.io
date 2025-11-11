@@ -55,35 +55,28 @@
   </header>
 
   <!-- ===== CONTACT CARDS ===== -->
-  <section class="contact-cards">
-    <!-- Email card -->
-<article class="contact-card">
-  <div class="contact-card-head">
-    <h3>Email</h3>
-    <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path fill="currentColor" d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.3-.5 7.2 5.2L18.7 6H4.3Zm15.2 2.1-6.7 4.8a1.5 1.5 0 0 1-1.7 0L4.4 8.1V17.5c0 .28.22.5.5.5h15c.28 0 .5-.22.5-.5V8.1Z"/>
-    </svg>
-  </div>
+  <!-- Form card -->
+    <article class="contact-card">
+      <div class="contact-card-head">
+        <h3>Message Me</h3>
+        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 12.713 0 5.25V18h24V5.25L12 12.713zM12 11L24 3H0l12 8z"/>
+        </svg>
+      </div>
 
-  <p class="muted">Tap to copy & open your mail app</p>
+      <p class="muted">Send me a direct message — it’ll go straight to my inbox.</p>
 
-  <div class="contact-actions">
-    <a href="mailto:vristti.jalan@gmail.com"
-       class="btn btn-primary copy-mail"
-       data-email="vristti.jalan@gmail.com">Email Me</a>
-  </div>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="from_name" placeholder="Your Name" required />
+        <input type="email" name="from_email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
 
-  <!-- Email pill with tiny copy button -->
-  <div class="pillline email-line">
-    <span class="pill mono">vristti.jalan@gmail.com</span>
-    <button class="copy-icon-btn" data-email="vristti.jalan@gmail.com" title="Copy email">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-      </svg>
-    </button>
-  </div>
-</article>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </article>
+
 
 
     <!-- LinkedIn card -->
@@ -162,5 +155,8 @@
       });
     })();
   </script>
+   <!-- EmailJS library + contact form logic -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="contact.js"></script>
 </body>
 </html>
