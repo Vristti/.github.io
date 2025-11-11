@@ -1377,3 +1377,10 @@ nav ul.open {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   background: var(--brand-dark);
 }
+.back-to-top-container {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: right;
+  padding: 20px;
+}
