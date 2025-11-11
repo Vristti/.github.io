@@ -216,17 +216,46 @@ p.subtitle {
   color: #555;
 }
 
+/* ===== BUTTONS (Unified across all pages) ===== */
 a.btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;       /* ensures all buttons same width */
+  height: 46px;           /* uniform height */
   margin: 10px;
-  padding: 10px 16px;
-  border-radius: 8px;
-  background:var(--brand);
+  padding: 0 20px;        /* balanced horizontal padding */
+  border-radius: 10px;
+  background: var(--brand);
   color: #fff;
-  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+a.btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+a.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  a.btn {
+    display: block;
+    width: 80%;
+    margin: 8px auto;
+  }
+}
+
 
 a.btn:hover { background: var(--brand-dark); }
 
