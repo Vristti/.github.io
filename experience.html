@@ -184,7 +184,7 @@
 </section>
 
 <div class="back-to-top-container">
-  <button id="backToTop" title="Go to top">↑ Top</button>
+  <button id="backToTop" title="Back to top">Top</button>
 </div>
 <footer id="contact">
   <h2>Let's work together</h2>
@@ -221,10 +221,7 @@ drawer?.setAttribute('aria-hidden', 'true');
   );
   backdrop?.addEventListener('click', closeDrawer);
   window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-</script>
-<!-- ===== BACK TO TOP BUTTON ===== -->
-<button id="backToTop" title="Go to top">↑</button>
-<script>
+
   // Show the button when user scrolls down
   const backToTopBtn = document.getElementById("backToTop");
   window.onscroll = function() {

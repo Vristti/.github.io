@@ -106,7 +106,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
 
   <div class="back-to-top-container">
-  <button id="backToTop" title="Go to top">↑ Top</button>
+  <button id="backToTop" title="Back to top">Top</button>
 </div>
 
   <!-- ===== FOOTER (same as your site) ===== -->
@@ -183,10 +183,7 @@ btn?.addEventListener('click', () =>
 );
 backdrop?.addEventListener('click', closeDrawer);
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-</script>
-<!-- ===== BACK TO TOP BUTTON ===== -->
-<button id="backToTop" title="Go to top">↑</button>
-<script>
+
   // Show the button when user scrolls down
   const backToTopBtn = document.getElementById("backToTop");
   window.onscroll = function() {
