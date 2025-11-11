@@ -105,100 +105,61 @@
   <!-- Toast for copy feedback -->
   <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
 
-  <div class="back-to-top-container">
-  <button id="backToTop" title="Back to top">↑</button>
-</div>
-
-  <!-- ===== FOOTER (same as your site) ===== -->
-  <footer id="contact">
-    <h2>Let’s work together</h2>
+   <footer id="contact">
+    <h2>Let's work together</h2>
     <p>Toronto ·
       <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
     </p>
     <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
   </footer>
 
+  <button id="backToTop" title="Back to top">↑</button>
 
   <script>
-  // footer year
-  document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script src="loader.js"></script>
+  <script>
+    (function () {
+      const btn = document.querySelector('.menu-toggle');
+      const drawer = document.getElementById('drawer');
+      const backdrop = document.querySelector('.drawer-backdrop');
+      const body = document.body;
 
-  async function copyText(text) {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-    } else {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-  }
+      function openDrawer() {
+        body.classList.add('drawer-open');
+        btn?.setAttribute('aria-expanded', 'true');
+        drawer?.setAttribute('aria-hidden', 'false');
+      }
+      function closeDrawer() {
+        body.classList.remove('drawer-open');
+        btn?.setAttribute('aria-expanded', 'false');
+        drawer?.setAttribute('aria-hidden', 'true');
+      }
 
-  const toast = document.getElementById('toast');
-  function showToast(msg = 'Copied!') {
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 1300);
-  }
+      btn?.addEventListener('click', () =>
+        body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
+      );
+      backdrop?.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (!backToTopBtn) return;
 
-  // --- EMAIL BUTTON (copies + opens mail app)
-  document.querySelector('.copy-mail').addEventListener('click', async (e) => {
-    e.preventDefault();
-    const email = e.target.dataset.email;
-    await copyText(email);
-    showToast('Email copied');
-    setTimeout(() => (window.location.href = 'mailto:' + email), 150);
-  });
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        backToTopBtn.style.display = y > 300 ? 'block' : 'none';
+      });
 
-  // --- SMALL COPY ICON ---
-  document.querySelector('.copy-icon-btn').addEventListener('click', async (e) => {
-    const email = e.currentTarget.dataset.email;
-    await copyText(email);
-    showToast('Email copied');
-  });
-
-  // --- Navbar toggle ---
- // --- Navbar toggle (drawer version) ---
-const btn = document.querySelector('.menu-toggle');
-const drawer = document.getElementById('drawer');
-const backdrop = document.querySelector('.drawer-backdrop');
-drawer?.setAttribute('aria-hidden', 'true');
-const body = document.body;
-
-function openDrawer() {
-  body.classList.add('drawer-open');
-  btn?.setAttribute('aria-expanded', 'true');
-  drawer?.setAttribute('aria-hidden', 'false');
-}
-function closeDrawer() {
-  body.classList.remove('drawer-open');
-  btn?.setAttribute('aria-expanded', 'false');
-  drawer?.setAttribute('aria-hidden', 'true');
-}
-
-btn?.addEventListener('click', () =>
-  body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
-);
-backdrop?.addEventListener('click', closeDrawer);
-window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-
-  // Show the button when user scrolls down
-  const backToTopBtn = document.getElementById("backToTop");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  };
-
-  // Scroll smoothly to the top when clicked
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 </body>
 </html>

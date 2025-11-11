@@ -183,60 +183,61 @@
     </ol>
 </section>
 
-<div class="back-to-top-container">
+  <footer id="contact">
+    <h2>Let's work together</h2>
+    <p>Toronto ·
+      <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+    </p>
+    <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+  </footer>
+
   <button id="backToTop" title="Back to top">↑</button>
-</div>
-<footer id="contact">
-  <h2>Let's work together</h2>
-  <p>Toronto · 
-    <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
-  </p>
-  <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
-</footer> 
 
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-<script src="loader.js"></script>
-<script>
-  const btn = document.querySelector('.menu-toggle');
-  const drawer = document.getElementById('drawer');
-const backdrop = document.querySelector('.drawer-backdrop');
-drawer?.setAttribute('aria-hidden', 'true');
-  const body = document.body;
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <script src="loader.js"></script>
+  <script>
+    (function () {
+      const btn = document.querySelector('.menu-toggle');
+      const drawer = document.getElementById('drawer');
+      const backdrop = document.querySelector('.drawer-backdrop');
+      const body = document.body;
 
-  function openDrawer() {
-    body.classList.add('drawer-open');
-    btn?.setAttribute('aria-expanded', 'true');
-    drawer?.setAttribute('aria-hidden', 'false');
-  }
-  function closeDrawer() {
-    body.classList.remove('drawer-open');
-    btn?.setAttribute('aria-expanded', 'false');
-    drawer?.setAttribute('aria-hidden', 'true');
-  }
+      function openDrawer() {
+        body.classList.add('drawer-open');
+        btn?.setAttribute('aria-expanded', 'true');
+        drawer?.setAttribute('aria-hidden', 'false');
+      }
+      function closeDrawer() {
+        body.classList.remove('drawer-open');
+        btn?.setAttribute('aria-expanded', 'false');
+        drawer?.setAttribute('aria-hidden', 'true');
+      }
 
-  btn?.addEventListener('click', () =>
-    body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
-  );
-  backdrop?.addEventListener('click', closeDrawer);
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+      btn?.addEventListener('click', () =>
+        body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
+      );
+      backdrop?.addEventListener('click', closeDrawer);
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeDrawer();
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      const backToTopBtn = document.getElementById('backToTop');
+      if (!backToTopBtn) return;
 
-  // Show the button when user scrolls down
-  const backToTopBtn = document.getElementById("backToTop");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  };
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        backToTopBtn.style.display = y > 300 ? 'block' : 'none';
+      });
 
-  // Scroll smoothly to the top when clicked
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
 </body>
 </html>
