@@ -1351,39 +1351,31 @@ nav ul.open {
   .hamburger { display: none; }
   nav ul { display: flex !important; flex-direction: row; }
 }
-/* ===== BACK TO TOP BUTTON (Unified) ===== */
+/* ===== BACK TO TOP BUTTON (Arrow Only, Unified) ===== */
 #backToTop {
-  display: none;                 /* shown after scroll */
+  display: none; /* Hidden by default */
   position: fixed;
-  bottom: 24px;                  /* above footer area */
-  right: 20px;                   /* right side */
+  bottom: 24px;         /* Above footer */
+  right: 20px;          /* Aligned right */
   z-index: 1200;
 
-  padding: 16px 18px;
+  width: 48px;
+  height: 48px;
   border: none;
-  outline: none;
-  border-radius: 999px;
-
+  border-radius: 50%;
   background: var(--brand);
   color: #fff;
+  font-size: 22px;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-
-  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  line-height: 1;
   cursor: pointer;
-  transition: opacity 0.25s ease, transform 0.25s ease,
-              box-shadow 0.25s ease, background 0.25s ease;
-}
 
-#backToTop::before {
-  content: "↑";
-  margin-right: 6px;
-  font-size: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  transition: all 0.25s ease;
 }
 
 #backToTop:hover {
   background: var(--brand-dark);
   transform: translateY(-3px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
 }
