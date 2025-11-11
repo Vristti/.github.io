@@ -1281,25 +1281,55 @@ body.contact-page {
 }
 .scrim.show{ opacity: 1; pointer-events: auto; }
 
-/* Prevent page scroll while drawer open */
-body.nav-open{ overflow: hidden; }
+/* === Mobile Navbar Fix — Show Logo and Tighten Spacing === */
 @media (max-width: 768px) {
-  /* Hide the large header and keep only the hamburger */
+
+  /* Show logo again on top (centered) */
   .brand-group {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 10px;
   }
 
+  .brand {
+    font-size: 42px;
+  }
+
+  .brand-subtitle {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Navbar padding smaller */
+  .navbar {
+    padding: 20px 0 8px;
+  }
+
+  /* Hamburger position */
+  .menu-toggle {
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 1100;
+  }
+
+  /* Hide main nav links until hamburger opens */
   .nav-links {
     display: none !important;
   }
 
-  .menu-toggle {
-    position: fixed;
-    top: 14px;
-    left: 16px;
-    z-index: 1100;
+  /* Reduce the space before hero text */
+  header.hero {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding-top: 40px;
   }
 }
+
 /* === Simple Hamburger Toggle === */
 nav ul {
   display: none;
