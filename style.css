@@ -1351,4 +1351,27 @@ nav ul.open {
   .hamburger { display: none; }
   nav ul { display: flex !important; flex-direction: row; }
 }
+/* ===== BACK TO TOP BUTTON ===== */
+#backToTop {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: var(--brand);
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: var(--brand-dark);
+  transform: translateY(-2px);
+}
 

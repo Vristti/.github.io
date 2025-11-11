@@ -180,8 +180,24 @@ btn?.addEventListener('click', () =>
 backdrop?.addEventListener('click', closeDrawer);
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 </script>
+<!-- ===== BACK TO TOP BUTTON ===== -->
+<button id="backToTop" title="Go to top">↑</button>
+<script>
+  // Show the button when user scrolls down
+  const backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
 
-
+  // Scroll smoothly to the top when clicked
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 
 </body>
 </html>
