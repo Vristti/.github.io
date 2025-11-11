@@ -146,7 +146,7 @@ section {
 
 .brand {
   font-family: 'Herr Von Muellerhoff', cursive;
-  font-size: 68px;
+  font-size: 60px;
   color: var(--brand);
   line-height: 1.1;        /* more vertical space inside the word */
   margin: 0 0 6px 0;       /* space below signature */
