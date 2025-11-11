@@ -55,7 +55,10 @@
   </header>
 
   <!-- ===== CONTACT CARDS ===== -->
-  <!-- Form card -->
+    <!-- ===== CONTACT CARDS ===== -->
+  <section class="contact-cards">
+
+    <!-- Form card -->
     <article class="contact-card">
       <div class="contact-card-head">
         <h3>Message Me</h3>
@@ -77,8 +80,6 @@
       </form>
     </article>
 
-
-
     <!-- LinkedIn card -->
     <article class="contact-card">
       <div class="contact-card-head">
@@ -91,10 +92,15 @@
       <p class="muted">Best for networking, referrals, and quick updates</p>
 
       <div class="contact-actions">
-        <a class="btn btn-primary" target="_blank" href="https://www.linkedin.com/in/vristti-jalan-794960244/">Connect on LinkedIn</a>
+        <a class="btn btn-primary" target="_blank"
+           href="https://www.linkedin.com/in/vristti-jalan-794960244/">
+          Connect on LinkedIn
+        </a>
       </div>
     </article>
+
   </section>
+
 
   <!-- Toast for copy feedback -->
   <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
@@ -156,7 +162,7 @@
     })();
   </script>
    <!-- EmailJS library + contact form logic -->
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="contact.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>

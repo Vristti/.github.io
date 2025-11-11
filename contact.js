@@ -4,10 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!form || !status) return;
 
-  // 🔑 Initialize EmailJS with your PUBLIC KEY
-  emailjs.init({
-    publicKey: 'BPvosCZTH0733SKkE', // e.g. 'g4AbCdEf123XYZ'
-  });
+  // 1) Initialize EmailJS with your PUBLIC KEY
+  emailjs.init('BPvosCZTH0733SKkE');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -15,11 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
     status.textContent = 'Sending...';
     status.className = 'form-status sending';
 
-    // Use your actual IDs here:
-    const serviceID = 'service_t4eg3fu';        // from your screenshot
-    const templateID = 'template_aosbp1n'; // from Email Templates
+    // 2) Your actual IDs
+    const serviceID = 'service_t4eg3fu';
+    const templateID = 'template_aosbp1n';
 
-    emailjs.sendForm(serviceID, templateID, form)
+    // 3) Send the form data
+    emailjs.sendForm(serviceID, templateID, '#contact-form')
       .then(function () {
         status.textContent = 'Thank you — your message has been sent!';
         status.className = 'form-status success';
@@ -32,3 +31,4 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   });
 });
+
