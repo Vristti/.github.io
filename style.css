@@ -135,32 +135,32 @@ section {
 }
 
 /* Brand area – open and airy */
-.brand-group{
-  text-align:center;
-  margin-bottom:14px;
-  padding:0;                 /* remove tight padding */
-  background: transparent;   /* no boxed bg */
-  box-shadow:none;           /* no card shadow */
-  border-radius:0;
+.brand-group {
+  text-align: center;
+  margin-bottom: 14px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-.brand{
-  font-family:'Herr Von Muellerhoff', cursive;
-  font-size:68px;            /* same as Home */
-  line-height:1.05;          /* a bit more breathing room */
-  letter-spacing:.5px;
-  color:var(--brand);
+.brand {
+  font-family: 'Herr Von Muellerhoff', cursive;
+  font-size: 68px;
+  color: var(--brand);
+  line-height: 1.1;        /* more vertical space inside the word */
+  margin: 0 0 6px 0;       /* space below signature */
+  letter-spacing: 0.5px;
 }
-
 
 .brand-subtitle {
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: var(--ink-soft);
-  letter-spacing: 0.3px;
-  margin-top: 2px;
+  letter-spacing: 0.35px;
+  margin: 0;               /* no overlap, sits comfortably under */
 }
-
+ 
 
 /* =========================
    Hero
