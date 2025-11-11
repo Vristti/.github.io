@@ -145,12 +145,11 @@ section {
 }
 
 .brand {
-  font-family: 'Herr Von Muellerhoff', cursive;
-  font-size: 60px;
-  color: var(--brand);
-  line-height: 1.1;        /* more vertical space inside the word */
-  margin: 0 0 6px 0;       /* space below signature */
-  letter-spacing: 0.5px;
+  font-family:'Great Vibes', cursive;
+  font-size:68px;
+  line-height:1.1;
+  letter-spacing:0.5px;
+  color:var(--brand);
 }
 
 .brand-subtitle {
@@ -158,7 +157,7 @@ section {
   font-size: 15px;
   color: var(--ink-soft);
   letter-spacing: 0.35px;
-  margin: 0;               /* no overlap, sits comfortably under */
+  margin: 0px;               /* no overlap, sits comfortably under */
 }
  
 
