@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
 
-  if (!form || !status) return;
+  if (!form || !status) {
+    console.error('Contact form or status element not found.');
+    return;
+  }
 
-  // 1) Initialize EmailJS with your PUBLIC KEY
+  // Initialize EmailJS with your PUBLIC KEY
   emailjs.init('BPvosCZTH0733SKkE');
 
   form.addEventListener('submit', function (e) {
@@ -13,11 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
     status.textContent = 'Sending...';
     status.className = 'form-status sending';
 
-    // 2) Your actual IDs
+    // Your actual IDs
     const serviceID = 'service_t4eg3fu';
     const templateID = 'template_aosbp1n';
 
-    // 3) Send the form data
     emailjs.sendForm(serviceID, templateID, '#contact-form')
       .then(function () {
         status.textContent = 'Thank you — your message has been sent!';
@@ -26,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .catch(function (error) {
         console.error('EmailJS error:', error);
-        status.textContent = 'Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com.';
+        status.textContent =
+          'Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com.';
         status.className = 'form-status error';
       });
   });
 });
-
