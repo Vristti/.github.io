@@ -1,38 +1,79 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
+  const form   = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
 
+  function setStatus(text, cls) {
+    if (!status) return;
+    status.textContent = text;
+    status.className = 'form-status ' + (cls || '');
+  }
+
+  // Guard: is the form present?
   if (!form || !status) {
     console.error('Contact form or status element not found.');
     return;
   }
 
-  // ✅ EmailJS v4 recommended init shape
-  emailjs.init({ publicKey: 'BPvosCZTH0733SKkE' });
+  // Guard: is EmailJS library present?
+  if (typeof window.emailjs === 'undefined') {
+    setStatus('EmailJS library did not load. Check the script tag.', 'error');
+    return;
+  }
+
+  // Init EmailJS (v4 syntax)
+  try {
+    emailjs.init({ publicKey: 'BPvosCZTH0733SKkE' });
+  } catch (e) {
+    console.error('EmailJS init failed:', e);
+    setStatus('EmailJS init failed: ' + (e?.message || ''), 'error');
+    return;
+  }
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    status.textContent = 'Sending...';
-    status.className = 'form-status sending';
+    // Grab values explicitly
+    const from_name  = form.querySelector('[name="from_name"]')?.value?.trim()  || '';
+    const from_email = form.querySelector('[name="from_email"]')?.value?.trim() || '';
+    const subject    = form.querySelector('[name="subject"]')?.value?.trim()    || '';
+    const message    = form.querySelector('[name="message"]')?.value?.trim()    || '';
 
-    const serviceID = 'service_t4eg3fu';
+    if (!from_name || !from_email || !subject || !message) {
+      setStatus('Please fill in all fields.', 'error');
+      return;
+    }
+
+    setStatus('Sending...', 'sending');
+
+    const serviceID  = 'service_t4eg3fu';
     const templateID = 'template_aosbp1n';
 
     try {
-      // ✅ Pass the actual form element (more reliable than a selector)
-      await emailjs.sendForm(serviceID, templateID, form);
+      // Send simple JSON payload (more reliable than sendForm)
+      const resp = await emailjs.send(serviceID, templateID, {
+        from_name,
+        from_email,
+        subject,
+        message,
+        // Add common optional vars in case your template expects them:
+        to_name: 'Vristti',
+        reply_to: from_email
+      });
 
-      status.textContent = 'Thank you — your message has been sent!';
-      status.className = 'form-status success';
+      setStatus('Thank you — your message has been sent!', 'success');
       form.reset();
     } catch (err) {
+      // Show the real error (stringify safely)
+      let detail = '';
+      try {
+        if (err?.text) detail = ` (${err.text})`;
+        else if (err?.message) detail = ` (${err.message})`;
+        else detail = ` (${JSON.stringify(err)})`;
+      } catch (_) {
+        detail = '';
+      }
       console.error('EmailJS error:', err);
-
-      // Surface the exact EmailJS error so we can see what it is without DevTools
-      const msg = (err && (err.text || err.message)) ? ` (${err.text || err.message})` : '';
-      status.textContent = 'Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com' + msg;
-      status.className = 'form-status error';
+      setStatus('Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com.' + detail, 'error');
     }
   });
 });
