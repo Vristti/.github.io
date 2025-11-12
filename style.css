@@ -1270,43 +1270,6 @@ body.contact-page {
 .form-status.success { color: #2e7d32; }
 .form-status.error { color: #c62828; }
 
-/* ===== Mail fly-by animation ===== */
-#mail-fly {
-  position: fixed;
-  left: -100px;                 /* start off-screen left */
-  bottom: 18vh;                 /* height where it flies */
-  color: var(--brand);
-  opacity: 0;                   /* hidden by default */
-  transform: translateX(-30vw) rotate(-8deg) scale(0.95);
-  pointer-events: none;
-  z-index: 9999;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.15));
-}
-
-#mail-fly.show {
-  opacity: 1;
-  animation: mail-fly 1.8s cubic-bezier(.22,.61,.36,1) forwards;
-}
-
-@keyframes mail-fly {
-  0%   { transform: translateX(-30vw) rotate(-8deg) scale(0.95); opacity: 0; }
-  8%   { opacity: 1; }
-  45%  { transform: translateX(35vw) translateY(-12px) rotate(3deg) scale(1.02); }
-  70%  { transform: translateX(75vw) translateY(8px) rotate(-2deg) scale(1.0); }
-  100% { transform: translateX(110vw) rotate(0deg) scale(0.98); opacity: 0; }
-}
-
-/* Prefers-reduced-motion: be gentle */
-@media (prefers-reduced-motion: reduce) {
-  #mail-fly.show {
-    animation: mail-fade 700ms ease-out forwards;
-  }
-  @keyframes mail-fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-}
-
 
 .contact-actions {
   display: flex;
@@ -1527,3 +1490,40 @@ nav ul.open {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(0,0,0,0.22);
 }
+/* ===== Mail fly-by animation ===== */
+#mail-fly {
+  position: fixed;
+  left: -100px;               /* start off-screen left */
+  bottom: 18vh;
+  color: var(--brand);
+  opacity: 0;
+  transform: translateX(-30vw) rotate(-8deg) scale(0.95);
+  pointer-events: none;
+  z-index: 9999;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.15));
+}
+
+#mail-fly.show {
+  opacity: 1;
+  animation: mail-fly 1.8s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes mail-fly {
+  0%   { transform: translateX(-30vw) rotate(-8deg) scale(0.95); opacity: 0; }
+  8%   { opacity: 1; }
+  45%  { transform: translateX(35vw) translateY(-12px) rotate(3deg) scale(1.02); }
+  70%  { transform: translateX(75vw) translateY(8px) rotate(-2deg) scale(1.0); }
+  100% { transform: translateX(110vw) rotate(0deg) scale(0.98); opacity: 0; }
+}
+
+/* If your device has reduced motion on, still show a quick fade so it's visible */
+@media (prefers-reduced-motion: reduce) {
+  #mail-fly.show {
+    animation: mail-fade 700ms ease-out forwards;
+  }
+  @keyframes mail-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+

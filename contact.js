@@ -3,26 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById('form-status');
   const btn    = form?.querySelector('button[type="submit"]');
 
+  // ✉️ helper: trigger mail animation reliably
+  function showMailFly() {
+    const mail = document.getElementById('mail-fly');
+    if (!mail) return;
+    // restart animation if it was mid-flight
+    mail.classList.remove('show');
+    // force a reflow so the browser sees the class change
+    // (this resets the animation timeline)
+    // eslint-disable-next-line no-unused-expressions
+    mail.offsetWidth;
+    mail.classList.add('show');
+    mail.addEventListener('animationend', () => {
+      mail.classList.remove('show');
+    }, { once: true });
+  }
+
   if (!form || !status) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    const nameVal    = form.querySelector('[name="name"]')?.value?.trim();
-    const emailVal   = form.querySelector('[name="email"]')?.value?.trim();
-    const subjectVal = form.querySelector('[name="subject"]')?.value?.trim();
-    const messageVal = form.querySelector('[name="message"]')?.value?.trim();
-
-    if (!nameVal || !emailVal || !subjectVal || !messageVal) {
-      status.textContent = 'Please fill in all fields.';
-      status.className = 'form-status error';
-      return;
-    }
-
-    status.textContent = 'Sending...';
-    status.className = 'form-status sending';
-    if (btn) { btn.disabled = true; btn.style.opacity = '0.7'; }
-
+    /* ... your existing validation and fetch code ... */
     try {
       const formData = new FormData(form);
       const resp = await fetch(form.action, { method: 'POST', body: formData });
@@ -33,15 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         status.className = 'form-status success';
         form.reset();
 
-        // ✉️ STEP 3: Trigger the flying-mail animation
-        const mail = document.getElementById('mail-fly');
-        if (mail) {
-          mail.classList.add('show');
-          mail.addEventListener('animationend', () => {
-            mail.classList.remove('show'); // clean up after flight
-          }, { once: true });
-        }
-        // ✉️ END animation block
+        // ✉️ trigger animation on success
+        showMailFly();
+
       } else {
         status.textContent = 'Oops, something went wrong. ' + (result.message || 'Please try again later.');
         status.className = 'form-status error';
@@ -54,4 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
     }
   });
+
+  // Optional: expose a manual tester in console
+  window.testMailFly = showMailFly;
 });
