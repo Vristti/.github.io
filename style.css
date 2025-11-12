@@ -312,20 +312,23 @@ li {
 
 .about-card {
   border-radius: var(--radius);
-  border: 1px solid var(--line);
+  border: 1.5px solid #8f6148; /* thin warm brown trim */
   background: var(--panel);
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); /* keep the bubble lift */
   overflow: clip;
-  transition: box-shadow 200ms ease, transform 200ms ease;
+  transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
 }
+
 .about-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  border-color: #4b2e1f; /* darker brown when hovered */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-.about-card summary { list-style: none; }
-.about-card summary::-webkit-details-marker { display: none; }
-
+.about-card[open] {
+  border-color: #4b2e1f; /* keep the dark brown while open */
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.10);
+}
 .about-header {
   display: flex;
   align-items: center;
