@@ -8,14 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function showMailFly() {
     const mail = document.getElementById('mail-fly');
     if (!mail) return;
-    mail.classList.remove('show'); // restart if mid-flight
-    // force reflow so the animation resets
+
+    // restart animation if already mid-flight
+    mail.classList.remove('show');
+    // force reflow so animation can restart
     // eslint-disable-next-line no-unused-expressions
     mail.offsetWidth;
     mail.classList.add('show');
-    mail.addEventListener('animationend', () => {
+
+    const onEnd = () => {
       mail.classList.remove('show');
-    }, { once: true });
+      mail.removeEventListener('animationend', onEnd);
+    };
+    mail.addEventListener('animationend', onEnd);
   }
 
   form.addEventListener('submit', async (e) => {
@@ -32,62 +37,60 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Instant feedback: animate + optimistic status
-    showMailFly();
-    status.textContent = 'Sent! (verifying…)';
-    status.className = 'form-status success';
+    // show loading state (but NOT the success copy yet)
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
     btn?.classList.add('is-loading');
 
+    // single controller/timeout (don’t redeclare inside try)
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000); // fail fast at 12s
+    const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
-  const formData = new FormData(form);
+      const formData = new FormData(form);
 
-  // add an abort in case Web3Forms hangs
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
+      const resp = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        signal: controller.signal,
+        headers: { 'Accept': 'application/json' } // ensures JSON response
+      });
+      clearTimeout(timeout);
 
-  const resp = await fetch(form.action, {
-    method: 'POST',
-    body: formData,
-    signal: controller.signal,
-    headers: { 'Accept': 'application/json' } // << key fix so Web3Forms returns JSON
+      let result = {};
+      try { result = await resp.json(); } catch {}
+
+      if (resp.ok && result.success) {
+        form.reset();
+        status.textContent = 'Sent! Thanks, I’ll get back to you soon.';
+        status.className = 'form-status success';
+        showMailFly();                 // ✉️ animate on true success
+      } else {
+        status.textContent = 'Oops, something went wrong. Please try again or email me directly.';
+        status.className = 'form-status error';
+      }
+
+    } catch (err) {
+      clearTimeout(timeout);
+
+      // graceful fallback: open the user’s mail app prefilled
+      const body = encodeURIComponent(
+        `Name: ${nameVal}\nEmail: ${emailVal}\n\n${messageVal}`
+      );
+      const mailto = `mailto:vristti.jalan@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${body}`;
+      try { window.location.href = mailto; } catch {}
+
+      status.textContent = (err.name === 'AbortError')
+        ? 'Taking longer than usual—opened your email app as a fallback.'
+        : 'Opened your email app as a fallback.';
+      status.className = 'form-status success';
+      console.error(err);
+
+    } finally {
+      btn?.classList.remove('is-loading');
+    }
   });
-  clearTimeout(timeout);
 
-  // be defensive: parse JSON if available
-  let result = {};
-  try { result = await resp.json(); } catch {}
-
-  if (resp.ok && result.success) {
-    form.reset();
-    status.textContent = 'Sent! Thanks, I’ll get back to you soon.';
-    status.className = 'form-status success';
-    showMailFly(); // ✉️ animation
-  } else {
-    status.textContent = 'Oops, something went wrong. Please try again or email me directly.';
-    status.className = 'form-status error';
-  }
-
-} catch (err) {
-  // Fallback: open the user's email app prefilled (works even if fetch fails)
-  const body = encodeURIComponent(
-    `Name: ${nameVal}\nEmail: ${emailVal}\n\n${messageVal}`
-  );
-  const mailto = `mailto:vristti.jalan@gmail.com?subject=${encodeURIComponent(subjectVal)}&body=${body}`;
-  try { window.location.href = mailto; } catch {}
-
-  status.textContent = (err.name === 'AbortError')
-    ? 'Taking longer than usual—opened your email app as a fallback.'
-    : 'Opened your email app as a fallback.';
-  status.className = 'form-status success';
-  console.error(err);
-
-} finally {
-  btn?.classList.remove('is-loading');
-}
-
-  // Optional manual test in console: window.testMailFly()
+  // Manual test: type testMailFly() in the console to see the ✉️
   window.testMailFly = showMailFly;
-})});;   
+});
