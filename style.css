@@ -814,11 +814,23 @@ body.experience-page {
 
 .case {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1.5px solid #8f6148; /* warm brown trim to match About section */
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); /* same soft bubble effect */
   margin-bottom: 14px;
   overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.case:hover {
+  transform: translateY(-2px);
+  border-color: #4b2e1f; /* darker brown hover accent */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.case[open] {
+  border-color: #4b2e1f;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.10);
 }
 
 .case summary {
