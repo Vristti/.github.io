@@ -1526,4 +1526,23 @@ nav ul.open {
     to   { opacity: 1; }
   }
 }
+/* send button loader */
+.btn.btn-primary.is-loading {
+  pointer-events: none;
+  opacity: .85;
+  position: relative;
+}
+.btn.btn-primary.is-loading::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 50%;
+  width: 16px; height: 16px;
+  margin-top: -8px;
+  border: 2px solid rgba(255,255,255,.7);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 

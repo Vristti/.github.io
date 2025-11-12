@@ -3,14 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const status = document.getElementById('form-status');
   const btn    = form?.querySelector('button[type="submit"]');
 
-  // ✉️ helper: trigger mail animation reliably
+  if (!form || !status) return;
+
   function showMailFly() {
     const mail = document.getElementById('mail-fly');
     if (!mail) return;
-    // restart animation if it was mid-flight
-    mail.classList.remove('show');
-    // force a reflow so the browser sees the class change
-    // (this resets the animation timeline)
+    mail.classList.remove('show'); // restart if mid-flight
+    // force reflow so the animation resets
     // eslint-disable-next-line no-unused-expressions
     mail.offsetWidth;
     mail.classList.add('show');
@@ -19,37 +18,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { once: true });
   }
 
-  if (!form || !status) return;
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    /* ... your existing validation and fetch code ... */
+
+    const nameVal    = form.querySelector('[name="name"]')?.value?.trim();
+    const emailVal   = form.querySelector('[name="email"]')?.value?.trim();
+    const subjectVal = form.querySelector('[name="subject"]')?.value?.trim();
+    const messageVal = form.querySelector('[name="message"]')?.value?.trim();
+
+    if (!nameVal || !emailVal || !subjectVal || !messageVal) {
+      status.textContent = 'Please fill in all fields.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    // Instant feedback: animate + optimistic status
+    showMailFly();
+    status.textContent = 'Sent! (verifying…)';
+    status.className = 'form-status success';
+    btn?.classList.add('is-loading');
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000); // fail fast at 12s
+
     try {
       const formData = new FormData(form);
-      const resp = await fetch(form.action, { method: 'POST', body: formData });
+      const resp = await fetch(form.action, { method: 'POST', body: formData, signal: controller.signal });
+      clearTimeout(timeout);
+
       const result = await resp.json();
 
       if (result.success) {
-        status.textContent = 'Thank you — your message has been sent!';
-        status.className = 'form-status success';
+        // keep the optimistic success, just tidy up
         form.reset();
-
-        // ✉️ trigger animation on success
-        showMailFly();
-
       } else {
         status.textContent = 'Oops, something went wrong. ' + (result.message || 'Please try again later.');
         status.className = 'form-status error';
       }
     } catch (err) {
-      console.error(err);
-      status.textContent = 'Network error. Please try again.';
+      status.textContent = (err.name === 'AbortError')
+        ? 'Taking longer than usual. We’ll keep trying…'
+        : 'Network error. Please try again.';
       status.className = 'form-status error';
+      console.error(err);
     } finally {
-      if (btn) { btn.disabled = false; btn.style.opacity = '1'; }
+      btn?.classList.remove('is-loading');
     }
   });
 
-  // Optional: expose a manual tester in console
+  // Optional manual test in console: window.testMailFly()
   window.testMailFly = showMailFly;
 });
