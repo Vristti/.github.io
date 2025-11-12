@@ -68,17 +68,22 @@
       </div>
 
       <p class="muted">Send me a direct message — it’ll go straight to my inbox.</p>
+    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms credentials -->
+    <input type="hidden" name="access_key" value="2052bfe9-3bb2-4154-94bb-7fb07aa988c7">
+    <input type="hidden" name="subject" value="New message from vristti.ca">
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
-      <form id="contact-form" class="contact-form">
-        <input type="text" name="from_name" placeholder="Your Name" required />
-        <input type="email" name="from_email" placeholder="Your Email" required />
-        <input type="text" name="subject" placeholder="Subject" required />
-        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  <!-- Visible fields -->
+    <input type="text"   name="name"   placeholder="Your Name"   required>
+    <input type="email"  name="email"  placeholder="Your Email"  required>
+    <input type="text"   name="topic"  placeholder="Subject"     required>
+    <textarea name="message" rows="4"  placeholder="Your Message" required></textarea>
 
-        <button type="submit" class="btn btn-primary">Send Message</button>
-        <p id="form-status" class="form-status"></p>
-      </form>
-    </article>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+    <p id="form-status" class="form-status"></p>
+    </form>
+
 
     <!-- LinkedIn card -->
     <article class="contact-card">
@@ -162,7 +167,6 @@
     })();
   </script>
    <!-- EmailJS library + contact form logic -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="contact.js"></script>
 </body>
 </html>
