@@ -219,47 +219,34 @@ p.subtitle {
 }
 
 /* ===== BUTTONS (Unified across all pages) ===== */
-a.btn {
+/* Base button — use .btn for both <a> and <button> */
+.btn, a.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 160px;       /* ensures all buttons same width */
-  height: 46px;           /* uniform height */
-  margin: 10px;
-  padding: 0 20px;        /* balanced horizontal padding */
-  border-radius: 10px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid transparent;
   background: var(--brand);
   color: #fff;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
+  font: 500 15px 'Poppins', sans-serif;
+  letter-spacing: .3px;
   text-decoration: none;
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.10);
+  transition: background .25s ease, transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
 }
-
-a.btn:hover {
+.btn:hover, a.btn:hover {
   background: var(--brand-dark);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
 }
-
-a.btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+.btn:active, a.btn:active { transform: translateY(0); }
 @media (max-width: 768px) {
-  a.btn {
-    display: block;
-    width: 80%;
-    margin: 8px auto;
-  }
+  .btn, a.btn { display:block; width:80%; margin:8px auto; }
 }
-
-
-a.btn:hover { background: var(--brand-dark); }
 
 /* =========================
    Lists
@@ -718,6 +705,69 @@ body.experience-page {
   .experience-hero {
     margin-top: 24px;
   }
+}
+/* ===== Skills page polish (chips under each category) ===== */
+.skills-section {
+  max-width: 980px;
+  margin: 40px auto 60px;
+  padding: 0 16px;
+}
+
+.skills-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 40px);
+  color: var(--brand-dark);
+  margin: 0 0 16px;
+}
+
+.skill-category {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 14px;
+  margin: 14px 0;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
+}
+
+.skill-category > h3 {
+  margin: 0 0 10px;
+  font: 700 16px 'Poppins', sans-serif;
+  letter-spacing: .2px;
+  color: var(--ink-soft);
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .6rem;
+}
+
+.skill-list .skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .65rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff, #f7f3ef);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font: 600 13.5px 'Poppins', sans-serif;
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+  text-align: center;
+  white-space: normal;
+  line-height: 1.2;
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.skill-list .skill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.12);
 }
 
 /* ===== Accessibility ===== */
@@ -1227,29 +1277,30 @@ body.contact-page {
   border-color: var(--brand);
 }
 
-/* Send button — match home page buttons */
-.contact-form .btn.btn-primary {
-  align-self: center; /* centers it like your main CTAs */
-  padding: 10px 28px;
-  border: none;
-  border-radius: 50px;
+/* Primary button — used everywhere (links and buttons) */
+.btn.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  min-height: 46px;
+  border-radius: 999px;
+  border: 1px solid transparent;
   background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font: 500 15px 'Poppins', sans-serif;
+  letter-spacing: .3px;
+  text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,.10);
+  transition: transform .2s ease, box-shadow .2s ease, background .25s ease;
+}
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.14);
+  background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);
 }
 
-
-.contact-form .btn.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);
-} 
 
 .form-status {
   margin-top: 8px;
@@ -1278,46 +1329,26 @@ body.contact-page {
   margin-bottom: 12px;
 }
 
-.btn.btn-primary {
-  background: var(--brand);
-  color: #fff;
-  border-radius: 10px;
-  padding: 10px 14px;
-  text-decoration: none;
-  border: 1px solid rgba(0,0,0,0.05);
+/* Variants */
+.btn-primary { 
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
 }
-.btn.btn-primary:hover { background: var(--brand-dark); }
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);
+}
 
-.btn.ghost {
-  background: #fff;
-  color: var(--ink);
-  border-radius: 10px;
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-}
-/* Secondary button style for paired actions */
-.btn.btn-secondary {
-  align-self: center;
-  padding: 10px 28px;
-  border-radius: 50px;
-  border: 2px solid var(--brand-dark);
+.btn-secondary {
   background: transparent;
   color: var(--brand-dark);
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  margin-left: 14px;
-  transition: all 0.25s ease;
+  border: 2px solid var(--brand-dark);
+  box-shadow: none;
 }
-
-.btn.btn-secondary:hover {
-  background: var(--brand-dark);
+.btn-secondary:hover {
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
 }
-
 
 .pillline { margin-top: 4px; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
