@@ -7,30 +7,32 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Initialize EmailJS with your PUBLIC KEY
-  emailjs.init('BPvosCZTH0733SKkE');
+  // ✅ EmailJS v4 recommended init shape
+  emailjs.init({ publicKey: 'BPvosCZTH0733SKkE' });
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     status.textContent = 'Sending...';
     status.className = 'form-status sending';
 
-    // Your actual IDs
     const serviceID = 'service_t4eg3fu';
     const templateID = 'template_aosbp1n';
 
-    emailjs.sendForm(serviceID, templateID, '#contact-form')
-      .then(function () {
-        status.textContent = 'Thank you — your message has been sent!';
-        status.className = 'form-status success';
-        form.reset();
-      })
-      .catch(function (error) {
-        console.error('EmailJS error:', error);
-        status.textContent =
-          'Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com.';
-        status.className = 'form-status error';
-      });
+    try {
+      // ✅ Pass the actual form element (more reliable than a selector)
+      await emailjs.sendForm(serviceID, templateID, form);
+
+      status.textContent = 'Thank you — your message has been sent!';
+      status.className = 'form-status success';
+      form.reset();
+    } catch (err) {
+      console.error('EmailJS error:', err);
+
+      // Surface the exact EmailJS error so we can see what it is without DevTools
+      const msg = (err && (err.text || err.message)) ? ` (${err.text || err.message})` : '';
+      status.textContent = 'Oops, something went wrong. Please email me directly at vristti.jalan@gmail.com' + msg;
+      status.className = 'form-status error';
+    }
   });
 });
