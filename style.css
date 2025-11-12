@@ -1490,59 +1490,34 @@ nav ul.open {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(0,0,0,0.22);
 }
-/* ===== Mail fly-by animation ===== */
+/* ===== Mail fly-by animation (dark, vivid envelope) ===== */
 #mail-fly {
   position: fixed;
-  left: -100px;               /* start off-screen left */
+  left: -100px;
   bottom: 18vh;
-  color: var(--brand);
+  color: #4a2e23;                    /* deep brown for the envelope */
   opacity: 0;
   transform: translateX(-30vw) rotate(-8deg) scale(0.95);
   pointer-events: none;
   z-index: 9999;
-  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.15));
+  filter:
+    drop-shadow(0 8px 16px rgba(0,0,0,0.4))
+    drop-shadow(0 0 8px rgba(255,190,130,0.6));  /* warm gold glow */
+}
+
+#mail-fly svg rect {
+  fill: #4a2e23;                     /* envelope body */
+}
+
+#mail-fly svg path:first-of-type {
+  fill: #d4a373;                     /* lighter gold flap */
+}
+
+#mail-fly svg path:last-of-type {
+  stroke: #f5e0c3;                   /* pale crease lines */
 }
 
 #mail-fly.show {
   opacity: 1;
   animation: mail-fly 1.8s cubic-bezier(.22,.61,.36,1) forwards;
 }
-
-@keyframes mail-fly {
-  0%   { transform: translateX(-30vw) rotate(-8deg) scale(0.95); opacity: 0; }
-  8%   { opacity: 1; }
-  45%  { transform: translateX(35vw) translateY(-12px) rotate(3deg) scale(1.02); }
-  70%  { transform: translateX(75vw) translateY(8px) rotate(-2deg) scale(1.0); }
-  100% { transform: translateX(110vw) rotate(0deg) scale(0.98); opacity: 0; }
-}
-
-/* If your device has reduced motion on, still show a quick fade so it's visible */
-@media (prefers-reduced-motion: reduce) {
-  #mail-fly.show {
-    animation: mail-fade 700ms ease-out forwards;
-  }
-  @keyframes mail-fade {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-}
-/* send button loader */
-.btn.btn-primary.is-loading {
-  pointer-events: none;
-  opacity: .85;
-  position: relative;
-}
-.btn.btn-primary.is-loading::after {
-  content: "";
-  position: absolute;
-  right: -28px;
-  top: 50%;
-  width: 16px; height: 16px;
-  margin-top: -8px;
-  border: 2px solid rgba(255,255,255,.7);
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin .6s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
