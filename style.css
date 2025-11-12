@@ -1585,6 +1585,38 @@ nav ul.open {
 #mail-fly svg path:first-of-type { fill: #d4a373; } /* flap */
 #mail-fly svg path:last-of-type { stroke: #fff; }   /* crease */
 
+/* ===== Dropdown (select) styling — dark brown border ===== */
+select {
+  background-color: var(--panel);
+  border: 2px solid #4b2e1f; /* rich dark brown outline */
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Hover and focus glow */
+select:hover {
+  border-color: #3a2316; /* even darker on hover */
+  box-shadow: 0 0 0 2px rgba(59, 47, 39, 0.25);
+}
+
+select:focus {
+  border-color: #3a2316;
+  box-shadow: 0 0 0 3px rgba(59, 47, 39, 0.35);
+}
+
+/* Dropdown options */
+option {
+  background-color: #fff;
+  color: var(--ink);
+}
+
 /* ===== About: paired buttons fix ===== */
 .about-buttons{
   display:flex;
