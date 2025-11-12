@@ -32,6 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
         status.textContent = 'Thank you — your message has been sent!';
         status.className = 'form-status success';
         form.reset();
+
+        // ✉️ STEP 3: Trigger the flying-mail animation
+        const mail = document.getElementById('mail-fly');
+        if (mail) {
+          mail.classList.add('show');
+          mail.addEventListener('animationend', () => {
+            mail.classList.remove('show'); // clean up after flight
+          }, { once: true });
+        }
+        // ✉️ END animation block
       } else {
         status.textContent = 'Oops, something went wrong. ' + (result.message || 'Please try again later.');
         status.className = 'form-status error';
@@ -45,4 +55,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
