@@ -645,37 +645,42 @@ body.experience-page {
   margin: 10px 0 0;
 }
 
-/* ===== Skills Grid ===== */
-.skills {
-  margin-top: 44px;
+/* ===== Skill Categories (match Case Study boxes) ===== */
+.skill-category {
+  background: var(--panel);                 /* same white as your case cards */
+  border: 2px solid var(--brand-dark);      /* brown trim */
+  border-radius: var(--radius);             /* same rounded corners */
+  box-shadow: var(--shadow);                /* soft shadow */
+  padding: 28px 32px;
+  margin: 32px 0;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Optional: slight hover lift like case cards */
+.skill-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.1);
+}
+
+/* Category headings */
+.skill-category h3 {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* The skill list inside each category */
+.skill-list {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
+  justify-content: center;
 }
 
-.skill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center;
-  word-break: break-word;      /* allow tidy wrapping */
-  white-space: normal;          /* prevent single-line squish */
-  transition: transform .2s ease, background .2s ease, color .2s ease;
-}
-.skill:hover {
-  background: var(--brand);
-  color: #fff;
-  transform: translateY(-2px);
-}
+
+
 
 /* ===== Responsive ===== */
 @media (max-width: 920px) {
