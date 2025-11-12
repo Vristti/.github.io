@@ -1544,37 +1544,47 @@ nav ul.open {
   transform: translateY(-3px);
   box-shadow: 0 10px 28px rgba(0,0,0,0.22);
 }
-/* ===== Mail fly-by animation (dark, vivid envelope) ===== */
+/* ===== Mail fly-by animation (envelope pops across screen) ===== */
 #mail-fly {
   position: fixed;
-  left: -100px;
+  left: -120px;
   bottom: 18vh;
-  color: #4a2e23;                    /* deep brown for the envelope */
   opacity: 0;
   transform: translateX(-30vw) rotate(-8deg) scale(0.95);
   pointer-events: none;
   z-index: 9999;
-  filter:
-    drop-shadow(0 8px 16px rgba(0,0,0,0.4))
-    drop-shadow(0 0 8px rgba(255,190,130,0.6));  /* warm gold glow */
-}
-
-#mail-fly svg rect {
-  fill: #4a2e23;                     /* envelope body */
-}
-
-#mail-fly svg path:first-of-type {
-  fill: #d4a373;                     /* lighter gold flap */
-}
-
-#mail-fly svg path:last-of-type {
-  stroke: #f5e0c3;                   /* pale crease lines */
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25));
 }
 
 #mail-fly.show {
-  opacity: 1;
-  animation: mail-fly 1.8s cubic-bezier(.22,.61,.36,1) forwards;
+  animation: mail-fly 1200ms ease-out forwards;
 }
+
+@keyframes mail-fly {
+  0% {
+    opacity: 0;
+    transform: translateX(-30vw) translateY(0) rotate(-8deg) scale(0.95);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-10vw) translateY(-1vh) rotate(-4deg) scale(1.0);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(45vw) translateY(-6vh) rotate(3deg) scale(1.05);
+    filter: drop-shadow(0 10px 22px rgba(0,0,0,0.28));
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) translateY(-12vh) rotate(6deg) scale(1.05);
+  }
+}
+
+/* Envelope colors */
+#mail-fly svg rect { fill: #4a2e23; }          /* body */
+#mail-fly svg path:first-of-type { fill: #d4a373; } /* flap */
+#mail-fly svg path:last-of-type { stroke: #fff; }   /* crease */
+
 /* ===== About: paired buttons fix ===== */
 .about-buttons{
   display:flex;
