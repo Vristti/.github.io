@@ -55,34 +55,33 @@
   </header>
 
   <!-- ===== CONTACT CARDS ===== -->
-    <!-- ===== CONTACT CARDS ===== -->
-  <section class="contact-cards">
+   <!-- Form card -->
+<article class="contact-card">
+  <div class="contact-card-head">
+    <h3>Message Me</h3>
+    <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M12 12.713 0 5.25V18h24V5.25L12 12.713zM12 11L24 3H0l12 8z"/>
+    </svg>
+  </div>
 
-    <!-- Form card -->
-    <article class="contact-card">
-      <div class="contact-card-head">
-        <h3>Message Me</h3>
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M12 12.713 0 5.25V18h24V5.25L12 12.713zM12 11L24 3H0l12 8z"/>
-        </svg>
-      </div>
+  <p class="muted">Send me a direct message — it’ll go straight to my inbox.</p>
 
-      <p class="muted">Send me a direct message — it’ll go straight to my inbox.</p>
-    <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
     <!-- Web3Forms credentials -->
     <input type="hidden" name="access_key" value="2052bfe9-3bb2-4154-94bb-7fb07aa988c7">
-    <input type="hidden" name="subject" value="New message from vristti.ca">
     <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
-  <!-- Visible fields -->
-    <input type="text"   name="name"   placeholder="Your Name"   required>
-    <input type="email"  name="email"  placeholder="Your Email"  required>
-    <input type="text"   name="topic"  placeholder="Subject"     required>
+    <!-- Visible fields -->
+    <input type="text"  name="name"    placeholder="Your Name"   required>
+    <input type="email" name="email"   placeholder="Your Email"  required>
+    <input type="text"  name="subject" placeholder="Subject"     required>
     <textarea name="message" rows="4"  placeholder="Your Message" required></textarea>
 
     <button type="submit" class="btn btn-primary">Send Message</button>
-    <p id="form-status" class="form-status"></p>
-    </form>
+    <p id="form-status" class="form-status" aria-live="polite"></p>
+  </form>
+</article>
+
 
 
     <!-- LinkedIn card -->
