@@ -777,6 +777,79 @@ body.experience-page {
   box-shadow: 0 10px 26px rgba(0,0,0,.08);
   border-color: rgba(0,0,0,.12);
 }
+/* ===== Skills page shell – match About card ===== */
+.skills-shell {
+  max-width: 960px;
+  margin: 40px auto 80px;
+  padding: 32px 28px;
+  background: var(--paper);
+  border-radius: var(--radius);
+  border: 1px solid var(--brand-dark);
+  box-shadow: var(--shadow);
+}
+
+/* Center title like About */
+.skills-shell .section-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* ===== Accordion (same vibe as About dropdowns) ===== */
+.skills-accordion {
+  background: var(--panel);
+  border: 1px solid var(--brand-dark);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* Remove default triangle */
+.skills-accordion summary::-webkit-details-marker {
+  display: none;
+}
+.skills-accordion summary {
+  list-style: none;
+}
+
+/* Header bar */
+.skills-accordion > summary {
+  cursor: pointer;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Arrow rotate when open */
+.skills-accordion[open] .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+/* Smooth arrow animation */
+.accordion-arrow {
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+/* Panel behind the bubbles */
+.skills-panel {
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 18px 20px 22px;
+  background: rgba(255,255,255,0.95);
+}
+
+/* Reuse your existing bubble grid but let it wrap nicely */
+.skills-panel .skills {
+  margin-top: 0;
+}
+
+/* Optional: tighten gaps a bit inside accordion */
+.skills-panel .skill {
+  min-height: 34px;
+  padding: 6px 14px;
+}
+
 
 /* ===== Accessibility ===== */
 @media (prefers-reduced-motion: reduce) {
