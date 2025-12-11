@@ -1780,7 +1780,7 @@ option {
 
 .hero-buttons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;     /* ← centers the buttons horizontally */
   justify-content: center;
   width: 100%;
