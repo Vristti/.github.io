@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css?v=1" />
 </head>
 
-<body class="experience-page">
+<body>
  <!-- ===== UNIVERSAL NAVBAR ===== -->
 <nav class="navbar">
   <button class="menu-toggle" aria-label="Open menu">
@@ -25,102 +25,113 @@
   </div>
 
   <div class="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="experience.html" class="nav-link">Experience</a>
-    <a href="skills.html" class="nav-link active">skills</a>
-    <a href="case-studies.html" class="nav-link">Case Studies</a>
-    <a href="contacts.html" class="nav-link">Contact</a>
+    <a href="Index.html" class="nav-link">Home</a>
+    <a href="About.html" class="nav-link">About</a>
+    <a href="Experience.html" class="nav-link">Experience</a>
+    <a href="Skills.html" class="nav-link active">skills</a>
+    <a href="Case-studies.html" class="nav-link">Case Studies</a>
+    <a href="Contacts.html" class="nav-link">Contact</a>
     <!-- add/remove links as needed -->
   </div>
 
   <!-- Mobile drawer -->
   <div class="mobile-drawer" id="drawer">
     <div class="drawer-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="experience.html" class="nav-link">Experience</a>
-       <a href="skills.html" class="nav-link active">skills</a>
-      <a href="case-studies.html" class="nav-link">Case Studies</a>
-      <a href="contacts.html" class="nav-link">Contact</a>
+      <a href="Index.html" class="nav-link">Home</a>
+      <a href="About.html" class="nav-link">About</a>
+      <a href="Experience.html" class="nav-link">Experience</a>
+       <a href="Skills.html" class="nav-link active">skills</a>
+      <a href="Case-studies.html" class="nav-link">Case Studies</a>
+      <a href="Contacts.html" class="nav-link">Contact</a>
     </div>
   </div>
   <div class="drawer-backdrop" id="backdrop"></div>
 </nav>
-<section class="skills-shell">
-  <h1 class="section-title">Core Skills</h1>
-  <!-- Recruitment & HR Operations -->
-  <details class="skills-accordion" open>
-    <summary>
-      <span>Recruitment &amp; HR Operations</span>
-      <span class="accordion-arrow">▾</span>
-    </summary>
-    <div class="skills-panel">
-      <div class="skills" aria-label="Recruitment & HR Operations">
-        <div class="skill">Interview Scheduling</div>
-        <div class="skill">Scorecards &amp; Rubrics</div>
-        <div class="skill">Reference Checks</div>
-        <div class="skill">Job Postings &amp; Screening</div>
-        <div class="skill">Candidate Profiles</div>
-        <div class="skill">Onboarding Docs</div>
-        <div class="skill">Employee Records</div>
-        <div class="skill">Process Maps</div>
-        <div class="skill">Compliance Tracking</div>
-      </div>
-    </div>
-  </details>
+<section id="skills" class="about-section">
+  <h2 class="section-title">Core Skills</h2>
 
-  <!-- Tools & Systems -->
-  <details class="skills-accordion">
-    <summary>
-      <span>Tools &amp; Systems</span>
-      <span class="accordion-arrow">▾</span>
-    </summary>
-    <div class="skills-panel">
-      <div class="skills" aria-label="Tools & Systems">
-        <div class="skill">MS Office</div>
-        <div class="skill">Microsoft Excel</div>
-        <div class="skill">Excel Tracking Sheets</div>
-        <div class="skill">Microsoft Word</div>
-        <div class="skill">Microsoft Forms</div>
-        <div class="skill">Microsoft Copilot</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Microsoft PowerPoint</div>
-        <div class="skill">SharePoint</div>
-        <div class="skill">Google Suite</div>
-        <div class="skill">Google Docs</div>
-        <div class="skill">Google Slides</div>
-        <div class="skill">Google Forms</div>
-        <div class="skill">ICIMS</div>
-        <div class="skill">CRMs</div>
-        <div class="skill">Indeed Recruiting</div>
-        <div class="skill">LinkedIn Recruiting</div>
-        <div class="skill">Oracle</div>
-        <div class="skill">SignWell</div>
-        <div class="skill">VS Code</div>
-      </div>
-    </div>
-  </details>
+  <div class="about-grid">
 
-  <!-- Communication & Client Service -->
-  <details class="skills-accordion">
-    <summary>
-      <span>Communication &amp; Client Service</span>
-      <span class="accordion-arrow">▾</span>
-    </summary>
-    <div class="skills-panel">
-      <div class="skills" aria-label="Communication & Client Service">
-        <div class="skill">Client Communication</div>
-        <div class="skill">Candidate Experience</div>
-        <div class="skill">Professional Emailing</div>
-        <div class="skill">Phone Screening</div>
-        <div class="skill">Report Writing</div>
-        <div class="skill">Stakeholder Updates</div>
-        <div class="skill">Presentation Skills</div>
-        <div class="skill">Team Collaboration</div>
+    <!-- Recruitment & HR Operations -->
+    <details class="about-card" open>
+      <summary class="about-header">
+        <span>Recruitment &amp; HR Operations</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </summary>
+      <div class="about-body">
+        <div class="skills" aria-label="Recruitment &amp; HR Operations">
+          <div class="skill">Interview Scheduling</div>
+          <div class="skill">Scorecards &amp; Rubrics</div>
+          <div class="skill">Reference Checks</div>
+          <div class="skill">Job Postings &amp; Screening</div>
+          <div class="skill">Candidate Profiles</div>
+          <div class="skill">Onboarding Docs</div>
+          <div class="skill">Employee Records</div>
+          <div class="skill">Process Maps</div>
+          <div class="skill">Compliance Tracking</div>
+        </div>
       </div>
-    </div>
-  </details>
+    </details>
+
+    <!-- Tools & Systems -->
+    <details class="about-card">
+      <summary class="about-header">
+        <span>Tools &amp; Systems</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </summary>
+      <div class="about-body">
+        <div class="skills" aria-label="Tools &amp; Systems">
+          <div class="skill">MS Office</div>
+          <div class="skill">Microsoft Excel</div>
+          <div class="skill">Excel Tracking Sheets</div>
+          <div class="skill">Microsoft Word</div>
+          <div class="skill">Microsoft Forms</div>
+          <div class="skill">Microsoft Copilot</div>
+          <div class="skill">Power BI</div>
+          <div class="skill">Microsoft PowerPoint</div>
+          <div class="skill">SharePoint</div>
+          <div class="skill">Google Suite</div>
+          <div class="skill">Google Docs</div>
+          <div class="skill">Google Slides</div>
+          <div class="skill">Google Forms</div>
+          <div class="skill">ICIMS</div>
+          <div class="skill">CRMs</div>
+          <div class="skill">Indeed Recruiting</div>
+          <div class="skill">LinkedIn Recruiting</div>
+          <div class="skill">Oracle</div>
+          <div class="skill">SignWell</div>
+          <div class="skill">VS Code</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Communication & Client Service -->
+    <details class="about-card">
+      <summary class="about-header">
+        <span>Communication &amp; Client Service</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </summary>
+      <div class="about-body">
+        <div class="skills" aria-label="Communication &amp; Client Service">
+          <div class="skill">Client Communication</div>
+          <div class="skill">Candidate Experience</div>
+          <div class="skill">Professional Emailing</div>
+          <div class="skill">Phone Screening</div>
+          <div class="skill">Report Writing</div>
+          <div class="skill">Stakeholder Updates</div>
+          <div class="skill">Presentation Skills</div>
+          <div class="skill">Team Collaboration</div>
+        </div>
+      </div>
+    </details>
+
+  </div>
 </section>
 
    <footer id="contact">
