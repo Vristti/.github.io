@@ -1805,3 +1805,50 @@ option {
     gap: 1.5rem;           /* a bit more space between buttons */
   }
 }
+/* ===== Experience hero mobile tweaks ===== */
+@media (max-width: 640px) {
+  .experience-hero {
+    grid-template-columns: 1fr;      /* stack text + metrics */
+    margin: 24px auto 12px;
+    padding: 18px 16px 22px;
+    gap: 14px;
+  }
+
+  .experience-title {
+    font-size: 30px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .experience-sub {
+    font-size: 14px;
+  }
+
+  .experience-badgebar {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 6px 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05), 0 0 0 3px var(--ring);
+  }
+
+  .hero-card {
+    padding: 14px 14px 16px;
+  }
+
+  .hero-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row instead of 3 */
+    gap: 10px;
+  }
+
+  .metric .num {
+    font-size: 22px;
+  }
+
+  .metric .lbl {
+    font-size: 11px;
+  }
+}
