@@ -1737,6 +1737,8 @@ option {
   white-space:nowrap;
 }
 
+
+
 /* primary stays solid */
 .about-buttons .btn.btn-primary{
   background: linear-gradient(90deg, var(--brand-dark) 0%, var(--brand) 100%);

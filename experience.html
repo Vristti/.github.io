@@ -3,88 +3,123 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vristti Jalan · Experience</title>
+  <title>Vristti Jalan · Experience</title>
 
   <!-- Fonts (same across your site) -->
-   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=1" />
 </head>
 
 <body class="experience-page">
- <!-- ===== UNIVERSAL NAVBAR ===== -->
-<nav class="navbar">
-  <button class="menu-toggle" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <!-- ===== UNIVERSAL NAVBAR ===== -->
+  <nav class="navbar">
+    <button class="menu-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
 
-  <div class="brand-group">
-    <a href="index.html" class="brand" aria-label="Home">Vristti Jalan</a>
-    <div class="brand-subtitle">HR &amp; Talent Acquisition</div>
-  </div>
-
-  <div class="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="experience.html" class="nav-link active">Experience</a>
-    <a href="skills.html" class="nav-link">Skills</a>
-    <a href="case-studies.html" class="nav-link">Case Studies</a>
-    <a href="contacts.html" class="nav-link">Contact</a>
-    <!-- add/remove links as needed -->
-  </div>
-
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer" id="drawer">
-    <div class="drawer-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="experience.html" class="nav-link">Experience</a>
-    <a href="skills.html" class="nav-link">Skills</a>
-    <a href="case-studies.html" class="nav-link">Case Studies</a>
-    <a href="contacts.html" class="nav-link">Contact</a>
+    <div class="brand-group">
+      <a href="index.html" class="brand" aria-label="Home">Vristti Jalan</a>
+      <div class="brand-subtitle">HR &amp; Talent Acquisition</div>
     </div>
-  </div>
-  <div class="drawer-backdrop" id="backdrop"></div>
-</nav> 
 
-  <!-- ===== HERO SECTION ===== -->
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="experience.html" class="nav-link active">Experience</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="case-studies.html" class="nav-link">Case Studies</a>
+      <a href="contacts.html" class="nav-link">Contact</a>
+    </div>
 
-     <header class="page-header">
-    <h1>Experience</h1>
-  </header>
-   
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" id="drawer">
+      <div class="drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="experience.html" class="nav-link active">Experience</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="case-studies.html" class="nav-link">Case Studies</a>
+        <a href="contacts.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="backdrop"></div>
+  </nav>
+
+  <!-- ===== EXPERIENCE HERO ===== -->
+  <section class="experience-hero">
+    <div>
+      <h1 class="experience-title">Experience</h1>
+      <p class="experience-sub">
+        Blending hands-on HR operations, recruitment, business development, and community leadership
+        to support scalable, people-first workplaces.
+      </p>
+
+      <div class="experience-badgebar">
+        <span class="pill mono">HR &amp; Talent Acquisition</span>
+        <span class="pill">Recruitment Operations</span>
+        <span class="pill">Policy &amp; Process Design</span>
+        <span class="pill">Co-op &amp; Early Talent Programs</span>
+        <span class="pill">Community Fundraising</span>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Experience highlights">
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="num">4+</div>
+          <div class="lbl">People-focused roles</div>
+        </div>
+        <div class="metric">
+          <div class="num">125K+</div>
+          <div class="lbl">Raised for SickKids</div>
+        </div>
+        <div class="metric">
+          <div class="num">3</div>
+          <div class="lbl">Co-op / internship terms</div>
+        </div>
+      </div>
+    </aside>
+  </section>
 
   <!-- ===== TIMELINE ===== -->
   <section class="exp-wrap">
+    <h2 class="section-title">Professional Experience</h2>
+
     <ol class="timeline">
 
-      <!-- HR specalist -->
+      <!-- HR Specialist -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
           <div class="exp-head">
             <div>
-              <div class="role">HR specalist· Intragrad Inc.</div>
+              <div class="role">HR Specialist · Intragrad Inc.</div>
               <div class="where">Toronto, ON · Hybrid</div>
             </div>
             <div class="dates">April 2025 – December 2025</div>
           </div>
+
           <div class="stack">
-            <span class="tag">Leading end-to-end HR operation</span>
-            <span class="tag">Direct-Hire</span>
-            <span class="tag">Co-op Program creation and optimization</span>
-            <span class="tag">Creating onboarding systems</span> 
-            <span class="tag">Creating Training systems</span>
-            <span class="tag">Creating records System</span> 
-            <span class="tag">Poliicy creation / standardizations</span> 
-            <span class="tag">Complience & Employee relations </span>  
-              <span class="tag">Implimented key HR Changes</span> 
+            <span class="tag">End-to-end HR operations</span>
+            <span class="tag">Direct-hire recruitment</span>
+            <span class="tag">Co-op program design &amp; optimization</span>
+            <span class="tag">Onboarding systems</span>
+            <span class="tag">Training frameworks</span>
+            <span class="tag">HR records management</span>
+            <span class="tag">Policy creation &amp; standardization</span>
+            <span class="tag">Compliance &amp; employee relations</span>
+            <span class="tag">Implemented key HR changes</span>
           </div>
+
+          <p class="xp">
+            Led core HR programs at a growing staffing firm, designing and refining people processes across
+            onboarding, records, and policy to support both leadership needs and employee experience.
+          </p>
         </article>
       </li>
 
-       <!-- Lemonade Loverss-->
+      <!-- Co-Founder · Lemonade Loverss -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
@@ -95,17 +130,23 @@
             </div>
             <div class="dates">2015 – Present</div>
           </div>
+
           <div class="stack">
-            <span class="tag">Community Leadership</span>
-            <span class="tag">$125K+ Raised</span>
-            <span class="tag">Event Ops</span>
-            <span class="tag">Creating marketing materials</span>
-            <span class="tag">Managing volenteers</span>
+            <span class="tag">Community leadership</span>
+            <span class="tag">$125K+ raised for SickKids</span>
+            <span class="tag">Event operations</span>
+            <span class="tag">Marketing materials</span>
+            <span class="tag">Volunteer management</span>
           </div>
+
+          <p class="xp">
+            Co-founded and co-led a long-running community initiative, coordinating fundraising events,
+            marketing campaigns, and volunteer teams to support the Hospital for Sick Children.
+          </p>
         </article>
       </li>
 
-      <!-- Hr Coordinator -->
+      <!-- HR Coordinator -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
@@ -114,75 +155,102 @@
               <div class="role">HR Coordinator · Intragrad Inc.</div>
               <div class="where">Toronto, ON · Hybrid</div>
             </div>
-            <div class="dates"> Jan 2025 – April 2025</div>
+            <div class="dates">January 2025 – April 2025</div>
           </div>
+
           <div class="stack">
-            <span class="tag">Recruitment Ops</span>
-            <span class="tag">Direct-Hire</span>
-            <span class="tag">candidate screening</span>
-            <span class="tag">Contracts & Letters creation</span>
+            <span class="tag">Recruitment operations</span>
+            <span class="tag">Direct-hire coordination</span>
+            <span class="tag">Candidate screening</span>
+            <span class="tag">Contract &amp; letter creation</span>
           </div>
+
+          <p class="xp">
+            Supported day-to-day recruitment and HR coordination, screening candidates, preparing offer
+            letters and contracts, and ensuring a smooth experience for both clients and hires.
+          </p>
         </article>
       </li>
 
-      <!-- Recrutiment Coordinator  -->
+      <!-- Recruitment Coordinator (Co-op) -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
           <div class="exp-head">
             <div>
-              <div class="role">Recruitment Coordinator (Co-op)</div>
-              <div class="where">Intragrad Inc. · Toronto, ON</div>
+              <div class="role">Recruitment Coordinator (Co-op) · Intragrad Inc.</div>
+              <div class="where">Toronto, ON</div>
             </div>
-            <div class="dates">Sept 2024 – Dec 2024</div>
+            <div class="dates">September 2024 – December 2024</div>
           </div>
+
           <div class="stack">
-            <span class="tag">Sourcing</span>
-            <span class="tag">Interviewing</span>
-            <span class="tag">ATS Hygiene</span>
-            <span class="tag">Stakeholder Comms</span>
+            <span class="tag">Candidate sourcing</span>
+            <span class="tag">Interview coordination</span>
+            <span class="tag">ATS hygiene</span>
+            <span class="tag">Stakeholder communication</span>
           </div>
+
+          <p class="xp">
+            Coordinated high-volume recruitment pipelines, maintained clean and accurate ATS data,
+            and kept candidates and hiring managers aligned through clear, timely communication.
+          </p>
         </article>
       </li>
 
-      <!-- Business dev  -->
+      <!-- Business Developer (Co-op) -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
           <div class="exp-head">
             <div>
-              <div class="role"> Business Developer (Co-op)</div>
-              <div class="where">Intragrad Inc. · Toronto, ON</div>
+              <div class="role">Business Developer (Co-op) · Intragrad Inc.</div>
+              <div class="where">Toronto, ON</div>
             </div>
-            <div class="dates">Sept 2024 – Dec 2024</div>
+            <div class="dates">September 2024 – December 2024</div>
           </div>
+
           <div class="stack">
-            <span class="tag">develop and refine business plans and client acquisition strategies.</span>
+            <span class="tag">Business planning</span>
+            <span class="tag">Client acquisition strategies</span>
+            <span class="tag">Market research</span>
           </div>
+
+          <p class="xp">
+            Developed and refined business plans and client outreach strategies, supporting growth in
+            new markets and informing how HR services were positioned to prospective partners.
+          </p>
         </article>
       </li>
 
-      <!-- talent aquisition intern-->
+      <!-- Talent Acquisition Intern · Region of Peel -->
       <li class="t-item">
         <div class="t-dot" aria-hidden="true"></div>
         <article class="exp-card">
           <div class="exp-head">
             <div>
-              <div class="role"> Talent Acquisitionist (Intern) </div>
-              <div class="where"> Region of Peel · Toronto, ON</div>
+              <div class="role">Talent Acquisition Intern · Region of Peel</div>
+              <div class="where">Toronto, ON</div>
             </div>
-            <div class="dates"> May 2024 – Sep 2024</div>
+            <div class="dates">May 2024 – September 2024</div>
           </div>
+
           <div class="stack">
-            <span class="tag">candidate sourcing</span>
-            <span class="tag">resume screening</span>
-            <span class="tag">reference checks</span>
-            <span class="tag">contract drafting</span>
+            <span class="tag">Candidate sourcing</span>
+            <span class="tag">Résumé screening</span>
+            <span class="tag">Reference checks</span>
+            <span class="tag">Contract drafting</span>
           </div>
+
+          <p class="xp">
+            Supported public sector recruitment by sourcing and screening candidates, conducting
+            structured reference checks, and assisting with drafting and processing employment contracts.
+          </p>
         </article>
       </li>
+
     </ol>
-</section>
+  </section>
 
   <footer id="contact">
     <h2>Let's work together</h2>
