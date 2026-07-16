@@ -3,25 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vristti Jalan · Skills</title>
 
-  <!-- Fonts (same across your site) -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.css?v=99" />
+  <title>Skills · Vristti Jalan</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css?v=100" />
 </head>
 
 <body>
-  <!-- ===== UNIVERSAL NAVBAR ===== -->
-  <nav class="navbar">
-    <button class="menu-toggle" aria-label="Open menu">
-      <span></span><span></span><span></span>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" role="navigation">
+
+    <button
+      class="menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <div class="brand-group">
-      <a href="index.html" class="brand" aria-label="Home">Vristti Jalan</a>
-      <div class="brand-subtitle">HR &amp; Talent Acquisition</div>
+      <a href="index.html" class="brand" aria-label="Home">
+        Vristti Jalan
+      </a>
+
+      <div class="brand-subtitle">
+        HR &amp; Talent Acquisition
+      </div>
     </div>
 
     <div class="nav-links">
@@ -33,272 +48,524 @@
       <a href="contacts.html" class="nav-link">Contact</a>
     </div>
 
-    <!-- Mobile drawer -->
-    <div class="mobile-drawer" id="drawer">
+    <!-- Mobile navigation drawer -->
+    <div
+      class="mobile-drawer"
+      id="drawer"
+      aria-hidden="true"
+    >
       <div class="drawer-links">
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="experience.html" class="nav-link">Experience</a>
-        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="skills.html" class="nav-link active">Skills</a>
         <a href="case-studies.html" class="nav-link">Case Studies</a>
         <a href="contacts.html" class="nav-link">Contact</a>
       </div>
     </div>
+
     <div class="drawer-backdrop" id="backdrop"></div>
+
   </nav>
 
-  <!-- ===== SKILLS SECTION ===== -->
-  <section id="skills" class="about-section">
-    <h2 class="section-title">Skills &amp; Strengths</h2>
-    <p class="section-intro">
-      As an HR Specialist, I support end-to-end HR operations, recruitment, and people programs across multiple regions.
-      Below is a snapshot of the skills I use most often in my work.
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <h1>Skills &amp; Expertise</h1>
+
+    <p>
+      The recruitment, HR operations and stakeholder-management capabilities
+      I have developed throughout my professional experience.
     </p>
+  </header>
 
-<div class="skills-highlight-box">
-  <div class="skills-highlight-item">150+ hires across 5 countries</div>
-  <div class="skills-highlight-item">40+ clients supported</div>
-  <div class="skills-highlight-item">Employee Handbook development</div>
-  <div class="skills-highlight-item">Early talent program design</div>
-  <div class="skills-highlight-item">$124,400+ raised for SickKids</div>
-  <div class="skills-highlight-item">Personal HR portfolio website (vristti.ca)</div>
-</div>
 
-      <!-- HR Operations & People Programs -->
-      <details class="about-card" >
+  <!-- ===== SKILLS SECTION ===== -->
+  <main>
+    <section id="skills" class="about-section">
+
+      <div class="skills-introduction">
+        <p>
+          My experience spans talent acquisition, campus recruitment,
+          onboarding, employee relations, policy development and HR operations.
+          I have supported hiring across technical, consulting, corporate and
+          early-talent roles while working closely with candidates, hiring
+          managers, clients and university partners.
+        </p>
+      </div>
+
+
+      <!-- TALENT ACQUISITION -->
+      <details class="about-card">
         <summary class="about-header">
-          <span>HR Operations &amp; People Programs</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <span>Talent Acquisition</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="HR Operations &amp; People Programs">
+          <div class="skills" aria-label="Talent Acquisition skills">
+
             <div class="skill">Full-cycle recruitment</div>
-            <div class="skill">Job postings &amp; screening</div>
-            <div class="skill">Candidate sourcing (Canada, India, Philippines, UK, US)</div>
-            <div class="skill">Onboarding &amp; training coordination</div>
-            <div class="skill">Employee relations support</div>
-            <div class="skill">Performance documentation (write-ups, coaching, reviews)</div>
-            <div class="skill">Policy creation &amp; handbook development</div>
-            <div class="skill">Compliance &amp; record maintenance</div>
-            <div class="skill">Payroll support</div>
-            <div class="skill">HR workflow optimization</div>
-            <div class="skill">Retention &amp; engagement support</div>
-            <div class="skill">Process mapping &amp; SOP development</div>
-          </div>
-        </div>
-      </details>
-
-      <!-- Talent Acquisition & Early Talent Programs -->
-      <details class="about-card">
-        <summary class="about-header">
-          <span>Talent Acquisition &amp; Early Talent Programs</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
-        </summary>
-        <div class="about-body">
-          <div class="skills" aria-label="Talent Acquisition &amp; Early Talent Programs">
-            <div class="skill">Candidate sourcing &amp; resume screening</div>
-            <div class="skill">Interview scheduling &amp; coordination</div>
+            <div class="skill">Candidate sourcing</div>
+            <div class="skill">Resume screening</div>
+            <div class="skill">Candidate interviewing</div>
+            <div class="skill">Interview coordination</div>
             <div class="skill">Reference checks</div>
-            <div class="skill">Diversity-focused hiring initiatives</div>
-            <div class="skill">Candidate experience enhancement</div>
+            <div class="skill">Offer coordination</div>
+            <div class="skill">Candidate relationship management</div>
             <div class="skill">Talent pipeline development</div>
-            <div class="skill">Early talent &amp; co-op program design</div>
-            <div class="skill">Applicant tracking accuracy</div>
-            <div class="skill">Hiring metrics &amp; tracking</div>
-            <div class="skill">Client communication for hiring needs</div>
+            <div class="skill">Recruitment process improvement</div>
+            <div class="skill">Hiring-manager collaboration</div>
+            <div class="skill">Applicant tracking</div>
+
           </div>
         </div>
       </details>
 
-      <!-- HR Analytics & Reporting -->
+
+      <!-- TECHNICAL & CONSULTING RECRUITMENT -->
       <details class="about-card">
         <summary class="about-header">
-          <span>HR Analytics &amp; Reporting</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <span>Technical &amp; Consulting Recruitment</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="HR Analytics &amp; Reporting">
-            <div class="skill">Excel trackers &amp; reporting</div>
-            <div class="skill">Recruitment funnel reporting</div>
-            <div class="skill">Hiring KPI tracking</div>
-            <div class="skill">Compliance tracking</div>
-            <div class="skill">Data cleaning &amp; accuracy management</div>
-            <div class="skill">Basic Power BI visualization</div>
-            <div class="skill">Process performance monitoring</div>
+          <div
+            class="skills"
+            aria-label="Technical and consulting recruitment skills"
+          >
+
+            <div class="skill">Technical candidate screening</div>
+            <div class="skill">Consulting recruitment</div>
+            <div class="skill">Junior and senior-level hiring</div>
+            <div class="skill">NetSuite recruitment support</div>
+            <div class="skill">Microsoft Business Central hiring</div>
+            <div class="skill">Supply-chain recruitment</div>
+            <div class="skill">Functional-role assessment</div>
+            <div class="skill">Competency-based interviewing</div>
+            <div class="skill">Candidate profile development</div>
+            <div class="skill">Role requirement clarification</div>
+
           </div>
         </div>
       </details>
 
-      <!-- Tools & Systems -->
+
+      <!-- CAMPUS & EARLY TALENT -->
       <details class="about-card">
         <summary class="about-header">
-          <span>Tools &amp; Systems</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <span>Campus Recruitment &amp; Early Talent</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="Tools &amp; Systems">
-            <p><strong>HRIS, ATS &amp; Recruiting Tools</strong></p>
-            <div class="skill">iCIMS</div>
-            <div class="skill">Oracle</div>
-            <div class="skill">Zoho Recruit</div>
-            <div class="skill">CRM tools</div>
-            <div class="skill">Indeed recruiting</div>
-            <div class="skill">LinkedIn recruiting</div>
-            <div class="skill">GoTo calling system</div>
+          <div
+            class="skills"
+            aria-label="Campus recruitment and early talent skills"
+          >
 
-            <p><strong>Microsoft 365</strong></p>
-            <div class="skill">Excel</div>
-            <div class="skill">Word</div>
-            <div class="skill">PowerPoint</div>
-            <div class="skill">Forms</div>
-            <div class="skill">Power BI</div>
-            <div class="skill">SharePoint</div>
-            <div class="skill">Microsoft Copilot</div>
+            <div class="skill">Campus recruitment</div>
+            <div class="skill">University outreach</div>
+            <div class="skill">Student engagement</div>
+            <div class="skill">Co-op recruitment</div>
+            <div class="skill">New-graduate hiring</div>
+            <div class="skill">Career-event coordination</div>
+            <div class="skill">Employer branding</div>
+            <div class="skill">Interview preparation workshops</div>
+            <div class="skill">Candidate coaching</div>
+            <div class="skill">Early-talent pipeline development</div>
+            <div class="skill">Placement coordination</div>
+            <div class="skill">Student and supervisor check-ins</div>
 
-            <p><strong>Google Workspace</strong></p>
-            <div class="skill">Docs</div>
-            <div class="skill">Sheets</div>
-            <div class="skill">Slides</div>
-            <div class="skill">Forms</div>
-
-            <p><strong>Other Tools</strong></p>
-            <div class="skill">SignWell</div>
-            <div class="skill">VS Code</div>
-            <div class="skill">HTML / CSS / JavaScript (beginner)</div>
-            <div class="skill">Git &amp; GitHub</div>
-            <div class="skill">Website portfolio management</div>
           </div>
         </div>
       </details>
 
-      <!-- Communication & Stakeholder Management -->
+
+      <!-- HR OPERATIONS -->
       <details class="about-card">
         <summary class="about-header">
-          <span>Communication &amp; Stakeholder Management</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <span>HR Operations</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="Communication &amp; Stakeholder Management">
-            <div class="skill">Professional email communication</div>
+          <div class="skills" aria-label="HR operations skills">
+
+            <div class="skill">Employee onboarding</div>
+            <div class="skill">IT onboarding support</div>
+            <div class="skill">Training coordination</div>
+            <div class="skill">Employee relations support</div>
+            <div class="skill">Policy development</div>
+            <div class="skill">Employee handbook development</div>
+            <div class="skill">Performance documentation</div>
+            <div class="skill">Payroll coordination</div>
+            <div class="skill">Employee record maintenance</div>
+            <div class="skill">Compliance support</div>
+            <div class="skill">Confidential document management</div>
+            <div class="skill">HR workflow improvement</div>
+
+          </div>
+        </div>
+      </details>
+
+
+      <!-- RECRUITMENT OPERATIONS -->
+      <details class="about-card">
+        <summary class="about-header">
+          <span>Recruitment Operations &amp; Reporting</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </summary>
+
+        <div class="about-body">
+          <div
+            class="skills"
+            aria-label="Recruitment operations and reporting skills"
+          >
+
+            <div class="skill">Recruitment pipeline tracking</div>
+            <div class="skill">Candidate-status reporting</div>
+            <div class="skill">Hiring metrics</div>
+            <div class="skill">Interview tracking</div>
+            <div class="skill">Recruitment dashboards</div>
+            <div class="skill">Excel reporting</div>
+            <div class="skill">Data validation</div>
+            <div class="skill">Applicant-tracking accuracy</div>
+            <div class="skill">Process documentation</div>
+            <div class="skill">Standard operating procedures</div>
+            <div class="skill">Screening templates</div>
+            <div class="skill">Interview scorecards</div>
+
+          </div>
+        </div>
+      </details>
+
+
+      <!-- STAKEHOLDER MANAGEMENT -->
+      <details class="about-card">
+        <summary class="about-header">
+          <span>Stakeholder Management</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </summary>
+
+        <div class="about-body">
+          <div class="skills" aria-label="Stakeholder management skills">
+
+            <div class="skill">Hiring-manager partnership</div>
+            <div class="skill">Candidate communication</div>
             <div class="skill">Client relationship management</div>
-            <div class="skill">Stakeholder coordination</div>
-            <div class="skill">Presentation &amp; reporting</div>
-            <div class="skill">Team collaboration</div>
-            <div class="skill">High-volume communication management</div>
-            <div class="skill">Cross-functional support</div>
+            <div class="skill">University-partner communication</div>
+            <div class="skill">Cross-functional collaboration</div>
+            <div class="skill">Senior stakeholder communication</div>
+            <div class="skill">Expectation management</div>
+            <div class="skill">Recruitment updates and reporting</div>
+            <div class="skill">Professional correspondence</div>
+            <div class="skill">Conflict-sensitive communication</div>
+
           </div>
         </div>
       </details>
 
-      <!-- Business Development & Market Insights -->
+
+      <!-- BUSINESS DEVELOPMENT -->
       <details class="about-card">
         <summary class="about-header">
-          <span>Business Development &amp; Market Insights</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <span>Business Development &amp; Research</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="Business Development &amp; Market Insights">
-            <div class="skill">Market &amp; competitive research</div>
-            <div class="skill">Identifying business growth opportunities</div>
-            <div class="skill">Business plan refinement</div>
-            <div class="skill">Client acquisition support</div>
-            <div class="skill">Strategy recommendations</div>
+          <div
+            class="skills"
+            aria-label="Business development and research skills"
+          >
+
+            <div class="skill">Market research</div>
+            <div class="skill">Competitive research</div>
+            <div class="skill">Prospective-client research</div>
+            <div class="skill">Client outreach</div>
+            <div class="skill">Recruitment proposal support</div>
+            <div class="skill">Business-growth research</div>
+            <div class="skill">Service opportunity identification</div>
+            <div class="skill">Relationship building</div>
+
           </div>
         </div>
       </details>
 
-      <!-- Professional Strengths -->
+
+      <!-- TECHNOLOGY -->
+      <details class="about-card">
+        <summary class="about-header">
+          <span>Technology &amp; Systems</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </summary>
+
+        <div class="about-body tools-body">
+
+          <div class="tool-category">
+            <h3>Recruiting &amp; HR Systems</h3>
+
+            <div class="skills">
+              <div class="skill">iCIMS</div>
+              <div class="skill">Zoho Recruit</div>
+              <div class="skill">Workable</div>
+              <div class="skill">Oracle</div>
+              <div class="skill">Indeed</div>
+              <div class="skill">LinkedIn Recruiter</div>
+              <div class="skill">CRM systems</div>
+              <div class="skill">GoTo</div>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <h3>Microsoft</h3>
+
+            <div class="skills">
+              <div class="skill">Excel</div>
+              <div class="skill">Word</div>
+              <div class="skill">PowerPoint</div>
+              <div class="skill">Microsoft Forms</div>
+              <div class="skill">Power BI</div>
+              <div class="skill">SharePoint</div>
+              <div class="skill">Microsoft Copilot</div>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <h3>Google Workspace</h3>
+
+            <div class="skills">
+              <div class="skill">Google Docs</div>
+              <div class="skill">Google Sheets</div>
+              <div class="skill">Google Slides</div>
+              <div class="skill">Google Forms</div>
+              <div class="skill">Google Drive</div>
+            </div>
+          </div>
+
+          <div class="tool-category">
+            <h3>Web &amp; Digital Tools</h3>
+
+            <div class="skills">
+              <div class="skill">VS Code</div>
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">Git</div>
+              <div class="skill">GitHub</div>
+              <div class="skill">Website management</div>
+              <div class="skill">Electronic-signature tools</div>
+            </div>
+          </div>
+
+        </div>
+      </details>
+
+
+      <!-- PROFESSIONAL STRENGTHS -->
       <details class="about-card">
         <summary class="about-header">
           <span>Professional Strengths</span>
-          <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M6 9l6 6 6-6" />
           </svg>
         </summary>
+
         <div class="about-body">
-          <div class="skills" aria-label="Professional Strengths">
+          <div class="skills" aria-label="Professional strengths">
+
+            <div class="skill">Organization</div>
             <div class="skill">Attention to detail</div>
-            <div class="skill">Highly organized</div>
-            <div class="skill">Adaptable in dynamic environments</div>
-            <div class="skill">Strong judgment &amp; confidentiality</div>
+            <div class="skill">Professional judgment</div>
+            <div class="skill">Confidentiality</div>
+            <div class="skill">Adaptability</div>
             <div class="skill">Time management</div>
             <div class="skill">Problem solving</div>
-            <div class="skill">Reliability &amp; ownership</div>
-            <div class="skill">High responsiveness</div>
+            <div class="skill">Accountability</div>
+            <div class="skill">Responsiveness</div>
+            <div class="skill">Relationship building</div>
+            <div class="skill">Independent work</div>
+            <div class="skill">Team collaboration</div>
+
           </div>
         </div>
       </details>
 
-    </div>
-  </section>
+    </section>
+  </main>
 
+
+  <!-- ===== FOOTER ===== -->
   <footer id="contact">
     <h2>Let's work together</h2>
-    <p>Toronto ·
-      <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+
+    <p>
+      Toronto ·
+      <a
+        href="https://www.linkedin.com/in/vristti-jalan-794960244/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
     </p>
-    <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+
+    <p class="copyright">
+      © <span id="y"></span> Vristti Jalan · Portfolio
+    </p>
   </footer>
 
-  <button id="backToTop" title="Back to top">↑</button>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button
+    id="backToTop"
+    type="button"
+    title="Back to top"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="loader.js"></script>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const yearElement = document.getElementById("y");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
   </script>
-  <script src="loader.js"></script>
+
   <script>
     (function () {
-      const btn = document.querySelector('.menu-toggle');
-      const drawer = document.getElementById('drawer');
-      const backdrop = document.querySelector('.drawer-backdrop');
+      const menuButton = document.querySelector(".menu-toggle");
+      const drawer = document.getElementById("drawer");
+      const backdrop = document.getElementById("backdrop");
       const body = document.body;
 
       function openDrawer() {
-        body.classList.add('drawer-open');
-        btn?.setAttribute('aria-expanded', 'true');
-        drawer?.setAttribute('aria-hidden', 'false');
-      }
-      function closeDrawer() {
-        body.classList.remove('drawer-open');
-        btn?.setAttribute('aria-expanded', 'false');
-        drawer?.setAttribute('aria-hidden', 'true');
+        body.classList.add("drawer-open");
+        menuButton?.setAttribute("aria-expanded", "true");
+        drawer?.setAttribute("aria-hidden", "false");
       }
 
-      btn?.addEventListener('click', () =>
-        body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
-      );
-      backdrop?.addEventListener('click', closeDrawer);
-      window.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeDrawer();
+      function closeDrawer() {
+        body.classList.remove("drawer-open");
+        menuButton?.setAttribute("aria-expanded", "false");
+        drawer?.setAttribute("aria-hidden", "true");
+      }
+
+      menuButton?.addEventListener("click", function () {
+        if (body.classList.contains("drawer-open")) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+
+      backdrop?.addEventListener("click", closeDrawer);
+
+      window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeDrawer();
+        }
       });
     })();
   </script>
+
   <script>
     (function () {
-      const backToTopBtn = document.getElementById('backToTop');
-      if (!backToTopBtn) return;
+      const backToTopButton = document.getElementById("backToTop");
 
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        backToTopBtn.style.display = y > 300 ? 'block' : 'none';
+      if (!backToTopButton) {
+        return;
+      }
+
+      function updateButtonVisibility() {
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
+
+        backToTopButton.style.display =
+          scrollPosition > 300 ? "block" : "none";
+      }
+
+      window.addEventListener("scroll", updateButtonVisibility);
+
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
 
-      backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      updateButtonVisibility();
     })();
   </script>
+
 </body>
 </html>
