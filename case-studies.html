@@ -3,291 +3,730 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Professional Case Studies · Vristti Jalan</title>
+
   <link rel="stylesheet" href="style.css?v=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
-  <!-- ===== Navbar ===== -->
-<nav class="navbar" role="navigation">
-  <button class="menu-toggle" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
 
-  <div class="brand-group">
-    <a href="index.html" class="brand" aria-label="Home">Vristti Jalan</a>
-    <div class="brand-subtitle">HR &amp; Talent Acquisition</div>
-  </div>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" role="navigation">
 
-  <div class="nav-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link ">About</a>
-    <a href="experience.html" class="nav-link">Experience</a>
-    <a href="skills.html" class="nav-link">Skills</a>
-    <a href="case-studies.html" class="nav-link active">Case Studies</a>
-    <a href="contacts.html" class="nav-link">Contact</a>
-    <!-- add/remove links as needed -->
-  </div>
+    <button
+      class="menu-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer" id="drawer">
-    <div class="drawer-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="experience.html" class="nav-link">Experience</a>
-    <a href="skills.html" class="nav-link">Skills</a>
-    <a href="case-studies.html" class="nav-link">Case Studies</a>
-    <a href="contacts.html" class="nav-link">Contact</a>
+    <div class="brand-group">
+      <a href="index.html" class="brand" aria-label="Home">
+        Vristti Jalan
+      </a>
+
+      <div class="brand-subtitle">
+        HR &amp; Talent Acquisition
+      </div>
     </div>
-  </div>
-  <div class="drawer-backdrop" id="backdrop"></div>
-</nav> 
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="case-studies.html" class="nav-link active">Case Studies</a>
+      <a href="contacts.html" class="nav-link">Contact</a>
+    </div>
+
+    <!-- Mobile navigation drawer -->
+    <div
+      class="mobile-drawer"
+      id="drawer"
+      aria-hidden="true"
+    >
+      <div class="drawer-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="case-studies.html" class="nav-link active">Case Studies</a>
+        <a href="contacts.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+
+    <div class="drawer-backdrop" id="backdrop"></div>
+
+  </nav>
+
+
   <!-- ===== PAGE HEADER ===== -->
   <header class="page-header">
     <h1>Professional Case Studies</h1>
-    <p>Real-world HR and Talent initiatives led by Vristti Jalan</p>
+
+    <p>
+      A selection of recruitment, talent development and HR initiatives
+      from my professional experience.
+    </p>
   </header>
 
+
   <!-- ===== CASE STUDIES GRID ===== -->
-  <section class="case-studies-grid">
+  <main>
+    <section class="case-studies-grid">
 
-    <details class="case">
-    <summary>
-      <span>Global Recruitment Expansion & Client Growth</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> The organization aimed to scale recruitment operations internationally but lacked a structured model for multiple markets.</p>
-      <p><strong>Action:</strong> Designed and executed a cross-regional hiring framework spanning Canada, India, the UK, the Philippines, and the U.S. Oversaw sourcing, compliance, and onboarding across time zones.</p>
-      <p><strong>Result:</strong> Recruited 150+ professionals and supported 40+ client accounts globally, positioning the company as a reliable cross-border staffing partner.</p>
-    </div>
-  </details>
 
-    <details class="case">
-    <summary>
-      <span>Employee Handbook & Policy Standardization</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Inconsistent HR practices caused uncertainty around compliance and employee relations.</p>
-      <p><strong>Action:</strong> Developed a comprehensive Employee Handbook outlining key policies on conduct, leave, performance, and accountability.</p>
-      <p><strong>Result:</strong> Standardized HR operations across all departments and reduced policy-related inquiries by 40%.</p>
-    </div>
-  </details> 
+      <!-- CASE STUDY 1 -->
+      <details class="case">
+        <summary>
+          <span>Global Recruitment Expansion &amp; Client Growth</span>
 
-   <details class="case">
-    <summary>
-      <span>HR Process Improvement & Workflow Automation</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Manual workflows and document handling delayed onboarding and payroll accuracy.</p>
-      <p><strong>Action:</strong> Introduced digital onboarding, automated templates, and implemented e-signature tools to streamline approvals.</p>
-      <p><strong>Result:</strong> Reduced onboarding time by 30% and improved documentation accuracy to 99%.</p>
-    </div>
-  </details>
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
 
-    <details class="case">
-    <summary>
-      <span>Performance Management System Overhaul</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> The existing review system lacked structure and follow-up processes.</p>
-      <p><strong>Action:</strong> Introduced standardized performance templates and monthly coaching sessions to enhance accountability.</p>
-      <p><strong>Result:</strong> Achieved a 95% completion rate for employee reviews and strengthened engagement through consistent feedback.</p>
-    </div>
-  </details>
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            The organization needed to support growing recruitment demands
+            across multiple clients, industries and geographic markets.
+          </p>
 
-    <details class="case">
-    <summary>
-      <span>HR Metrics & Retention Strategy</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> High turnover rates in certain teams affected productivity and morale.</p>
-      <p><strong>Action:</strong> Conducted exit and stay interviews to identify turnover trends and developed data-informed retention initiatives.</p>
-      <p><strong>Result:</strong> Reduced voluntary turnover by 18% within six months and improved employee satisfaction scores.</p>
-    </div>
-  </details> 
+          <p>
+            <strong>Action:</strong>
+            Supported full-cycle recruitment across Canada, India, the
+            Philippines, the United Kingdom and the United States. Coordinated
+            sourcing, screening, interviews, candidate communication and
+            onboarding while managing the needs of more than 40 client accounts.
+          </p>
 
-    <details class="case">
-    <summary>
-      <span>Co-op and Early Talent Program Development</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Limited engagement and unclear pathways for students and new graduates.</p>
-      <p><strong>Action:</strong> Designed a structured co-op framework integrating mentorship, onboarding, and performance feedback systems.</p>
-      <p><strong>Result:</strong> Increased student applications by 60% and improved conversion of co-op hires to full-time roles.</p>
-    </div>
-  </details>
+          <p>
+            <strong>Result:</strong>
+            Contributed to more than 150 hires and helped establish a more
+            consistent recruitment experience across international markets.
+          </p>
+        </div>
+      </details>
 
-<details class="case">
-    <summary>
-      <span>Recruitment Process Standardization</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Recruiters followed different screening criteria, affecting consistency and fairness.</p>
-      <p><strong>Action:</strong> Developed standardized scorecards, interview rubrics, and evaluation templates.</p>
-      <p><strong>Result:</strong> Improved hiring consistency across teams and enhanced client and candidate satisfaction.</p>
-    </div>
-  </details>
 
-    <details class="case">
-    <summary>
-      <span>Candidate Experience Optimization</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Delays in communication caused candidate drop-offs during interviews and feedback stages.</p>
-      <p><strong>Action:</strong> Introduced structured update templates, feedback loops, and a personalized candidate journey.</p>
-      <p><strong>Result:</strong> Improved satisfaction by 30% and significantly reduced candidate withdrawal rates.</p>
-    </div>
-  </details> 
+      <!-- CASE STUDY 2 -->
+      <details class="case">
+        <summary>
+          <span>Employee Handbook &amp; Policy Standardization</span>
 
-  <details class="case">
-    <summary>
-      <span>Data-Driven Recruitment Dashboard</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Leadership lacked visibility into real-time recruitment analytics.</p>
-      <p><strong>Action:</strong> Created an Excel-based dashboard to track candidate pipelines, conversion rates, and source effectiveness.</p>
-      <p><strong>Result:</strong> Enabled data-informed decision-making and improved placement efficiency by 20%.</p>
-    </div>
-  </details>
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
 
-    <details class="case">
-    <summary>
-      <span>Business Development & Market Research</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> The organization needed a clearer understanding of competitive positioning and client needs.</p>
-      <p><strong>Action:</strong> Conducted market research to identify growth opportunities and developed client acquisition strategies.</p>
-      <p><strong>Result:</strong> Expanded service offerings and increased new business leads by 15%.</p>
-    </div>
-  </details>
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Employees and managers needed clearer guidance regarding workplace
+            expectations, procedures and responsibilities.
+          </p>
 
-    <details class="case">
-    <summary>
-      <span>Client Acquisition & Outreach Strategy</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Business development relied on ad-hoc outreach with low conversion rates.</p>
-      <p><strong>Action:</strong> Refined client proposals, created branded outreach templates, and identified target industries.</p>
-      <p><strong>Result:</strong> Secured multiple long-term clients within one quarter through strategic relationship-building.</p>
-    </div>
-  </details>
+          <p>
+            <strong>Action:</strong>
+            Developed an Employee Handbook covering workplace conduct,
+            attendance, leave, performance expectations, confidentiality,
+            accountability and other key employment practices.
+          </p>
 
-   <details class="case">
-    <summary>
-      <span>Administrative System Optimization</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Disorganized documentation and recordkeeping posed compliance risks.</p>
-      <p><strong>Action:</strong> Introduced structured digital filing systems and implemented tracking logs for document accuracy.</p>
-      <p><strong>Result:</strong> Achieved 100% compliance in internal record audits and reduced administrative backlog.</p>
-    </div>
-  </details> 
+          <p>
+            <strong>Result:</strong>
+            Created a central resource for employees and managers while
+            improving consistency across HR practices and workplace decisions.
+          </p>
+        </div>
+      </details>
 
-     <details class="case">
-    <summary>
-      <span>Legal & Client Communication Coordination</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Miscommunication between internal and external stakeholders delayed document turnaround.</p>
-      <p><strong>Action:</strong> Developed standardized communication templates and centralized document workflows.</p>
-      <p><strong>Result:</strong> Reduced response times by 60%, improving client satisfaction and workflow transparency.</p>
-    </div>
-  </details>
 
-  <details class="case">
-    <summary>
-      <span>Reference Check & Screening Process Redesign</span>
-      <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-    </summary>
-    <div class="case-body">
-      <p><strong>Challenge:</strong> Reference checks were inconsistent and lacked structure.</p>
-      <p><strong>Action:</strong> Created a standardized template focusing on competencies and job-specific metrics.</p>
-      <p><strong>Result:</strong> Reduced processing time by half while improving candidate evaluation quality.</p>
-    </div>
-  </details>
-</section>
-<script>
+      <!-- CASE STUDY 3 -->
+      <details class="case">
+        <summary>
+          <span>HR Process Improvement &amp; Workflow Automation</span>
 
-  // Expand/Collapse All
-  const expandBtn = document.getElementById('expand-all');
-  const collapseBtn = document.getElementById('collapse-all');
-  const allCases = () => Array.from(document.querySelectorAll('.case'));
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
 
-  expandBtn?.addEventListener('click', () => allCases().forEach(d => d.open = true));
-  collapseBtn?.addEventListener('click', () => allCases().forEach(d => d.open = false));
-</script>
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Manual document handling and inconsistent workflows created delays
+            across recruitment, onboarding and employee administration.
+          </p>
 
-   <footer id="contact">
+          <p>
+            <strong>Action:</strong>
+            Introduced structured templates, digital tracking systems,
+            electronic signatures and standardized communication processes.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Improved document accuracy, reduced repetitive administrative work
+            and created a more organized HR workflow.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 4 -->
+      <details class="case">
+        <summary>
+          <span>Campus Recruitment Strategy &amp; University Partnerships</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            The organization wanted to strengthen its early-talent pipeline and
+            increase awareness among university students and new graduates.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Coordinated campus recruitment initiatives, supported university
+            outreach, represented the employer at recruitment activities and
+            guided students from initial engagement through the interview
+            process.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Expanded the early-talent pipeline, strengthened the organization's
+            campus presence and supported hiring for student and entry-level
+            opportunities.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 5 -->
+      <details class="case">
+        <summary>
+          <span>Technical Hiring Across Multiple Business Functions</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Hiring managers required candidates with specialized experience
+            across consulting, enterprise software and supply-chain functions.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Conducted interviews and supported recruitment for junior and senior
+            positions involving NetSuite, Microsoft Business Central, supply
+            chain, consulting and other technical or functional areas.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Delivered more focused candidate assessments and helped hiring
+            managers identify applicants aligned with both technical
+            requirements and workplace expectations.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 6 -->
+      <details class="case">
+        <summary>
+          <span>Co-op &amp; Early-Talent Program Development</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Students and new graduates needed clearer pathways into the
+            organization and more structure throughout their placements.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Supported a co-op framework involving candidate sourcing,
+            onboarding, employer coordination, student check-ins, performance
+            feedback and placement administration.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Created a more consistent experience for students, educational
+            partners and placement supervisors while supporting early-talent
+            hiring needs.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 7 -->
+      <details class="case">
+        <summary>
+          <span>Recruitment Process Standardization</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Different roles and hiring stakeholders required a consistent
+            method for reviewing and comparing candidates.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Developed structured screening criteria, candidate summaries,
+            interview questions and evaluation templates tailored to role
+            requirements.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Improved consistency across candidate reviews and gave hiring
+            managers clearer information when making interview and selection
+            decisions.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 8 -->
+      <details class="case">
+        <summary>
+          <span>Interview Training &amp; Candidate Readiness</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Some candidates entered interviews without a clear understanding of
+            employer expectations or how to communicate their experience
+            effectively.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Facilitated interview preparation workshops covering behavioural
+            questions, professional communication, resume presentation,
+            research and interview etiquette.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Helped candidates approach interviews with greater confidence,
+            preparation and awareness of professional expectations.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 9 -->
+      <details class="case">
+        <summary>
+          <span>Data-Driven Recruitment Dashboard</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Recruitment information was distributed across multiple documents,
+            making it difficult to monitor active candidates and next steps.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Created structured Excel trackers and dashboard-style reporting to
+            monitor candidate pipelines, interviews, hiring stages, placement
+            status and follow-up actions.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Increased visibility into recruitment activity and supported more
+            organized, timely decisions throughout the hiring process.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 10 -->
+      <details class="case">
+        <summary>
+          <span>Business Development &amp; Market Research</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            The organization needed additional insight into potential markets,
+            client needs and opportunities for business growth.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Conducted market research, reviewed industry trends, identified
+            potential clients and supported the development of recruitment and
+            service proposals.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Provided research that supported business planning, client outreach
+            and the identification of new service opportunities.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 11 -->
+      <details class="case">
+        <summary>
+          <span>Client Acquisition &amp; Outreach Strategy</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Client outreach required clearer messaging and a more targeted
+            approach to building new business relationships.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Researched prospective clients, developed outreach templates,
+            communicated service offerings and supported relationship-building
+            with employers seeking recruitment assistance.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Strengthened the organization's outreach process and contributed to
+            new client conversations and recruitment partnerships.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 12 -->
+      <details class="case">
+        <summary>
+          <span>IT Onboarding &amp; New-Hire Enablement</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            New employees needed consistent guidance to begin using internal
+            systems, communication tools and workplace processes.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Supported onboarding by facilitating IT training sessions,
+            introducing internal tools and answering new-hire questions during
+            the transition into their roles.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Created a smoother onboarding experience and helped new employees
+            become familiar with essential systems and processes.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 13 -->
+      <details class="case">
+        <summary>
+          <span>Reference Check &amp; Screening Process Redesign</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Candidate screening and reference checks required consistent
+            questions and clearer documentation.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Used structured screening forms and reference-check templates
+            focused on competencies, previous responsibilities, reliability and
+            role-specific requirements.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Improved the organization and quality of candidate information
+            provided to hiring managers.
+          </p>
+        </div>
+      </details>
+
+
+      <!-- CASE STUDY 14 -->
+      <details class="case">
+        <summary>
+          <span>Employer Branding &amp; Candidate Engagement</span>
+
+          <svg
+            class="chev"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+
+        <div class="case-body">
+          <p>
+            <strong>Challenge:</strong>
+            Attracting candidates required an engaging employer presence beyond
+            traditional job advertisements.
+          </p>
+
+          <p>
+            <strong>Action:</strong>
+            Supported employer-branding efforts through campus outreach,
+            recruitment messaging, candidate communications, event
+            participation and relationship-building throughout the hiring
+            journey.
+          </p>
+
+          <p>
+            <strong>Result:</strong>
+            Strengthened candidate engagement and presented a clearer, more
+            welcoming representation of the employer during recruitment.
+          </p>
+        </div>
+      </details>
+
+
+    </section>
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact">
     <h2>Let's work together</h2>
-    <p>Toronto ·
-      <a href="https://www.linkedin.com/in/vristti-jalan-794960244/" target="_blank">LinkedIn</a>
+
+    <p>
+      Toronto ·
+      <a
+        href="https://www.linkedin.com/in/vristti-jalan-794960244/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
     </p>
-    <p class="copyright">© <span id="y"></span> Vristti Jalan · Portfolio</p>
+
+    <p class="copyright">
+      © <span id="y"></span> Vristti Jalan · Portfolio
+    </p>
   </footer>
 
-  <button id="backToTop" title="Back to top">↑</button>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button
+    id="backToTop"
+    type="button"
+    title="Back to top"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+
+  <!-- ===== WEBSITE SCRIPTS ===== -->
+  <script src="loader.js"></script>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Automatically display the current year.
+    const yearElement = document.getElementById("y");
+
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
   </script>
-  <script src="loader.js"></script>
+
   <script>
+    // Mobile navigation drawer.
     (function () {
-      const btn = document.querySelector('.menu-toggle');
-      const drawer = document.getElementById('drawer');
-      const backdrop = document.querySelector('.drawer-backdrop');
+      const menuButton = document.querySelector(".menu-toggle");
+      const drawer = document.getElementById("drawer");
+      const backdrop = document.getElementById("backdrop");
       const body = document.body;
 
       function openDrawer() {
-        body.classList.add('drawer-open');
-        btn?.setAttribute('aria-expanded', 'true');
-        drawer?.setAttribute('aria-hidden', 'false');
+        body.classList.add("drawer-open");
+        menuButton?.setAttribute("aria-expanded", "true");
+        drawer?.setAttribute("aria-hidden", "false");
       }
+
       function closeDrawer() {
-        body.classList.remove('drawer-open');
-        btn?.setAttribute('aria-expanded', 'false');
-        drawer?.setAttribute('aria-hidden', 'true');
+        body.classList.remove("drawer-open");
+        menuButton?.setAttribute("aria-expanded", "false");
+        drawer?.setAttribute("aria-hidden", "true");
       }
 
-      btn?.addEventListener('click', () =>
-        body.classList.contains('drawer-open') ? closeDrawer() : openDrawer()
-      );
-      backdrop?.addEventListener('click', closeDrawer);
-      window.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeDrawer();
+      menuButton?.addEventListener("click", function () {
+        const drawerIsOpen = body.classList.contains("drawer-open");
+
+        if (drawerIsOpen) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+
+      backdrop?.addEventListener("click", closeDrawer);
+
+      window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeDrawer();
+        }
       });
     })();
   </script>
+
   <script>
+    // Back-to-top button.
     (function () {
-      const backToTopBtn = document.getElementById('backToTop');
-      if (!backToTopBtn) return;
+      const backToTopButton = document.getElementById("backToTop");
 
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY || document.documentElement.scrollTop;
-        backToTopBtn.style.display = y > 300 ? 'block' : 'none';
+      if (!backToTopButton) {
+        return;
+      }
+
+      function updateButtonVisibility() {
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
+
+        backToTopButton.style.display =
+          scrollPosition > 300 ? "block" : "none";
+      }
+
+      window.addEventListener("scroll", updateButtonVisibility);
+
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
 
-      backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+      updateButtonVisibility();
     })();
   </script>
+
 </body>
 </html>
