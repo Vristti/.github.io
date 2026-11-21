@@ -76,6 +76,7 @@
      - Keeps existing website styling
      ===================================================== -->
 
+<div class="home-showcase">
 <header class="hero">
 
   <h1>Empowering People. Strengthening Teams.</h1>
@@ -87,6 +88,13 @@
       HR Operations
     </span>
   </p>
+  <p class="hero-description">
+  An HR professional with experience across talent acquisition,
+  HR operations, HR technology, and process improvement.
+  Passionate about strengthening workplace practices,
+  improving employee experiences, and creating people-focused
+  solutions that support organizational success.
+</p>
   <!-- END ANIMATED INTRODUCTION -->
 
   <div class="hero-buttons">
@@ -97,6 +105,106 @@
   </div>
 
 </header>
+<!-- ===== FEATURED PROJECTS ===== -->
+
+<section class="featured-projects" id="featured-projects">
+
+  <h2>Featured Projects</h2>
+
+  <p class="featured-intro">
+    A selection of HR initiatives that highlight my
+    experience in technology, policy development,
+    and process improvement.
+  </p>
+
+  <div class="featured-grid">
+
+    <!-- Project 1 -->
+    <article class="featured-card">
+      <div class="featured-icon">💻</div>
+
+      <h3>HR Technology Transformation</h3>
+
+      <p>
+        Supported HR technology modernization through
+        system testing, data validation, and recruitment
+        module migration activities.
+      </p>
+
+      <a href="case-studies.html" class="featured-link">
+        View Case Study →
+      </a>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="featured-card">
+      <div class="featured-icon">📋</div>
+
+      <h3>Employee Handbook Development</h3>
+
+      <p>
+        Developed a comprehensive employee handbook to
+        standardize workplace policies, procedures,
+        and employee expectations.
+      </p>
+
+      <a href="case-studies.html" class="featured-link">
+        View Case Study →
+      </a>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="featured-card">
+      <div class="featured-icon">📊</div>
+
+      <h3>HR Process Improvement</h3>
+
+      <p>
+        Improved HR workflows using structured templates,
+        digital tracking systems, and standardized
+        recruitment and onboarding processes.
+      </p>
+
+      <a href="case-studies.html" class="featured-link">
+        View Case Study →
+      </a>
+    </article>
+
+  </div>
+
+  <a href="case-studies.html" class="btn featured-all-btn">
+    Explore All Case Studies
+  </a>
+
+</section>
+
+<!-- ===== END FEATURED PROJECTS ===== -->
+
+</div>
+
+<!-- HOMEPAGE IMPACT HIGHLIGHTS -->
+
+<section class="home-impact">
+  <div class="impact-item">
+    <strong>150+</strong>
+    <span>Hires Supported</span>
+  </div>
+
+  <div class="impact-item">
+    <strong>7+</strong>
+    <span>Hiring Managers Partnered With</span>
+  </div>
+
+  <div class="impact-item">
+    <strong>4+</strong>
+    <span>University Partnerships</span>
+  </div>
+
+  <div class="impact-item">
+    <strong>40+</strong>
+    <span>Client Accounts Supported</span>
+  </div>
+</section>
 
     <footer id="contact">
     <h2>Let's work together</h2>
@@ -207,3 +315,97 @@
 
 <!-- END ANIMATED HR INTRODUCTION SCRIPT -->
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = Array.from(
+    document.querySelectorAll(".featured-projects .featured-card")
+  );
+
+  const container = document.querySelector(".featured-projects");
+
+  if (!container || cards.length === 0) return;
+
+  const controls = document.createElement("div");
+  controls.className = "project-controls";
+
+  controls.innerHTML = `
+    <button class="project-arrow project-prev"
+            aria-label="Previous project">‹</button>
+    <div class="project-dots"></div>
+    <button class="project-arrow project-next"
+            aria-label="Next project">›</button>
+  `;
+
+  const grid = container.querySelector(".featured-grid");
+  grid.insertAdjacentElement("afterend", controls);
+
+  const dotsContainer = controls.querySelector(".project-dots");
+  let current = 0;
+
+  cards.forEach((card, index) => {
+    const dot = document.createElement("button");
+    dot.className = "project-dot";
+    dot.setAttribute("aria-label", `Show project ${index + 1}`);
+    dot.addEventListener("click", () => {
+      showProject(index);
+      restartTimer();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+
+  function showProject(index) {
+    current = (index + cards.length) % cards.length;
+
+    cards.forEach((card, i) => {
+      card.classList.toggle("is-current", i === current);
+      card.setAttribute("aria-hidden", i === current ? "false" : "true");
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === current);
+      dot.setAttribute("aria-pressed", i === current ? "true" : "false");
+    });
+  }
+
+  controls.querySelector(".project-prev")
+    .addEventListener("click", () => {
+      showProject(current - 1);
+      restartTimer();
+    });
+
+  controls.querySelector(".project-next")
+    .addEventListener("click", () => {
+      showProject(current + 1);
+      restartTimer();
+    });
+
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  let timer = null;
+
+  function startTimer() {
+    if (reduceMotion || cards.length < 2) return;
+    timer = setInterval(() => showProject(current + 1), 5000);
+  }
+
+  function restartTimer() {
+    clearInterval(timer);
+    startTimer();
+  }
+
+  container.addEventListener("mouseenter", () => clearInterval(timer));
+  container.addEventListener("mouseleave", restartTimer);
+  container.addEventListener("focusin", () => clearInterval(timer));
+  container.addEventListener("focusout", (event) => {
+    if (!container.contains(event.relatedTarget)) restartTimer();
+  });
+
+  showProject(0);
+  startTimer();
+});
+</script>

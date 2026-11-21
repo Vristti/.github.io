@@ -2349,3 +2349,450 @@ footer#contact h2,
 footer#contact p {
   text-align: center;
 }
+
+/* HOMEPAGE PROFESSIONAL INTRODUCTION */
+
+.hero .hero-description {
+  max-width: 680px;
+  margin: 20px auto 30px;
+  padding: 0 15px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #6b5547;
+}
+
+@media (max-width: 768px) {
+  .hero .hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* ==================================
+   HOMEPAGE FEATURED PROJECTS
+   ================================== */
+
+.featured-projects {
+  width: min(1100px, calc(100% - 40px));
+  max-width: 1100px;
+  box-sizing: border-box;
+  margin: 30px auto 70px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Section heading */
+.featured-projects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #8f6148;
+  margin: 0 0 12px;
+}
+
+/* Section introduction */
+.featured-intro {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #6b5547;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Three project cards */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  text-align: left;
+}
+
+/* Card appearance */
+.featured-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #e7d9cf;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+/* Project icons */
+.featured-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 15px;
+  background: #faf0e9;
+  border-radius: 14px;
+  font-size: 25px;
+}
+
+/* Project titles */
+.featured-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  color: #3b2f27;
+  margin: 0 0 12px;
+}
+
+/* Descriptions */
+.featured-card p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6b5547;
+  margin: 0 0 20px;
+}
+
+/* Links */
+.featured-link {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8f6148;
+  text-decoration: none;
+}
+
+.featured-link:hover {
+  text-decoration: underline;
+}
+
+/* Explore all button */
+.featured-all-btn {
+  margin-top: 32px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .featured-projects {
+    width: calc(100% - 32px);
+    padding: 30px 0;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-projects h2 {
+    font-size: 27px;
+  }
+
+  .featured-card {
+    padding: 22px;
+  }
+}
+
+/* ===== HOMEPAGE SPACING FIX ===== */
+
+/* Reduce empty space below homepage buttons */
+.hero {
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+/* Bring Featured Projects closer to homepage buttons */
+.featured-projects {
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+/* ===== HOMEPAGE HERO SPACING FIX ===== */
+
+/* Bring homepage content closer to navbar */
+header.hero {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 35px;
+  padding-bottom: 25px;
+}
+
+/* Remove unnecessary heading spacing */
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Keep rotating introduction close to heading */
+.hero .rotating-intro {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Adjust professional description spacing */
+.hero .hero-description {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* Featured projects spacing */
+.featured-projects {
+  margin-top: 15px;
+  padding-top: 20px;
+}
+
+/* =====================================
+   HOMEPAGE TWO-COLUMN SHOWCASE
+   ===================================== */
+
+.home-showcase {
+  width: min(1280px, calc(100% - 48px));
+  max-width: 1280px;
+  margin: 35px auto 25px;
+  padding: 35px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: stretch;
+  gap: 35px;
+
+  background: #fffdfb;
+  border: 1px solid #e7d9cf;
+  border-radius: 26px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+}
+
+/* Left: homepage introduction */
+.home-showcase .hero {
+  max-width: none;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 25px 0;
+  text-align: left;
+  overflow: visible;
+}
+
+.home-showcase .hero h1 {
+  text-align: left;
+  font-size: clamp(28px, 3vw, 39px);
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+.home-showcase .hero .rotating-intro,
+.home-showcase .hero .subtitle,
+.home-showcase .hero .hero-description {
+  text-align: left;
+}
+
+.home-showcase .hero .hero-description {
+  max-width: none;
+  padding: 0;
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Keep the four homepage buttons */
+.home-showcase .hero-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.home-showcase .hero-buttons .btn {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px;
+  min-height: 48px;
+  white-space: normal;
+}
+
+/* Right: featured project panel */
+.home-showcase .featured-projects {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 25px;
+
+  background: #faf7f3;
+  border: 1px solid #e7d9cf;
+  border-radius: 20px;
+}
+
+.home-showcase .featured-projects h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.home-showcase .featured-intro {
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+/* Display only one project */
+.home-showcase .featured-grid {
+  display: block;
+}
+
+.home-showcase .featured-card {
+  display: none;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 255px;
+  text-align: left;
+}
+
+.home-showcase .featured-card.is-current {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project navigation */
+.project-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.project-arrow {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d9b8a4;
+  border-radius: 50%;
+  background: white;
+  color: #8f6148;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.project-dots {
+  display: flex;
+  gap: 9px;
+}
+
+.project-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #dec8b8;
+  cursor: pointer;
+}
+
+.project-dot.active {
+  background: #8f6148;
+}
+
+.home-showcase .featured-all-btn {
+  margin-top: 24px;
+}
+
+/* =====================================
+   IMPACT HIGHLIGHTS
+   ===================================== */
+
+.home-impact {
+  max-width: 1200px;
+  width: calc(100% - 48px);
+  box-sizing: border-box;
+  margin: 0 auto 60px;
+  padding: 28px 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+
+  background: #f5e9e1;
+  border-radius: 20px;
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.impact-item strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #8f6148;
+}
+
+.impact-item span {
+  font-size: 13px;
+  color: #3b2f27;
+}
+
+/* =====================================
+   MOBILE & TABLET
+   ===================================== */
+
+@media (max-width: 900px) {
+  .home-showcase {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .home-showcase .hero {
+    text-align: center;
+  }
+
+  .home-showcase .hero h1,
+  .home-showcase .hero .rotating-intro,
+  .home-showcase .hero .subtitle,
+  .home-showcase .hero .hero-description {
+    text-align: center;
+  }
+
+  .home-impact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .home-showcase {
+    width: calc(100% - 24px);
+    padding: 18px;
+    gap: 20px;
+  }
+
+  .home-showcase .hero-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .home-showcase .featured-projects {
+    padding: 18px;
+  }
+
+  .home-impact {
+    width: calc(100% - 24px);
+    gap: 25px 10px;
+  }
+
+  .impact-item strong {
+    font-size: 26px;
+  }
+}
+
