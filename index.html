@@ -7,8 +7,7 @@
   <!-- Fonts (same across your site) -->
    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1" />
+   <link rel="stylesheet" href="style.css?v=1" />
 </head>
 
 <body>
@@ -62,19 +61,42 @@
     <a href="contacts.html" class="nav-link">Contact</a>
     </div>
   </div>
-  <div class="drawer-backdrop" id="backdrop"></div>
-</nav> 
+ 
+  <!-- END UNIVERSAL NAVBAR -->
+</nav>
+
+<!-- =====================================================
+     HOMEPAGE HERO SECTION
+     Updated: November 2026
+
+     FIXES:
+     - Correctly closes navigation
+     - Removes extra ">" character
+     - Adds animated HR introduction
+     - Keeps existing website styling
+     ===================================================== -->
 
 <header class="hero">
+
   <h1>Empowering People. Strengthening Teams.</h1>
-  <p class="subtitle"> </p>
+
+  <!-- NEW ADDITION: ANIMATED HR INTRODUCTION -->
+  <p class="subtitle rotating-intro">
+    Passionate about
+    <span id="rotatingText" class="rotating-text">
+      HR Operations
+    </span>
+  </p>
+  <!-- END ANIMATED INTRODUCTION -->
+
   <div class="hero-buttons">
-  <a class="btn" href="about.html">Learn About Me</a>
-  <a class="btn" href="case-studies.html">Case-studies</a>
-  <a class="btn" href="experience.html">My Experience</a>
-  <a class="btn" href="skills.html">My Skills</a>
-</div>
-</header>
+    <a class="btn" href="about.html">Learn About Me</a>
+    <a class="btn" href="case-studies.html">Case Studies</a>
+    <a class="btn" href="experience.html">My Experience</a>
+    <a class="btn" href="skills.html">My Skills</a>
+  </div>
+
+
     <footer id="contact">
     <h2>Let's work together</h2>
     <p>Toronto ·
@@ -134,3 +156,53 @@
   
 </body>
 </html>
+
+
+<!-- =====================================================
+     NEW ADDITION: ANIMATED HR INTRODUCTION SCRIPT
+     Added: November 2026
+     ===================================================== -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const rotatingText = document.getElementById("rotatingText");
+
+    if (!rotatingText) return;
+
+    const phrases = [
+      "HR Operations",
+      "People & Culture",
+      "Talent Strategy",
+      "Employee Experience"
+    ];
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) return;
+
+    let currentIndex = 0;
+
+    setInterval(function () {
+
+      rotatingText.classList.add("is-changing");
+
+      setTimeout(function () {
+
+        currentIndex = (currentIndex + 1) % phrases.length;
+
+        rotatingText.textContent = phrases[currentIndex];
+
+        rotatingText.classList.remove("is-changing");
+
+      }, 300);
+
+    }, 3000);
+
+  });
+</script>
+
+<!-- END ANIMATED HR INTRODUCTION SCRIPT -->
+

@@ -984,40 +984,35 @@ body.experience-page {
 }
 
 
-/* =========================
-   Footer
-   ========================= */
+
+/* =====================================================
+   FOOTER: FULL-WIDTH LAYOUT
+   Updated: November 2026
+
+   Purpose:
+   Extend the white footer across the full screen
+   while keeping all content centered.
+   ===================================================== */
+
 footer {
-  text-align: center;
-  background: #ffffff; /* same crisp white as header */
-  padding: 56px 20px 52px;
-  border-top: 3px solid #e7d9cf; /* thicker line to match nav divider */
-  box-shadow: 0 -8px 24px rgba(0,0,0,0.06); /* gentle upward lift like header’s drop shadow */
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 60px;
+
+  padding: 56px 20px 52px;
+  box-sizing: border-box;
+
+  text-align: center;
+  background: #ffffff;
+
+  border-top: 3px solid #e7d9cf;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.06);
 }
 
-footer h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--brand-dark);
-  font-size: 24px;
-  margin-bottom: 10px;
-}
+/* END FULL-WIDTH FOOTER */
 
-footer p {
-  color: #555;
-  margin: 6px 0;
-}
-
-footer a {
-  color: var(--brand);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
 
 .copyright {
   font-size: 14px;
@@ -1957,3 +1952,183 @@ option {
 #skills .about-card {
   margin-bottom: 1rem;
 }
+
+/* =====================================================
+   NEW ADDITION: CATEGORIZED CASE STUDIES
+   Added: November 2026
+
+   Purpose:
+   Creates expandable categories with nested projects.
+   Retains existing case study styling.
+   ===================================================== */
+
+/* Display categories in a single column */
+.case-studies-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Main category container */
+.case-category {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 18px;
+  border: 1px solid rgba(120, 90, 70, 0.22);
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Main category heading */
+.case-category > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  list-style: none;
+  transition: background-color 0.25s ease;
+}
+
+.case-category > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hover effect */
+.case-category > summary:hover {
+  background: rgba(120, 90, 70, 0.06);
+}
+
+/* Expanded category */
+.case-category[open] {
+  border-color: rgba(120, 90, 70, 0.4);
+}
+
+/* Dropdown arrows */
+.case-category > summary .chev {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.25s ease;
+}
+
+.case-category[open] > summary .chev {
+  transform: rotate(180deg);
+}
+
+/* Nested project area */
+.category-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px;
+  border-top: 1px solid rgba(120, 90, 70, 0.15);
+}
+
+/* Individual projects within categories */
+.case-category .category-body > .case {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Nested project title */
+.case-category .case > summary {
+  font-size: 0.98rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .case-category > summary {
+    padding: 18px;
+    font-size: 1rem;
+  }
+
+  .category-body {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+/* END: CATEGORIZED CASE STUDIES */
+
+/* =====================================================
+   NEW ADDITION: ANIMATED HOMEPAGE INTRODUCTION
+   Added: November 2026
+   ===================================================== */
+
+.rotating-intro {
+  text-align: center;
+  margin: 18px auto 28px;
+  line-height: 1.8;
+}
+
+.rotating-text {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 600;
+  color: #a9785d;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.rotating-text.is-changing {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .rotating-intro {
+    padding: 0 12px;
+  }
+
+  .rotating-text {
+    margin-left: 3px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .rotating-text {
+    transition: none;
+  }
+}
+
+
+
+/* =====================================================
+   FOOTER FIX: INCREASE FOOTER WIDTH
+   Added: November 2026
+   Purpose: Make the white footer span more of the page.
+   ===================================================== */
+
+footer#contact {
+  width: 90% !important;
+  max-width: 1400px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  footer#contact {
+    width: 95% !important;
+    max-width: none !important;
+  }
+}
+
+/* END FOOTER WIDTH FIX */
+
+
+
