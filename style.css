@@ -2324,3 +2324,28 @@ footer#contact p {
     font-size: 14px;
   }
 }
+
+/* ===== HOMEPAGE FOOTER SPACING FIX ===== */
+
+/* Remove excessive space below homepage content */
+.hero {
+  margin-bottom: 0;
+}
+
+/* Keep footer full-width and remove extra gap */
+footer#contact {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-top: 3px solid #e7d9cf;
+}
+
+/* Keep footer content centred */
+footer#contact h2,
+footer#contact p {
+  text-align: center;
+}
