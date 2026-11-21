@@ -2104,31 +2104,17 @@ option {
   }
 }
 
-
-
-/* =====================================================
-   FOOTER FIX: INCREASE FOOTER WIDTH
-   Added: November 2026
-   Purpose: Make the white footer span more of the page.
-   ===================================================== */
-
+/* Footer: restore full-width styling consistently on all pages. */
 footer#contact {
-  width: 90% !important;
-  max-width: 1400px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  footer#contact {
-    width: 95% !important;
-    max-width: none !important;
-  }
+footer#contact h2,
+footer#contact p {
+  text-align: center;
 }
-
-/* END FOOTER WIDTH FIX */
-
-
-
