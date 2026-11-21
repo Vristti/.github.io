@@ -2796,3 +2796,15 @@ header.hero {
   }
 }
 
+/* Keep linked case studies visible below sticky navbar */
+
+.case-category .case {
+  scroll-margin-top: 300px;
+}
+
+@media (max-width: 768px) {
+  .case-category .case {
+    scroll-margin-top: 150px;
+  }
+}
+

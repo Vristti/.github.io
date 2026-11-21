@@ -84,7 +84,7 @@
   <div class="category-body">
 
     <!-- Case 1 -->
-    <details class="case">
+    <details class="case" id="hr-technology">
       <summary>
         <span>HR Technology Transformation &amp; System Migration</span>
         <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
@@ -119,7 +119,7 @@
     </details>
 
     <!-- Case 2 -->
-    <details class="case">
+    <details class="case" id="employee-handbook">
       <summary>
         <span>Employee Handbook &amp; Policy Standardization</span>
         <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
@@ -150,7 +150,7 @@
     </details>
 
     <!-- Case 3 -->
-    <details class="case">
+    <details class="case" id="hr-process">
       <summary>
         <span>HR Process Improvement &amp; Workflow Automation</span>
         <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
@@ -701,3 +701,46 @@
 
 </body>
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  function openSelectedCase() {
+
+    const caseId = window.location.hash.substring(1);
+
+    if (!caseId) return;
+
+    const selectedCase = document.getElementById(caseId);
+
+    if (!selectedCase || !selectedCase.matches("details.case")) {
+      return;
+    }
+
+    // Open the parent category
+    const parentCategory = selectedCase.closest(".case-category");
+
+    if (parentCategory) {
+      parentCategory.open = true;
+    }
+
+    // Open the individual case study
+    selectedCase.open = true;
+
+    // Scroll to the selected case study
+    requestAnimationFrame(function () {
+      selectedCase.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  // Open the requested case on page load
+  openSelectedCase();
+
+  // Also handle changes to the URL hash
+  window.addEventListener("hashchange", openSelectedCase);
+
+});
+</script>
