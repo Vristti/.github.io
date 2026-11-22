@@ -3570,3 +3570,343 @@ header.hero {
   outline-offset: 5px;
 }
 
+/* =====================================
+   ABOUT PAGE REDESIGN
+   ===================================== */
+
+/* Main padded container */
+
+#about.story-about {
+  width: min(1180px, calc(100% - 36px));
+  max-width: 1180px;
+  box-sizing: border-box;
+  margin: 35px auto 65px;
+  padding: 0;
+}
+
+#about .story-about-container {
+  padding: 45px;
+  background: #fffdfb;
+  border: 1px solid #ead8cb;
+  border-radius: 26px;
+  box-shadow: 0 10px 30px rgba(59,47,39,0.05);
+}
+
+/* Introduction */
+
+#about .story-about-intro {
+  margin-bottom: 42px;
+}
+
+#about .story-about-eyebrow {
+  display: block;
+  color: #a8795d;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+#about .story-about-intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.25;
+  color: #3b2f27;
+  margin: 0 0 18px;
+}
+
+#about .story-about-accent {
+  width: 65px;
+  height: 3px;
+  margin: 0 0 22px;
+  border-radius: 5px;
+  background: #a8795d;
+}
+
+#about .story-about-intro p {
+  max-width: 950px;
+  margin: 0 0 17px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #6b5547;
+}
+
+/* Personal values */
+
+#about .story-about-values {
+  margin-bottom: 28px;
+}
+
+#about .story-about-values h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #3b2f27;
+  margin: 0 0 15px;
+}
+
+#about .story-about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#about .story-about-card {
+  padding: 28px;
+  min-width: 0;
+  background: #fffaf6;
+  border: 1px solid #ead8cb;
+  border-radius: 20px;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+#about .story-about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(59,47,39,0.09);
+}
+
+#about .story-about-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #f5e6db;
+  color: #a8795d;
+  font-size: 28px;
+}
+
+#about .story-about-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #3b2f27;
+  margin: 0 0 12px;
+}
+
+#about .story-about-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #6b5547;
+}
+
+/* Beyond Work dropdown */
+
+#about .story-about-dropdown {
+  padding: 27px;
+  margin-bottom: 25px;
+  background: #fffaf6;
+  border: 1px solid #ead8cb;
+  border-radius: 20px;
+}
+
+#about .story-about-dropdown-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  cursor: pointer;
+  list-style: none;
+}
+
+#about .story-about-dropdown-heading::-webkit-details-marker {
+  display: none;
+}
+
+#about .story-about-dropdown-heading::marker {
+  content: "";
+}
+
+#about .story-about-dropdown-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #3b2f27;
+}
+
+#about .story-about-arrow {
+  font-size: 28px;
+  color: #a8795d;
+  transition: transform 0.3s ease;
+}
+
+#about .story-about-dropdown[open]
+.story-about-arrow {
+  transform: rotate(180deg);
+}
+
+#about .story-about-dropdown-heading:focus-visible {
+  outline: 2px solid #a8795d;
+  outline-offset: 6px;
+  border-radius: 5px;
+}
+
+#about .story-about-dropdown-content {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #ead8cb;
+}
+
+#about .story-about-dropdown-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  color: #3b2f27;
+  margin: 18px 0 12px;
+}
+
+#about .story-about-dropdown-content p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #6b5547;
+  margin: 0 0 15px;
+}
+
+/* Looking Ahead */
+
+#about .story-about-future {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 30px;
+  background: #f7eee7;
+  border: 1px solid #ead8cb;
+  border-radius: 20px;
+}
+
+#about .story-about-future-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fffdfb;
+  color: #a8795d;
+  font-size: 28px;
+}
+
+#about .story-about-future h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 27px;
+  color: #3b2f27;
+  margin: 0 0 15px;
+}
+
+#about .story-about-future p {
+  margin: 0 0 13px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #6b5547;
+}
+
+#about .story-about-future p:last-child {
+  margin-bottom: 0;
+}
+
+/* Navigation buttons beneath content */
+
+#about .story-about-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+#about .story-about-buttons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 180px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Responsive layout */
+
+@media (max-width: 700px) {
+
+  #about.story-about {
+    width: calc(100% - 24px);
+    margin: 20px auto 40px;
+  }
+
+  #about .story-about-container {
+    padding: 25px 18px;
+  }
+
+  #about .story-about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #about .story-about-card {
+    padding: 23px;
+  }
+
+  #about .story-about-intro p {
+    font-size: 14px;
+  }
+
+  #about .story-about-dropdown {
+    padding: 22px;
+  }
+
+  #about .story-about-dropdown-title {
+    font-size: 22px;
+  }
+
+  #about .story-about-future {
+    flex-direction: column;
+    padding: 23px;
+  }
+
+  #about .story-about-buttons {
+    flex-direction: column;
+  }
+
+  #about .story-about-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Reduced-motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  #about .story-about-card,
+  #about .story-about-arrow {
+    transition: none;
+  }
+
+  #about .story-about-card:hover {
+    transform: none;
+  }
+}
+
+/* ABOUT PAGE — INTRODUCTION ALIGNMENT */
+
+#about .story-about-intro {
+  text-align: left;
+}
+
+#about .story-about-eyebrow {
+  text-align: left;
+}
+
+#about .story-about-intro h1 {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#about .story-about-intro .story-about-accent {
+  margin-left: 0;
+  margin-right: 0;
+}
+
