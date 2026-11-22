@@ -76,7 +76,30 @@
      - Keeps existing website styling
      ===================================================== -->
 
+     
+
 <div class="home-showcase">
+<section class="home-impact">
+  <div class="impact-item">
+    <strong class="count-up" data-target="150" data-prefix="" data-suffix="+">0+</strong>
+    <span>Hires Supported</span>
+  </div>
+
+  <div class="impact-item">
+    <strong class="count-up" data-target="7" data-prefix="" data-suffix="+">0+</strong>
+    <span>Hiring Managers Partnered With</span>
+  </div>
+
+  <div class="impact-item">
+    <strong class="count-up" data-target="4" data-prefix="" data-suffix="+">0+</strong>
+    <span>University Partnerships</span>
+  </div>
+
+  <div class="impact-item">
+    <strong class="count-up" data-target="40" data-prefix="" data-suffix="+">0+</strong>
+    <span>Client Accounts Supported</span>
+  </div>
+</section>
 <header class="hero">
 
   <h1>Empowering People. Strengthening Teams.</h1>
@@ -182,29 +205,6 @@
 
 </div>
 
-<!-- HOMEPAGE IMPACT HIGHLIGHTS -->
-
-<section class="home-impact">
-  <div class="impact-item">
-    <strong>150+</strong>
-    <span>Hires Supported</span>
-  </div>
-
-  <div class="impact-item">
-    <strong>7+</strong>
-    <span>Hiring Managers Partnered With</span>
-  </div>
-
-  <div class="impact-item">
-    <strong>4+</strong>
-    <span>University Partnerships</span>
-  </div>
-
-  <div class="impact-item">
-    <strong>40+</strong>
-    <span>Client Accounts Supported</span>
-  </div>
-</section>
 
     <footer id="contact">
     <h2>Let's work together</h2>
@@ -263,6 +263,99 @@
     })();
   </script>
   
+  
+<!-- HOMEPAGE ANIMATED STATISTICS -->
+<
+<!-- HOMEPAGE STATISTICS ANIMATION -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".home-impact .count-up");
+
+  if (!counters.length) return;
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // Show final numbers for visitors who prefer reduced motion
+  if (reducedMotion) {
+    counters.forEach(counter => {
+      counter.textContent =
+        (counter.dataset.prefix || "") +
+        counter.dataset.target +
+        (counter.dataset.suffix || "");
+    });
+    return;
+  }
+
+  let hasStarted = false;
+
+  function startCounters() {
+    if (hasStarted) return;
+    hasStarted = true;
+
+    counters.forEach(counter => {
+      const target = Number(counter.dataset.target);
+      const prefix = counter.dataset.prefix || "";
+      const suffix = counter.dataset.suffix || "";
+      const duration = 2000;
+
+      if (!Number.isFinite(target)) return;
+
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(target * eased);
+
+        counter.textContent = prefix + value + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = prefix + target + suffix;
+        }
+      }
+
+      counter.textContent = prefix + "0" + suffix;
+      requestAnimationFrame(update);
+    });
+  }
+
+  function waitForLoader() {
+    const loader = document.getElementById("preloader");
+
+    // If the loader has already disappeared, start immediately
+    if (!loader) {
+      startCounters();
+      return;
+    }
+
+    // Watch for the loader being removed
+    const observer = new MutationObserver(() => {
+      if (!document.getElementById("preloader")) {
+        observer.disconnect();
+        startCounters();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Handle the loader disappearing between our checks
+    if (!document.getElementById("preloader")) {
+      observer.disconnect();
+      startCounters();
+    }
+  }
+
+  waitForLoader();
+});
+</script>
+
 </body>
 </html>
 

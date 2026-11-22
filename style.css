@@ -2808,3 +2808,765 @@ header.hero {
   }
 }
 
+/* =========================================
+   EXPERIENCE PAGE - TWO COLUMN LAYOUT
+   ========================================= */
+
+.experience-page .experience-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: 30px;
+  align-items: start;
+
+  width: min(1280px, calc(100% - 40px));
+  max-width: 1280px;
+  margin: 35px auto 65px;
+}
+
+/* Left timeline */
+
+.experience-page .experience-layout .exp-wrap {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Right education sidebar */
+
+.experience-page .experience-sidebar {
+  min-width: 0;
+}
+
+.experience-page .education-panel {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 28px;
+  box-sizing: border-box;
+
+  background: #fffaf6;
+  border: 1px solid #e7d3c5;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(59, 47, 39, 0.04);
+}
+
+.experience-page .education-panel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #3b2f27;
+  margin: 0 0 25px;
+}
+
+.experience-page .education-entry {
+  padding: 20px 0;
+  border-bottom: 1px solid #ead8cb;
+}
+
+.experience-page .education-entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.experience-page .education-entry h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  color: #3b2f27;
+  margin: 8px 0;
+}
+
+.experience-page .education-entry p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6b5547;
+  margin: 4px 0;
+}
+
+.experience-page .education-school {
+  font-weight: 600;
+}
+
+.experience-page .education-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #f3e1d6;
+  color: #8f6148;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Tablet and phone */
+
+@media (max-width: 950px) {
+  .experience-page .experience-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-page .experience-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .experience-page .experience-layout {
+    width: calc(100% - 24px);
+    gap: 20px;
+  }
+
+  .experience-page .education-panel {
+    padding: 22px;
+  }
+}
+
+/* EXPERIENCE PAGE: GROUPED INTRAGRAD CARD */
+
+.experience-page .experience-accordion {
+  width: 100%;
+}
+
+.experience-page .experience-accordion-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-page .experience-accordion-heading::-webkit-details-marker {
+  display: none;
+}
+
+.experience-page .experience-chevron {
+  font-size: 26px;
+  color: #a8795d;
+  transition: transform 0.3s ease;
+}
+
+.experience-page .experience-accordion[open]
+.experience-chevron {
+  transform: rotate(180deg);
+}
+
+/* Career progression */
+
+.experience-page .intragrad-progression {
+  margin-top: 22px;
+  padding: 20px;
+  background: #faf3ee;
+  border-radius: 15px;
+}
+
+.experience-page .intragrad-progression h3,
+.experience-page .intragrad-contributions h3 {
+  font-family: 'Playfair Display', serif;
+  color: #3b2f27;
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+.experience-page .progression-role {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding-left: 15px;
+  border-left: 2px solid #d9b8a4;
+}
+
+.experience-page .progression-role:last-child {
+  margin-bottom: 0;
+}
+
+.experience-page .progression-role strong {
+  color: #3b2f27;
+  font-size: 14px;
+}
+
+.experience-page .progression-role span {
+  color: #6b5547;
+  font-size: 12px;
+}
+
+/* Contributions */
+
+.experience-page .intragrad-contributions {
+  margin-top: 24px;
+}
+
+.experience-page .intragrad-contributions ul {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.experience-page .intragrad-contributions li {
+  margin-bottom: 12px;
+  color: #6b5547;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Small interactive hover effect */
+
+.experience-page .experience-accordion-heading:hover .role {
+  color: #a8795d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-page .experience-chevron {
+    transition: none;
+  }
+}
+
+/* =====================================
+   EXPERIENCE PAGE: COMMUNITY LEADERSHIP
+   ===================================== */
+
+.experience-page .community-panel {
+  margin-top: 25px;
+  padding: 28px;
+  box-sizing: border-box;
+
+  background: #fffaf6;
+  border: 1px solid #e7d3c5;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(59, 47, 39, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.experience-page .community-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(59, 47, 39, 0.09);
+}
+
+/* Heading */
+
+.experience-page .community-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.experience-page .community-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #3b2f27;
+  margin: 0;
+}
+
+.experience-page .community-icon {
+  font-size: 32px;
+  color: #a8795d;
+}
+
+/* Organization */
+
+.experience-page .community-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #3b2f27;
+  margin: 0 0 5px;
+}
+
+.experience-page .community-dates {
+  font-size: 12px;
+  color: #8f6148;
+  margin-bottom: 20px;
+}
+
+/* Fundraising highlight */
+
+.experience-page .community-impact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 18px;
+  background: #f7e9df;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.experience-page .community-impact strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  color: #8f6148;
+}
+
+.experience-page .community-impact span {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b5547;
+}
+
+/* Description */
+
+.experience-page .community-description {
+  color: #6b5547;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* Skills */
+
+.experience-page .community-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-page .community-tags span {
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #f3e1d6;
+  color: #8f6148;
+  font-size: 11px;
+}
+
+/* Respect reduced-motion settings */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-page .community-panel {
+    transition: none;
+  }
+}
+
+/* =========================================
+   EXPERIENCE PAGE: ACCORDION POLISH
+   ========================================= */
+
+.experience-page .experience-accordion-heading {
+  padding: 8px 0;
+}
+
+.experience-page .experience-accordion-heading:focus-visible {
+  outline: 2px solid #a8795d;
+  outline-offset: 5px;
+  border-radius: 6px;
+}
+
+.experience-page .experience-accordion-heading .dates {
+  margin-top: 8px;
+  color: #8f6148;
+}
+
+.experience-page .experience-accordion-content {
+  padding-top: 18px;
+}
+
+.experience-page .experience-accordion-content h3 {
+  margin: 24px 0 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #3b2f27;
+}
+
+.experience-page .experience-highlights {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.experience-page .experience-highlights li {
+  margin-bottom: 12px;
+  color: #6b5547;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Subtle hover animation on desktop */
+@media (hover: hover) {
+  .experience-page .exp-card {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .experience-page .exp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(59, 47, 39, 0.08);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .experience-page .exp-card {
+    transition: none;
+  }
+
+  .experience-page .exp-card:hover {
+    transform: none;
+  }
+}
+
+/* =========================================
+   EXPERIENCE PAGE - FINAL ANIMATIONS
+   ========================================= */
+
+/* Fade in and move upward when scrolling */
+
+.experience-page.reveal-ready .exp-card,
+.experience-page.reveal-ready .education-panel,
+.experience-page.reveal-ready .community-panel {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Reveal cards when JavaScript activates them */
+
+.experience-page.reveal-ready .exp-card.is-visible,
+.experience-page.reveal-ready .education-panel.is-visible,
+.experience-page.reveal-ready .community-panel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Education panel hover */
+
+@media (hover: hover) {
+  .experience-page .education-panel:hover,
+  .experience-page .community-panel:hover,
+  .experience-page .exp-card.is-visible:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(59, 47, 39, 0.10);
+  }
+}
+
+/* Better spacing between timeline cards */
+
+.experience-page .timeline {
+  padding-bottom: 15px;
+}
+
+.experience-page .t-item {
+  margin-bottom: 28px;
+}
+
+/* Timeline card appearance */
+
+.experience-page .exp-card {
+  border-radius: 18px;
+}
+
+/* Education sidebar alignment */
+
+.experience-page .experience-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience-page .community-panel {
+  margin-top: 0;
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-page.reveal-ready .exp-card,
+  .experience-page.reveal-ready .education-panel,
+  .experience-page.reveal-ready .community-panel {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .experience-page .exp-card:hover,
+  .experience-page .education-panel:hover,
+  .experience-page .community-panel:hover {
+    transform: none;
+  }
+}
+
+/* EXPERIENCE PAGE — CLEAN TIMELINE */
+
+.experience-page .timeline {
+  list-style: none;
+  list-style-type: none;
+  padding-left: 32px;
+  margin-left: 0;
+}
+
+.experience-page .timeline > .t-item {
+  list-style: none;
+  position: relative;
+}
+
+.experience-page .timeline > .t-item::marker {
+  content: "";
+}
+
+.experience-page .timeline > .t-item::before {
+  content: none;
+}
+
+/* =====================================
+   EXPERIENCE PAGE: VISIBLE SKILL TAGS
+   ===================================== */
+
+.experience-page .experience-preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.experience-page .experience-preview-tags span {
+  display: inline-block;
+  padding: 6px 11px;
+  background: #f5e4d9;
+  color: #8f6148;
+  border-radius: 20px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Keep tags aligned within collapsed cards */
+
+.experience-page .experience-accordion-heading > div {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 520px) {
+  .experience-page .experience-preview-tags {
+    gap: 6px;
+  }
+
+  .experience-page .experience-preview-tags span {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+}
+
+/* =====================================
+   EXPERIENCE PAGE: COMPACT INTRODUCTION
+   ===================================== */
+
+.experience-page .experience-hero {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.experience-page .experience-title {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.experience-page .experience-sub {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.experience-page .hero-card {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.experience-page .experience-layout {
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .experience-page .experience-hero {
+    padding-top: 20px;
+  }
+}
+
+/* HOMEPAGE - STATISTICS AT TOP OF SHOWCASE */
+
+.home-showcase .home-impact {
+  grid-column: 1 / -1;
+  grid-row: 1;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 24px 20px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+
+  background: #f5e9e1;
+  border-radius: 16px;
+}
+
+/* Introduction and projects below statistics */
+
+.home-showcase .hero {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.home-showcase .featured-projects {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Mobile layout */
+
+@media (max-width: 900px) {
+  .home-showcase .home-impact {
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 10px;
+  }
+
+  .home-showcase .hero {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .home-showcase .featured-projects {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+/* =========================================
+   EXPERIENCE PAGE — SIDEBAR DROPDOWNS
+   ========================================= */
+
+.experience-page .sidebar-accordion {
+  width: 100%;
+}
+
+/* Clickable headings */
+.experience-page .sidebar-accordion-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.experience-page .sidebar-accordion-heading::-webkit-details-marker {
+  display: none;
+}
+
+.experience-page .sidebar-accordion-heading::marker {
+  content: "";
+}
+
+.experience-page .sidebar-heading-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: #3b2f27;
+}
+
+/* Arrow animation */
+.experience-page .sidebar-chevron {
+  font-size: 28px;
+  color: #a8795d;
+  transition: transform 0.3s ease;
+}
+
+.experience-page .sidebar-accordion[open] .sidebar-chevron {
+  transform: rotate(180deg);
+}
+
+/* Expanded content */
+.experience-page .sidebar-accordion-content {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #ead8cb;
+}
+
+/* Remove unwanted heading spacing */
+.experience-page .education-panel,
+.experience-page .community-panel {
+  padding: 25px;
+}
+
+.experience-page .sidebar-accordion-heading:focus-visible {
+  outline: 2px solid #a8795d;
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 520px) {
+  .experience-page .sidebar-heading-title {
+    font-size: 21px;
+  }
+
+  .experience-page .education-panel,
+  .experience-page .community-panel {
+    padding: 20px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .experience-page .sidebar-chevron {
+    transition: none;
+  }
+}
+
+/* EXPERIENCE PAGE — MATCH SIDEBAR DROPDOWNS */
+
+/* Remove unwanted inner border on Community Leadership */
+.experience-page .community-panel .sidebar-accordion-heading {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make both sidebar cards the same width */
+.experience-page .education-panel,
+.experience-page .community-panel {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+
+/* Match heading layout */
+.experience-page .sidebar-accordion-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Keep the Community Leadership card aligned */
+.experience-page .community-panel {
+  margin-top: 0;
+}
+
+/* Accessible keyboard focus */
+.experience-page .sidebar-accordion-heading:focus-visible {
+  outline: 2px solid #a8795d;
+  outline-offset: 5px;
+}
+
