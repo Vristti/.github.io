@@ -1,0 +1,863 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Professional Case Studies · Vristti Jalan</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=20261121">
+<style>
+
+/* Scoped redesign: does not alter any other page */
+.case-portfolio-page .case-portfolio-intro {
+  width: min(1200px, calc(100% - 40px)); max-width: 1200px;
+  box-sizing: border-box; margin: 38px auto 24px; padding: 38px 42px;
+  text-align: left; background: #fffdfb; border: 1px solid #ead8cb;
+  border-radius: 24px; box-shadow: 0 8px 26px rgba(59,47,39,.04);
+}
+.case-portfolio-page .case-portfolio-eyebrow {
+  display: block; font: 600 12px 'Poppins',sans-serif;
+  letter-spacing: 2px; color: #a8795d; margin-bottom: 12px;
+}
+.case-portfolio-page .case-portfolio-intro h1 {
+  font: 700 clamp(30px,4vw,45px)/1.22 'Playfair Display',serif;
+  text-align: left; color: #3b2f27; margin: 0 0 14px;
+}
+.case-portfolio-page .case-portfolio-accent {
+  width: 65px; height: 3px; background: #a8795d; border-radius: 4px;
+  margin: 0 0 18px;
+}
+.case-portfolio-page .case-portfolio-intro p {
+  max-width: 760px; text-align: left; margin: 0; color: #6b5547;
+  font: 400 14px/1.85 'Poppins',sans-serif;
+}
+.case-portfolio-page main { width: 100%; max-width: none; padding: 0; margin: 0; }
+.case-portfolio-page .case-studies-grid {
+  width: min(1200px, calc(100% - 40px)); max-width: 1200px;
+  box-sizing: border-box; margin: 0 auto 65px; padding: 0;
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px;
+}
+.case-portfolio-page .case-portfolio-section-heading {grid-column: 1/-1; margin: 6px 0 0;}
+.case-portfolio-page .case-portfolio-section-heading h2 {
+  font: 700 28px 'Playfair Display',serif; color: #3b2f27; margin: 0 0 8px;
+}
+.case-portfolio-page .case-portfolio-section-heading p {
+  font: 400 13px/1.75 'Poppins',sans-serif; color: #6b5547; margin: 0;
+}
+.case-portfolio-page .case-studies-grid > .case-category {
+  width: 100%; min-width: 0; max-width: none; box-sizing: border-box;
+  padding: 0; margin: 0; align-self: start; border: 1px solid #ead8cb;
+  background: #fffdfb; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 5px 20px rgba(59,47,39,.04);
+  transition: box-shadow .25s ease,border-color .25s ease;
+}
+.case-portfolio-page .case-studies-grid > .case-category:hover { border-color: #d7b8a3; box-shadow: 0 12px 24px rgba(59,47,39,.07); }
+.case-portfolio-page .case-studies-grid > .case-category[open] { grid-column: 1/-1; }
+.case-portfolio-page .case-category > .category-heading {
+  display: flex; align-items: center; gap: 15px; padding: 24px;
+  background: transparent; border: 0; cursor: pointer; list-style: none;
+}
+.case-portfolio-page .case-category > .category-heading::-webkit-details-marker { display: none; }
+.case-portfolio-page .case-category > .category-heading::marker { content: ''; }
+.case-portfolio-page .case-portfolio-icon {
+  display: inline-flex; justify-content: center; align-items: center;
+  flex: 0 0 48px; width: 48px; height: 48px; border-radius: 50%;
+  background: #f5e6db; color: #986b51; font-size: 24px;
+}
+.case-portfolio-page .case-category .category-title {
+  flex: 1; display: block; min-width: 0; color: #3b2f27;
+  font: 700 20px/1.4 'Playfair Display',serif;
+}
+.case-portfolio-page .category-title small {
+  display: block; font: 400 12px/1.7 'Poppins',sans-serif;
+  color: #6b5547; margin-top: 6px;
+}
+.case-portfolio-page .case-category > .category-heading > .chev {
+  flex: 0 0 20px; width: 20px; height: 20px;
+}
+.case-portfolio-page .case-category > .category-body {
+  box-sizing: border-box; width: 100%; padding: 18px 24px 24px;
+  border-top: 1px solid #ead8cb; background: #faf7f3;
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px;
+}
+.case-portfolio-page .category-body > .case {
+  min-width: 0; width: 100%; max-width: none; box-sizing: border-box;
+  margin: 0; padding: 0; align-self: start; border: 1px solid #ead8cb;
+  border-radius: 13px; background: #fffdfb; overflow: hidden;
+}
+.case-portfolio-page .category-body > .case[open] { grid-column: 1/-1; }
+.case-portfolio-page .category-body > .case > summary {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; padding: 17px 18px; cursor: pointer; list-style: none;
+  color: #3b2f27; font: 600 14px/1.6 'Poppins',sans-serif;
+}
+.case-portfolio-page .category-body > .case > summary::-webkit-details-marker { display: none; }
+.case-portfolio-page .category-body > .case > summary::marker { content: ''; }
+.case-portfolio-page .category-body > .case > .case-body {
+  padding: 16px 20px 19px; border-top: 1px solid #ead8cb;
+  background: #fffdfb; color: #6b5547;
+}
+.case-portfolio-page .category-body > .case .case-body p { font: 400 13px/1.85 'Poppins',sans-serif; margin: 0 0 13px; }
+.case-portfolio-page .category-body > .case .case-body p:last-child { margin-bottom: 0; }
+.case-portfolio-page .category-body > .case .case-body strong { color: #8f6148; }
+.case-portfolio-page .case-category summary:focus-visible { outline: 2px solid #a8795d; outline-offset: -4px; border-radius: 8px; }
+.case-portfolio-page .case-category .case { scroll-margin-top: 275px; }
+@media (max-width: 720px) {
+  .case-portfolio-page .case-portfolio-intro { width: calc(100% - 24px); padding: 26px 22px; margin: 20px auto; }
+  .case-portfolio-page .case-studies-grid { width: calc(100% - 24px); grid-template-columns: 1fr; gap: 14px; }
+  .case-portfolio-page .case-category > .category-heading { padding: 20px 16px; gap: 12px; }
+  .case-portfolio-page .case-category .category-title { font-size: 17px; }
+  .case-portfolio-page .case-portfolio-icon { flex-basis: 40px; width: 40px; height: 40px; font-size: 21px; }
+  .case-portfolio-page .case-category > .category-body { grid-template-columns: 1fr; padding: 12px; }
+  .case-portfolio-page .case-category .case { scroll-margin-top: 145px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .case-portfolio-page .case-category { transition: none; }
+}
+
+</style>
+</head>
+
+<body class="case-portfolio-page">
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar">
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="brand-group">
+    <a href="index.html" class="brand">Vristti Jalan</a>
+    <div class="brand-subtitle">HR Professional</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="case-studies.html" class="nav-link active">Case Studies</a>
+    <a href="contacts.html" class="nav-link">Contact</a>
+  </div>
+
+  <div class="mobile-drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="case-studies.html" class="nav-link active">Case Studies</a>
+      <a href="contacts.html" class="nav-link">Contact</a>
+    </div>
+  </div>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+</nav>
+
+<!-- ================= PAGE HEADER ================= -->
+
+<header class="page-header case-portfolio-intro">
+  <span class="case-portfolio-eyebrow">MY WORK IN PRACTICE</span>
+  <h1>Professional Case Studies</h1>
+  <div class="case-portfolio-accent" aria-hidden="true"></div>
+  <p>Explore the challenges I've worked through, the solutions I've contributed to, and the impact of my HR initiatives across people, processes, and technology.</p>
+</header>
+
+<!-- ================= CASE STUDIES ================= -->
+
+<main>
+<section class="case-studies-grid" aria-label="Case study categories">
+  <div class="case-portfolio-section-heading">
+    <h2>Explore by Category</h2>
+    <p>Select a category, then open a project to see its challenge, action, and result.</p>
+  </div>
+
+<!-- ==============================================
+     CATEGORY 1: HR OPERATIONS & TECHNOLOGY
+     ============================================== -->
+
+<details class="case-category">
+  <summary class="category-heading">
+    <span class="case-portfolio-icon" aria-hidden="true">▥</span>
+    <span class="case-portfolio-icon" aria-hidden="true">🎓</span>
+    <span class="case-portfolio-icon" aria-hidden="true">♧</span>
+    <span class="case-portfolio-icon" aria-hidden="true">⚙</span>
+    <span class="category-title">
+      HR Operations &amp; Technology
+      <small>Systems, policies, process improvements and onboarding</small>
+    </span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </summary>
+
+  <div class="category-body">
+
+    <!-- Case 1 -->
+    <details class="case" id="hr-technology">
+      <summary>
+        <span>HR Technology Transformation &amp; System Migration</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Supporting the modernization of HR technology required
+          careful system testing, data accuracy and alignment
+          with recruitment workflows.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Participated in recruitment module testing, data
+          validation and migration preparation activities
+          while identifying opportunities to improve system
+          functionality and workflows.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Contributed to system readiness by supporting
+          data integrity, identifying process considerations
+          and preparing recruitment workflows for future
+          implementation.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 2 -->
+    <details class="case" id="employee-handbook">
+      <summary>
+        <span>Employee Handbook &amp; Policy Standardization</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Employees and managers needed clearer guidance regarding
+          workplace expectations, procedures and responsibilities.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Developed an Employee Handbook covering workplace conduct,
+          attendance, leave, performance expectations, confidentiality,
+          accountability and other key employment practices.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Created a central resource for employees and managers while
+          improving consistency across HR practices and workplace decisions.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 3 -->
+    <details class="case" id="hr-process">
+      <summary>
+        <span>HR Process Improvement &amp; Workflow Automation</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Manual document handling and inconsistent workflows created
+          delays across recruitment, onboarding and employee administration.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Introduced structured templates, digital tracking systems,
+          electronic signatures and standardized communication processes.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Improved document accuracy, reduced repetitive administrative
+          work and created a more organized HR workflow.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 4 -->
+    <details class="case">
+      <summary>
+        <span>IT Onboarding &amp; New-Hire Enablement</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          New employees needed consistent guidance to begin using
+          internal systems, communication tools and workplace processes.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Supported onboarding by facilitating IT training sessions,
+          introducing internal tools and answering new-hire questions
+          during the transition into their roles.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Created a smoother onboarding experience and helped new
+          employees become familiar with essential systems and processes.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ==============================================
+     CATEGORY 2: RECRUITMENT & CANDIDATE EXPERIENCE
+     ============================================== -->
+
+<details class="case-category">
+  <summary class="category-heading">
+    <span class="category-title">
+      Recruitment &amp; Candidate Experience
+      <small>Hiring, screening, interview preparation and employer branding</small>
+    </span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </summary>
+
+  <div class="category-body">
+
+    <!-- Case 5 -->
+    <details class="case">
+      <summary>
+        <span>Global Recruitment Expansion &amp; Client Growth</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          The organization needed to support growing recruitment
+          demands across multiple clients, industries and geographic markets.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Supported full-cycle recruitment across Canada, India,
+          the Philippines, the United Kingdom and the United States.
+          Coordinated sourcing, screening, interviews, candidate
+          communication and onboarding while managing the needs
+          of more than 40 client accounts.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Contributed to more than 150 hires and helped establish
+          a more consistent recruitment experience across international markets.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 6 -->
+    <details class="case">
+      <summary>
+        <span>Technical Hiring Across Multiple Business Functions</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Hiring managers required candidates with specialized experience
+          across consulting, enterprise software and supply-chain functions.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Conducted interviews and supported recruitment for junior
+          and senior positions involving NetSuite, Microsoft Business
+          Central, supply chain, consulting and other technical
+          or functional areas.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Delivered more focused candidate assessments and helped
+          hiring managers identify applicants aligned with both
+          technical requirements and workplace expectations.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 7 -->
+    <details class="case">
+      <summary>
+        <span>Interview Training &amp; Candidate Readiness</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Some candidates entered interviews without a clear understanding
+          of employer expectations or how to communicate their
+          experience effectively.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Facilitated interview preparation workshops covering
+          behavioural questions, professional communication,
+          resume presentation, research and interview etiquette.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Helped candidates approach interviews with greater
+          confidence, preparation and awareness of professional expectations.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 8 -->
+    <details class="case">
+      <summary>
+        <span>Reference Check &amp; Screening Process Redesign</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Candidate screening and reference checks required consistent
+          questions and clearer documentation.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Used structured screening forms and reference-check templates
+          focused on competencies, previous responsibilities,
+          reliability and role-specific requirements.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Improved the organization and quality of candidate
+          information provided to hiring managers.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 9 -->
+    <details class="case">
+      <summary>
+        <span>Employer Branding &amp; Candidate Engagement</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Attracting candidates required an engaging employer presence
+          beyond traditional job advertisements.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Supported employer-branding efforts through campus outreach,
+          recruitment messaging, candidate communications,
+          event participation and relationship-building
+          throughout the hiring journey.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Strengthened candidate engagement and presented a clearer,
+          more welcoming representation of the employer during recruitment.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ==============================================
+     CATEGORY 3: CAMPUS RECRUITMENT & EARLY TALENT
+     ============================================== -->
+
+<details class="case-category">
+  <summary class="category-heading">
+    <span class="category-title">
+      Campus Recruitment &amp; Early Talent
+      <small>University partnerships and student-to-career programs</small>
+    </span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </summary>
+
+  <div class="category-body">
+
+    <!-- Case 10 -->
+    <details class="case">
+      <summary>
+        <span>Campus Recruitment Strategy &amp; University Partnerships</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          The organization wanted to strengthen its early-talent
+          pipeline and increase awareness among university students
+          and new graduates.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Coordinated campus recruitment initiatives, supported
+          university outreach, represented the employer at recruitment
+          activities and guided students from initial engagement
+          through the interview process.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Expanded the early-talent pipeline, strengthened the
+          organization's campus presence and supported hiring
+          for student and entry-level opportunities.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 11 -->
+    <details class="case">
+      <summary>
+        <span>Co-op &amp; Early-Talent Program Development</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Students and new graduates needed clearer pathways
+          into the organization and more structure throughout
+          their placements.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Supported a co-op framework involving candidate sourcing,
+          onboarding, employer coordination, student check-ins,
+          performance feedback and placement administration.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Created a more consistent experience for students,
+          educational partners and placement supervisors while
+          supporting early-talent hiring needs.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+<!-- ==============================================
+     CATEGORY 4: BUSINESS STRATEGY & ANALYTICS
+     ============================================== -->
+
+<details class="case-category">
+  <summary class="category-heading">
+    <span class="category-title">
+      Business Strategy &amp; Analytics
+      <small>Recruitment data, market research and client growth</small>
+    </span>
+    <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </summary>
+
+  <div class="category-body">
+
+    <!-- Case 12 -->
+    <details class="case">
+      <summary>
+        <span>Data-Driven Recruitment Dashboard</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Recruitment information was distributed across multiple
+          documents, making it difficult to monitor active candidates
+          and next steps.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Created structured Excel trackers and dashboard-style reporting
+          to monitor candidate pipelines, interviews, hiring stages,
+          placement status and follow-up actions.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Increased visibility into recruitment activity and supported
+          more organized, timely decisions throughout the hiring process.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 13 -->
+    <details class="case">
+      <summary>
+        <span>Business Development &amp; Market Research</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          The organization needed additional insight into potential
+          markets, client needs and opportunities for business growth.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Conducted market research, reviewed industry trends,
+          identified potential clients and supported the development
+          of recruitment and service proposals.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Provided research that supported business planning,
+          client outreach and the identification of new service opportunities.
+        </p>
+      </div>
+    </details>
+
+    <!-- Case 14 -->
+    <details class="case">
+      <summary>
+        <span>Client Acquisition &amp; Outreach Strategy</span>
+        <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </summary>
+
+      <div class="case-body">
+        <p>
+          <strong>Challenge:</strong>
+          Client outreach required clearer messaging and a more targeted
+          approach to building new business relationships.
+        </p>
+
+        <p>
+          <strong>Action:</strong>
+          Researched prospective clients, developed outreach templates,
+          communicated service offerings and supported relationship-building
+          with employers seeking recruitment assistance.
+        </p>
+
+        <p>
+          <strong>Result:</strong>
+          Strengthened the organization's outreach process and
+          contributed to new client conversations and recruitment partnerships.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</details>
+
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+  <h2>Let's work together</h2>
+
+  <p>
+    Toronto ·
+    <a href="https://www.linkedin.com/in/vristti-jalan-794960244/"
+       target="_blank"
+       rel="noopener noreferrer">
+      LinkedIn
+    </a>
+  </p>
+
+  <p class="copyright">
+    © <span id="y"></span> Vristti Jalan · Portfolio
+  </p>
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+
+<button id="backToTop" type="button" title="Back to top" aria-label="Back to top">
+  ↑
+</button>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="loader.js"></script>
+
+<script>
+  const yearElement = document.getElementById("y");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+</script>
+
+<script>
+(function () {
+  const menuButton = document.querySelector(".menu-toggle");
+  const drawer = document.getElementById("drawer");
+  const backdrop = document.getElementById("backdrop");
+  const body = document.body;
+
+  function openDrawer() {
+    body.classList.add("drawer-open");
+    menuButton?.setAttribute("aria-expanded", "true");
+    drawer?.setAttribute("aria-hidden", "false");
+  }
+
+  function closeDrawer() {
+    body.classList.remove("drawer-open");
+    menuButton?.setAttribute("aria-expanded", "false");
+    drawer?.setAttribute("aria-hidden", "true");
+  }
+
+  menuButton?.addEventListener("click", function () {
+    if (body.classList.contains("drawer-open")) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  backdrop?.addEventListener("click", closeDrawer);
+
+  window.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeDrawer();
+    }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  const backToTopButton = document.getElementById("backToTop");
+
+  if (!backToTopButton) return;
+
+  function updateButtonVisibility() {
+    const scrollPosition =
+      window.scrollY || document.documentElement.scrollTop;
+
+    backToTopButton.style.display =
+      scrollPosition > 300 ? "block" : "none";
+  }
+
+  window.addEventListener("scroll", updateButtonVisibility);
+
+  backToTopButton.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  updateButtonVisibility();
+})();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  function openSelectedCase() {
+
+    const caseId = window.location.hash.substring(1);
+
+    if (!caseId) return;
+
+    const selectedCase = document.getElementById(caseId);
+
+    if (!selectedCase || !selectedCase.matches("details.case")) {
+      return;
+    }
+
+    // Open the parent category
+    const parentCategory = selectedCase.closest(".case-category");
+
+    if (parentCategory) {
+      parentCategory.open = true;
+    }
+
+    // Open the individual case study
+    selectedCase.open = true;
+
+    // Scroll to the selected case study
+    requestAnimationFrame(function () {
+      selectedCase.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  // Open the requested case on page load
+  openSelectedCase();
+
+  // Also handle changes to the URL hash
+  window.addEventListener("hashchange", openSelectedCase);
+
+});
+</script>
+</body>
+
+</html>
